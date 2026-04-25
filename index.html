@@ -1,18 +1,17 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MyZina – Gâteau Traditionnels Algériens | حلويات جزائرية تقليدية</title>
+    <title>MyZina – Gâteaux Traditionnels Algériens | حلويات جزائرية تقليدية</title>
     <meta name="description" content="Découvrez l'excellence de la pâtisserie traditionnelle algérienne avec MyZina. Commandez en ligne vos gâteaux préférés.">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         :root {
             --burgundy: #4a0404;
@@ -42,6 +41,7 @@
         h1, h2, h3, h4, .logo-text { font-family: 'Playfair Display', serif; font-weight: 700; }
         [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 { font-family: 'Amiri', serif; font-weight: 700; }
 
+        /* ── LANG SWITCH ── */
         .lang-switch { position: absolute; top: 20px; right: 20px; z-index: 100; }
         [dir="rtl"] .lang-switch { right: auto; left: 20px; }
         .lang-btn {
@@ -56,7 +56,9 @@
             border-radius: 50px;
             font-size: 1rem;
         }
+        .lang-btn:hover { background: rgba(212,175,55,0.35); }
 
+        /* ── HEADER ── */
         header {
             padding: 4rem 1rem 5rem;
             text-align: center;
@@ -64,26 +66,59 @@
             border-bottom: 2px solid rgba(212, 175, 55, 0.3);
             position: relative;
         }
-        .logo-img { width: 160px; height: 160px; border-radius: 50%; border: 3px solid var(--gold); padding: 5px; object-fit: cover; background: white; margin: 0 auto 2rem; box-shadow: 0 0 40px rgba(212, 175, 55, 0.4); }
+        .logo-img {
+            width: 160px; height: 160px; border-radius: 50%;
+            border: 3px solid var(--gold); padding: 5px; object-fit: cover;
+            background: white; margin: 0 auto 2rem;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+            display: block;
+        }
         .hd { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0; }
         .hd span { height: 2px; width: 60px; background: var(--gold); opacity: 0.6; }
         .hd-star { color: var(--gold); font-size: 1.2rem; }
-        .tagline { font-style: italic; color: var(--light-gold); letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase; margin-top: 20px; display: block; font-weight: 500; }
+        .tagline {
+            font-style: italic; color: var(--light-gold);
+            letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase;
+            margin-top: 20px; display: block; font-weight: 500;
+        }
+        [dir="rtl"] .tagline { letter-spacing: 0; font-size: 1.3rem; }
 
+        /* ── NAV ── */
         nav { margin-top: 3rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; padding: 0 10px; }
-        nav a { color: var(--white); text-decoration: none; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; opacity: 0.9; transition: var(--transition); font-weight: 600; border-bottom: 1px solid transparent; }
+        nav a {
+            color: var(--white); text-decoration: none;
+            text-transform: uppercase; font-size: 0.9rem;
+            letter-spacing: 2px; opacity: 0.9;
+            transition: var(--transition); font-weight: 600;
+            border-bottom: 1px solid transparent;
+        }
         nav a:hover { color: var(--gold); opacity: 1; border-bottom: 1px solid var(--gold); }
+        [dir="rtl"] nav a { letter-spacing: 0; font-size: 1.1rem; }
 
+        .choco-nav-link {
+            background: linear-gradient(135deg, #3b1a08, #1a0a00) !important;
+            border: 1.5px solid var(--gold) !important;
+            color: var(--gold) !important;
+            padding: 8px 22px !important;
+            border-radius: 50px !important;
+            opacity: 1 !important;
+            border-bottom: none !important;
+        }
+        .choco-nav-link:hover { background: linear-gradient(135deg, #5a2a10, #3b1a08) !important; }
+
+        /* ── HERO ── */
         .hero { padding: 6rem 1.5rem; text-align: center; max-width: 1100px; margin: 0 auto; }
         .hero h2 { font-size: 3rem; margin-bottom: 2rem; color: var(--gold); line-height: 1.1; letter-spacing: -0.5px; }
         .ornament { color: var(--gold); margin: 3rem 0; font-size: 1.5rem; letter-spacing: 15px; opacity: 0.8; }
         .hero p { font-size: 1.4rem; color: var(--light-gold); font-weight: 400; max-width: 750px; margin: 0 auto; line-height: 1.5; }
 
+        /* ── SECTIONS ── */
         section { padding: 6rem 1.5rem; background: var(--cream); color: var(--dark-burgundy); }
         .sec-title { text-align: center; margin-bottom: 4rem; }
         .sec-title h3 { font-size: 2.8rem; color: var(--burgundy); margin-bottom: 0.8rem; }
         .sec-title p { font-style: italic; color: var(--text-gray); font-size: 1.2rem; font-weight: 500; }
 
+        /* ── PRODUCTS GRID ── */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -91,16 +126,13 @@
             max-width: 1300px;
             margin: 0 auto;
         }
+
+        /* ── PRODUCT CARD ── */
         .product-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: white; border-radius: 12px; overflow: hidden;
+            transition: var(--transition); box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border: 1px solid rgba(212, 175, 55, 0.15);
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
+            display: flex; flex-direction: column; cursor: pointer;
         }
         .product-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 20px 40px rgba(74, 4, 4, 0.1); }
         .product-img-wrap { height: 280px; overflow: hidden; }
@@ -108,207 +140,245 @@
         .product-card:hover .product-img { transform: scale(1.1); }
         .product-info { padding: 2rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .product-info h4 { font-size: 1.6rem; color: var(--burgundy); margin-bottom: 1.2rem; }
-
-        /* ── PRICE TAG – supports promo ── */
         .price-tag {
-            border-top: 1px solid #f0f0f0;
-            padding-top: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
+            border-top: 1px solid #f0f0f0; padding-top: 1.5rem;
+            display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
         }
         .price-current { color: var(--gold); font-weight: 800; font-size: 1.4rem; }
-        .price-original {
-            color: #aaa;
-            font-size: 1.1rem;
-            text-decoration: line-through;
-            font-weight: 500;
-        }
+        .price-original { color: #aaa; font-size: 1.1rem; text-decoration: line-through; font-weight: 500; }
         .price-badge {
-            background: #e53e3e;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 900;
-            padding: 3px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: #e53e3e; color: white; font-size: 0.75rem;
+            font-weight: 900; padding: 3px 8px; border-radius: 4px;
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
+        /* ── CHOCOLAT PROMO CARD ── */
+        .choco-promo-card {
+            background: linear-gradient(160deg, #3b1a08, #1a0a00);
+            border: 2px solid var(--gold); border-radius: 12px; overflow: hidden;
+            transition: var(--transition); box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex; flex-direction: column; cursor: pointer;
+            text-decoration: none; position: relative;
+        }
+        .choco-promo-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+        .choco-promo-card .choco-promo-img { height: 280px; overflow: hidden; }
+        .choco-promo-card .choco-promo-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s; }
+        .choco-promo-card:hover .choco-promo-img img { transform: scale(1.08); }
+        .choco-promo-card .choco-promo-info { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .choco-promo-card h4 { color: var(--gold); font-size: 1.6rem; margin-bottom: 0.8rem; }
+        .choco-promo-card p { color: rgba(244,228,188,0.7); font-size: 1rem; font-style: italic; margin-bottom: 1.2rem; }
+        .choco-promo-new-badge {
+            position: absolute; top: 16px; left: 16px;
+            background: var(--gold); color: #1a0a00;
+            font-weight: 900; font-size: 0.7rem;
+            padding: 5px 14px; border-radius: 50px;
+            text-transform: uppercase; letter-spacing: 2px;
+        }
+        .choco-promo-cta {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 14px 20px; background: var(--gold); color: #1a0a00;
+            border-radius: 8px; font-weight: 900; font-size: 1rem;
+            text-transform: uppercase; letter-spacing: 1.5px; margin-top: auto;
+        }
+
+        /* ── QUALITY SECTION ── */
         .quality-section { background: var(--burgundy); color: var(--white); }
         .quality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .quality-card { background: rgba(255,255,255,0.05); padding: 4rem 2.5rem; text-align: center; border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 12px; transition: var(--transition); }
+        .quality-card {
+            background: rgba(255,255,255,0.05); padding: 4rem 2.5rem; text-align: center;
+            border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 12px; transition: var(--transition);
+        }
         .quality-card:hover { background: rgba(255,255,255,0.08); border-color: var(--gold); }
         .q-icon { font-size: 3.5rem; margin-bottom: 2rem; display: block; }
         .q-name { font-size: 2.2rem; color: var(--gold); margin-bottom: 1.5rem; font-family: 'Playfair Display', serif; }
         .q-desc { font-size: 1.1rem; color: var(--light-gold); font-weight: 400; line-height: 1.7; }
 
-        .order-section { background: #fffefb; padding: 6rem 1rem 10rem; background-image: radial-gradient(var(--light-gold) 0.8px, transparent 0.8px); background-size: 25px 25px; }
+        /* ── ORDER SECTION ── */
+        .order-section {
+            background: #fffefb; padding: 6rem 1rem 10rem;
+            background-image: radial-gradient(var(--light-gold) 0.8px, transparent 0.8px);
+            background-size: 25px 25px;
+        }
         .order-container { display: flex; flex-direction: column; gap: 3rem; max-width: 1000px; margin: 0 auto; }
-        .order-form-container { background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); border: 1px solid #eeeeee; }
-        .summary-card { background: var(--burgundy); color: var(--white); padding: 3rem; border-radius: 12px; border: 2px solid var(--gold); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
-        
+        .order-form-container {
+            background: white; padding: 3rem; border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08); border: 1px solid #eeeeee;
+        }
+        .summary-card {
+            background: var(--burgundy); color: var(--white); padding: 3rem;
+            border-radius: 12px; border: 2px solid var(--gold); box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        /* ── FORM ── */
         .form-row { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
         @media (min-width: 768px) { .form-row { grid-template-columns: 1fr 1fr; } }
         .form-group { display: flex; flex-direction: column; gap: 0.8rem; }
         .form-group label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; color: var(--burgundy); letter-spacing: 1.5px; }
-        input, select, textarea { padding: 15px 20px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1.1rem; background: #ffffff !important; width: 100%; color: #000000 !important; font-weight: 500; transition: border-color 0.3s; }
+        input, select, textarea {
+            padding: 15px 20px; border: 2px solid #e0e0e0; border-radius: 8px;
+            font-size: 1.1rem; background: #ffffff !important; width: 100%;
+            color: #000000 !important; font-weight: 500; transition: border-color 0.3s;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        [dir="rtl"] input, [dir="rtl"] select, [dir="rtl"] textarea { font-family: 'Amiri', serif; }
         input:focus, textarea:focus { border-color: var(--gold); outline: none; }
         textarea { resize: vertical; min-height: 120px; }
 
-        .summary-title { font-size: 2rem; color: var(--gold); margin-bottom: 2rem; border-bottom: 2px solid rgba(212,175,55,0.3); padding-bottom: 1rem; display: block; font-family: 'Playfair Display', serif; }
+        /* ── SUMMARY CARD ── */
+        .summary-title {
+            font-size: 2rem; color: var(--gold); margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(212,175,55,0.3); padding-bottom: 1rem;
+            display: block; font-family: 'Playfair Display', serif;
+        }
         .summary-item { display: flex; justify-content: space-between; margin-bottom: 1.2rem; font-size: 1.1rem; font-weight: 400; }
         .summary-total-box { margin-top: 2.5rem; border-top: 2px solid var(--gold); padding-top: 2rem; }
         .total-val { font-size: 2.5rem; color: var(--white); font-weight: 800; }
 
-        .submit-btn { width: 100%; padding: 22px; background: var(--gold); color: var(--burgundy); border: none; text-transform: uppercase; letter-spacing: 3px; font-weight: 900; font-size: 1.2rem; cursor: pointer; border-radius: 8px; margin-top: 3rem; transition: transform 0.2s, background 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        /* ── SUBMIT BTN ── */
+        .submit-btn {
+            width: 100%; padding: 22px; background: var(--gold); color: var(--burgundy);
+            border: none; text-transform: uppercase; letter-spacing: 3px; font-weight: 900;
+            font-size: 1.2rem; cursor: pointer; border-radius: 8px; margin-top: 3rem;
+            transition: transform 0.2s, background 0.3s;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-family: 'Playfair Display', serif;
+        }
         .submit-btn:hover { background: #eac04d; transform: scale(1.02); }
-        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-        .spinner { width: 24px; height: 24px; border: 3px solid rgba(74, 4, 4, 0.3); border-radius: 50%; border-top-color: var(--burgundy); animation: spin 1s linear infinite; display: none; }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        [dir="rtl"] .submit-btn { letter-spacing: 0; }
+
+        .spinner {
+            width: 24px; height: 24px; border: 3px solid rgba(74, 4, 4, 0.3);
+            border-radius: 50%; border-top-color: var(--burgundy);
+            animation: spin 1s linear infinite; display: none;
+        }
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* ── CHOCOLAT TRANSFER BANNER ── */
+        #choco_transfer_banner {
+            display: none;
+            background: linear-gradient(135deg, #3b1a08, #1a0a00);
+            border: 2px solid var(--gold); border-radius: 12px;
+            padding: 1.8rem 2rem; margin-bottom: 2rem;
+            color: var(--light-gold); position: relative; overflow: hidden;
+            animation: bannerSlide 0.5s ease;
+        }
+        @keyframes bannerSlide { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
+        #choco_transfer_banner::before {
+            content: ''; position: absolute; top: -50%; right: -10%;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        #choco_transfer_banner .banner-title {
+            font-size: 1.1rem; font-weight: 900; color: var(--gold);
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;
+        }
+        #choco_transfer_banner .banner-detail { font-size: 1rem; opacity: 0.85; line-height: 1.6; }
+        #choco_transfer_banner .close-banner {
+            position: absolute; top: 12px; right: 14px;
+            background: rgba(212,175,55,0.15); border: none; color: var(--gold);
+            cursor: pointer; width: 28px; height: 28px; border-radius: 50%;
+            font-size: 0.9rem; display: flex; align-items: center; justify-content: center;
+        }
+        [dir="rtl"] #choco_transfer_banner .close-banner { right: auto; left: 14px; }
+
+        /* ── FOOTER ── */
         footer { padding: 6rem 1rem; text-align: center; background: #ffffff; border-top: 4px solid var(--gold); color: #000000; }
-        .footer-logo { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 2.5rem; background: white; border: 3px solid var(--gold); padding: 5px; object-fit: cover; }
+        .footer-logo { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 2.5rem; background: white; border: 3px solid var(--gold); padding: 5px; object-fit: cover; display: block; }
         .footer-info { font-size: 1.2rem; color: #333333; line-height: 2; }
         .footer-info strong { color: var(--burgundy); font-size: 1.6rem; display: block; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
 
-        .cart-bar { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(200%); width: 90%; max-width: 550px; background: var(--dark-burgundy); border: 2px solid var(--gold); color: var(--white); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-radius: 100px; z-index: 1000; box-shadow: 0 15px 40px rgba(0,0,0,0.5); transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
+        /* ── CART BAR ── */
+        .cart-bar {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(200%);
+            width: 90%; max-width: 550px;
+            background: var(--dark-burgundy); border: 2px solid var(--gold); color: var(--white);
+            padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;
+            border-radius: 100px; z-index: 1000; box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
         .cart-bar.active { transform: translateX(-50%) translateY(0); }
         .cart-bar strong { color: var(--gold); font-size: 1.2rem; }
+        .cart-bar-btn {
+            background: var(--gold); color: var(--burgundy);
+            padding: 10px 25px; border-radius: 50px;
+            font-weight: 900; font-size: 0.9rem; cursor: pointer; border: none;
+        }
 
-        /* ════════════════════════════════════
-           MODAL – ENHANCED WITH VARIANT SYSTEM
-        ════════════════════════════════════ */
-        .modal-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; align-items: flex-end; justify-content: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease; }
-        .modal { background: white; width: 100%; max-width: 620px; border-radius: 25px 25px 0 0; overflow: hidden; position: relative; transform: translateY(100%); transition: transform 0.4s ease; max-height: 95vh; overflow-y: auto; }
-        @media (min-width: 768px) { .modal-bg { align-items: center; } .modal { border-radius: 15px; transform: scale(0.9); max-height: 90vh; } }
+        /* ── NOTIF ── */
+        .notif {
+            position: fixed; top: 30px; right: 30px;
+            background: var(--gold); color: var(--burgundy);
+            padding: 15px 35px; border-radius: 8px;
+            transform: translateX(150%); transition: transform 0.4s;
+            z-index: 3000; font-weight: 800; font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .notif.show { transform: translateX(0); }
+        [dir="rtl"] .notif { right: auto; left: 30px; transform: translateX(-150%); }
+        [dir="rtl"] .notif.show { transform: translateX(0); }
 
-        /* Product image container with fade transition */
+        /* ── PRODUCT MODAL ── */
+        .modal-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); display: none;
+            align-items: flex-end; justify-content: center;
+            z-index: 2000; opacity: 0; transition: opacity 0.3s ease;
+        }
+        .modal {
+            background: white; width: 100%; max-width: 620px;
+            border-radius: 25px 25px 0 0; overflow: hidden; position: relative;
+            transform: translateY(100%); transition: transform 0.4s ease;
+            max-height: 95vh; overflow-y: auto;
+        }
+        @media (min-width: 768px) {
+            .modal-bg { align-items: center; }
+            .modal { border-radius: 15px; transform: scale(0.9); max-height: 90vh; }
+        }
+
         .modal-img { height: 300px; position: relative; overflow: hidden; }
         .modal-img img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.35s ease; }
         .modal-img img.fading { opacity: 0; }
-
         .modal-img-txt { position: absolute; bottom: 20px; left: 25px; color: white; text-shadow: 0 3px 6px rgba(0,0,0,0.8); }
         .modal-body { padding: 2.5rem; color: var(--dark-burgundy); }
 
-        /* ── VARIANT TABS (replaces old classique/prestige chips) ── */
-        .variant-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 1.8rem;
-            overflow-x: auto;
-            padding-bottom: 4px;
-            scrollbar-width: none;
-        }
+        .variant-tabs { display: flex; gap: 10px; margin-bottom: 1.8rem; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
         .variant-tabs::-webkit-scrollbar { display: none; }
         .variant-tab {
-            flex-shrink: 0;
-            padding: 10px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1rem;
-            color: #555;
-            background: white;
-            transition: all 0.25s;
-            font-weight: 600;
-            text-align: center;
-            white-space: nowrap;
+            flex-shrink: 0; padding: 10px 20px; border: 2px solid #e0e0e0;
+            border-radius: 50px; cursor: pointer; font-size: 1rem; color: #555;
+            background: white; transition: all 0.25s; font-weight: 600;
+            text-align: center; white-space: nowrap;
+            font-family: 'Cormorant Garamond', serif;
         }
         .variant-tab:hover { border-color: var(--gold); }
         .variant-tab.active {
-            border-color: var(--gold);
-            background: var(--cream);
-            color: var(--burgundy);
-            font-weight: 800;
+            border-color: var(--gold); background: var(--cream);
+            color: var(--burgundy); font-weight: 800;
             box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
         }
 
-        /* ── VARIANT INFO PANEL (fades on change) ── */
-        .variant-details {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        .variant-details.fading {
-            opacity: 0;
-            transform: translateY(6px);
-        }
+        .variant-details { transition: opacity 0.3s ease, transform 0.3s ease; }
+        .variant-details.fading { opacity: 0; transform: translateY(6px); }
 
-        /* ── PRICE DISPLAY in modal ── */
-        .modal-price-block {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .modal-price-current {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--burgundy);
-            font-family: 'Playfair Display', serif;
-        }
-        .modal-price-original {
-            font-size: 1.3rem;
-            color: #aaa;
-            text-decoration: line-through;
-            font-weight: 500;
-        }
-        .modal-price-badge {
-            background: #e53e3e;
-            color: white;
-            font-size: 0.8rem;
-            font-weight: 900;
-            padding: 4px 10px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .modal-price-block { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem; }
+        .modal-price-current { font-size: 2.2rem; font-weight: 900; color: var(--burgundy); font-family: 'Playfair Display', serif; }
+        .modal-price-original { font-size: 1.3rem; color: #aaa; text-decoration: line-through; font-weight: 500; }
+        .modal-price-badge { background: #e53e3e; color: white; font-size: 0.8rem; font-weight: 900; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* ── INGREDIENTS LIST ── */
-        .ingredients-label {
-            font-size: 0.78rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-gray);
-            margin-bottom: 8px;
-            display: block;
-        }
-        .ingredients-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-            margin-bottom: 1.5rem;
-        }
-        .ingredient-chip {
-            background: var(--cream);
-            border: 1px solid rgba(212,175,55,0.35);
-            color: var(--dark-burgundy);
-            padding: 5px 13px;
-            border-radius: 50px;
-            font-size: 0.92rem;
-            font-weight: 600;
-        }
+        .ingredients-label { font-size: 0.78rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-gray); margin-bottom: 8px; display: block; }
+        .ingredients-list { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1.5rem; }
+        .ingredient-chip { background: var(--cream); border: 1px solid rgba(212,175,55,0.35); color: var(--dark-burgundy); padding: 5px 13px; border-radius: 50px; font-size: 0.92rem; font-weight: 600; }
 
-        /* ── NUTRITION TABLE ── */
-        .nutrition-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 1.8rem;
-        }
-        .nutri-cell {
-            background: #f9f9f9;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-        }
+        .nutrition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1.8rem; }
+        .nutri-cell { background: #f9f9f9; border: 1px solid #eee; border-radius: 8px; padding: 10px; text-align: center; }
         .nutri-val { font-size: 1.2rem; font-weight: 800; color: var(--burgundy); display: block; }
         .nutri-key { font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* ── QTY + ADD TO CART ── */
+        .modal-divider { height: 1px; background: #f0f0f0; margin: 1.2rem 0; }
+
         .qty-section { border-top: 2px solid #f5f5f5; padding-top: 1.8rem; margin-top: 0.5rem; }
         .qty-label { font-size: 0.78rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-gray); margin-bottom: 10px; display: block; }
         .qty-control { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
@@ -317,666 +387,567 @@
         .qty-control input { width: 90px; text-align: center; font-size: 1.2rem; font-weight: 700; border-color: #ddd; }
 
         .add-cart-btn-full {
-            width: 100%;
-            padding: 18px;
-            background: var(--burgundy);
-            color: var(--gold);
-            border: none;
-            border-radius: 10px;
-            font-weight: 900;
-            font-size: 1.15rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: background 0.25s, transform 0.15s;
-            letter-spacing: 1px;
+            width: 100%; padding: 18px; background: var(--burgundy); color: var(--gold);
+            border: none; border-radius: 10px; font-weight: 900; font-size: 1.15rem;
+            cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+            transition: background 0.25s, transform 0.15s; letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
         }
         .add-cart-btn-full:hover { background: var(--dark-burgundy); transform: scale(1.01); }
         .add-cart-btn-full:active { transform: scale(0.98); }
 
-        /* ── TOTAL PRICE AT BOTTOM ── */
         .cart-total-preview {
-            background: var(--cream);
-            border: 1px solid rgba(212,175,55,0.35);
-            border-radius: 8px;
-            padding: 12px 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.2rem;
+            background: var(--cream); border: 1px solid rgba(212,175,55,0.35); border-radius: 8px;
+            padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;
         }
         .cart-total-preview span:first-child { font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
         .cart-total-preview span:last-child { font-size: 1.4rem; font-weight: 900; color: var(--burgundy); }
 
-        .notif { position: fixed; top: 30px; right: 30px; background: var(--gold); color: var(--burgundy); padding: 15px 35px; border-radius: 8px; transform: translateX(150%); transition: transform 0.4s; z-index: 3000; font-weight: 800; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .notif.show { transform: translateX(0); }
+        .modal-close-btn {
+            position: absolute; top: 16px; right: 16px;
+            background: rgba(0,0,0,0.55); color: white; border: none;
+            width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
+            font-size: 1.1rem; display: flex; align-items: center; justify-content: center; z-index: 10;
+        }
 
-        /* Close button */
-        .modal-close-btn { position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.55); color: white; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; z-index: 10; }
-
-        [dir="rtl"] .tagline { letter-spacing: 0; font-size: 1.3rem; }
-        [dir="rtl"] .submit-btn { letter-spacing: 0; }
-        [dir="rtl"] nav a { letter-spacing: 0; font-size: 1.1rem; }
-        [dir="rtl"] .notif { right: auto; left: 30px; transform: translateX(-150%); }
-        [dir="rtl"] .notif.show { transform: translateX(0); }
-
-        /* Divider inside modal */
-        .modal-divider { height: 1px; background: #f0f0f0; margin: 1.2rem 0; }
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 2.2rem; }
+            .sec-title h3 { font-size: 2rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .quality-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
 <div class="lang-switch">
-    <button class="lang-btn" onclick="toggleLang()">العربية</button>
+    <button class="lang-btn" id="lang_btn" onclick="toggleLang()">العربية</button>
 </div>
 
 <header id="top">
-  <div class="logo-container">
-    <img src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/logosite.png" alt="MyZina Luxury Pastry" class="logo-img">
-  </div>
-  <div class="hd"><span></span><span class="hd-star">✦</span><span></span></div>
-  <nav>
-    <a href="#produits" data-key="nav1">Nos Créations</a>
-    <a href="#qualite" data-key="nav2">Nos Gammes</a>
-    <a href="#commande" data-key="nav3">Commander</a>
-  </nav>
+    <img src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/logosite.png"
+         alt="MyZina Luxury Pastry" class="logo-img"
+         onerror="this.src='https://via.placeholder.com/160x160/4a0404/d4af37?text=MyZina'">
+    <div class="hd"><span></span><span class="hd-star">✦</span><span></span></div>
+    <span class="tagline" id="tagline_txt">L'Excellence de la Pâtisserie Algérienne</span>
+    <nav>
+        <a href="#produits" data-key="nav1">Nos Créations</a>
+        <a href="#qualite" data-key="nav2">Nos Gammes</a>
+        <a href="#commande" data-key="nav3">Commander</a>
+        <a href="chocolat.html" class="choco-nav-link" data-key="nav_choco">🍫 Coffrets Chocolats</a>
+    </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-  <h2 data-key="hero_h">L'Art des Gâteaux<br>Traditionnels Algériens</h2>
-  <div class="ornament">✦ ✦ ✦</div>
-  <p data-key="hero_p">Une immersion sensorielle dans le patrimoine sucré de l'Algérie. Chaque pièce est une œuvre d'art, façonnée à la main avec passion.</p>
+    <h2 id="hero_h">L'Art des Gâteaux<br>Traditionnels Algériens</h2>
+    <div class="ornament">✦ ✦ ✦</div>
+    <p id="hero_p">Une immersion sensorielle dans le patrimoine sucré de l'Algérie. Chaque pièce est une œuvre d'art, façonnée à la main avec passion.</p>
 </div>
 
+<!-- PRODUCTS -->
 <section id="produits">
-  <div class="sec-title">
-    <h3 data-key="spec_h">Nos Spécialités</h3>
-    <p data-key="spec_p">Sélectionnez vos douceurs pour composer votre coffret</p>
-  </div>
-  <div class="products-grid" id="product_grid"></div>
+    <div class="sec-title">
+        <h3 id="spec_h">Nos Spécialités</h3>
+        <p id="spec_p">Sélectionnez vos douceurs pour composer votre coffret</p>
+    </div>
+    <div class="products-grid" id="product_grid"></div>
 </section>
 
+<!-- QUALITY -->
 <section id="qualite" class="quality-section">
-  <div class="sec-title">
-    <h3 style="color:var(--gold)" data-key="qual_h">Nos Standards d'Excellence</h3>
-    <p style="color:var(--light-gold)" data-key="qual_p">Deux expériences adaptées à vos exigences</p>
-  </div>
-  <div class="quality-grid">
-    <div class="quality-card">
-      <span class="q-icon">🌸</span>
-      <div class="q-name" data-key="q1_n">Classique</div>
-      <div class="q-desc" data-key="q1_d">L'authenticité pure. Recettes familiales transmises et saveurs équilibrées pour vos moments quotidiens.</div>
+    <div class="sec-title">
+        <h3 style="color:var(--gold)" id="qual_h">Nos Standards d'Excellence</h3>
+        <p style="color:var(--light-gold)" id="qual_p">Deux expériences adaptées à vos exigences</p>
     </div>
-    <div class="quality-card" style="border: 3px solid var(--gold);">
-      <span class="q-icon">👑</span>
-      <div class="q-name" data-key="q2_n">Prestige</div>
-      <div class="q-desc" data-key="q2_d">Le luxe ultime. Amandes extra-fines, miel de montagne pur et finitions délicates à la feuille d'or.</div>
+    <div class="quality-grid">
+        <div class="quality-card">
+            <span class="q-icon">🌸</span>
+            <div class="q-name" id="q1_n">Classique</div>
+            <div class="q-desc" id="q1_d">L'authenticité pure. Recettes familiales transmises et saveurs équilibrées pour vos moments quotidiens.</div>
+        </div>
+        <div class="quality-card" style="border:3px solid var(--gold);">
+            <span class="q-icon">👑</span>
+            <div class="q-name" id="q2_n">Prestige</div>
+            <div class="q-desc" id="q2_d">Le luxe ultime. Amandes extra-fines, miel de montagne pur et finitions délicates à la feuille d'or.</div>
+        </div>
+        <div class="quality-card" style="border:2px solid rgba(212,175,55,0.5); background:rgba(59,26,8,0.4);">
+            <span class="q-icon">🍫</span>
+            <div class="q-name" id="q3_n">Coffrets Chocolats</div>
+            <div class="q-desc" id="q3_d">Nouvelle collection. Composez votre propre box de 6, 12 ou 24 chocolats artisanaux. Idéal en cadeau.</div>
+        </div>
     </div>
-  </div>
 </section>
 
+<!-- ORDER SECTION -->
 <div class="order-section" id="commande">
-  <div class="sec-title">
-    <h3 data-key="order_h">Finaliser la Commande</h3>
-    <p data-key="order_p">Un service prestige pour des moments inoubliables</p>
-  </div>
-
-  <div class="order-container">
-    <div class="summary-card">
-        <span class="summary-title" data-key="sum_h">Récapitulatif de votre Panier</span>
-        <div id="summary_items_list">
-          <p style="opacity:0.7; font-style:italic; font-size: 1.2rem;" data-key="sum_empty">Aucun produit sélectionné...</p>
-        </div>
-        <div class="summary-total-box">
-          <div class="summary-item">
-            <span data-key="s_sub">Sous-total</span>
-            <span id="sum_subtotal">0 DA</span>
-          </div>
-          <div class="summary-item" id="sum_discount_row" style="display:none; color:var(--light-gold); font-weight:bold;">
-            <span data-key="s_disc">Remise Volume (-10%)</span>
-            <span id="sum_discount">-0 DA</span>
-          </div>
-          <div class="summary-item">
-            <span data-key="s_ship">Frais de Livraison</span>
-            <span id="sum_shipping">0 DA</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:1.5rem;">
-            <span style="color:var(--gold); text-transform:uppercase; font-size:1rem; font-weight:900;" data-key="s_total">Total Général</span>
-            <span class="total-val" id="sum_total_final">0 DA</span>
-          </div>
-        </div>
+    <div class="sec-title">
+        <h3 id="order_h">Finaliser la Commande</h3>
+        <p id="order_p">Un service prestige pour des moments inoubliables</p>
     </div>
 
-    <form class="order-form-container" id="order_form">
-      <input type="hidden" name="_subject" value="Nouvelle Commande - MyZina Gâteaux">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
+    <div class="order-container">
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="f_name" data-key="f_name">Nom & Prénom *</label>
-          <input type="text" id="f_name" name="Nom" required placeholder="Ex: Amina Benali">
+        <!-- CHOCOLAT TRANSFER BANNER -->
+        <div id="choco_transfer_banner">
+            <button class="close-banner" onclick="document.getElementById('choco_transfer_banner').style.display='none'">✕</button>
+            <div class="banner-title">🍫 <span id="banner_title_txt"></span></div>
+            <div class="banner-detail" id="banner_detail_txt"></div>
         </div>
-        <div class="form-group">
-          <label for="f_phone" data-key="f_phone">Numéro de Téléphone *</label>
-          <input type="tel" id="f_phone" name="Telephone" required placeholder="0550 00 00 00">
+
+        <!-- SUMMARY -->
+        <div class="summary-card">
+            <span class="summary-title" id="sum_h">Récapitulatif de votre Panier</span>
+            <div id="summary_items_list">
+                <p style="opacity:0.7; font-style:italic; font-size:1.2rem;" id="sum_empty_txt">Aucun produit sélectionné...</p>
+            </div>
+            <div class="summary-total-box">
+                <div class="summary-item">
+                    <span id="s_sub">Sous-total</span>
+                    <span id="sum_subtotal">0 DA</span>
+                </div>
+                <div class="summary-item" id="sum_discount_row" style="display:none; color:var(--light-gold); font-weight:bold;">
+                    <span id="s_disc">Remise Volume (-10%)</span>
+                    <span id="sum_discount">-0 DA</span>
+                </div>
+                <div class="summary-item">
+                    <span id="s_ship">Frais de Livraison</span>
+                    <span id="sum_shipping">0 DA</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:1.5rem;">
+                    <span style="color:var(--gold); text-transform:uppercase; font-size:1rem; font-weight:900;" id="s_total">Total Général</span>
+                    <span class="total-val" id="sum_total_final">0 DA</span>
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <div class="form-row">
-        <div class="form-group">
-          <label for="f_wilaya" data-key="f_wilaya">Wilaya de Livraison *</label>
-          <select id="f_wilaya" name="Wilaya" required>
-            <option value="" data-key="select_default">-- Sélectionner votre Wilaya --</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="f_address" data-key="f_addr">Adresse de Livraison *</label>
-          <input type="text" id="f_address" name="Adresse" required placeholder="Rue, Quartier, N° de Maison...">
-        </div>
-      </div>
 
-      <div class="form-group" style="margin-bottom:1.5rem;">
-        <label for="f_occasion" data-key="f_occ">Type d'Événement</label>
-        <select id="f_occasion" name="Occasion">
-          <option value="" data-key="occ_0">-- Choisir une occasion --</option>
-          <option value="Mariage" data-key="occ_1">Mariage / Fiançailles</option>
-          <option value="Naissance" data-key="occ_2">Naissance / Circoncision</option>
-          <option value="Aid" data-key="occ_3">Aïd El Fitr / El Adha</option>
-          <option value="Cadeau" data-key="occ_4">Cadeau Prestige</option>
-        </select>
-      </div>
+        <!-- FORM -->
+        <form class="order-form-container" id="order_form">
+            <input type="hidden" name="_subject" value="Nouvelle Commande - MyZina Gâteaux">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
 
-      <div class="form-group" style="margin-bottom:1.5rem;">
-        <label for="f_message" data-key="f_msg_label">Demandes Spécifiques / Personnalisation</label>
-        <textarea id="f_message" name="Message_Personnalisation" data-key="f_msg_placeholder" placeholder="Indiquez ici vos souhaits particuliers (couleurs, emballage spécial, etc...)"></textarea>
-      </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="f_name" id="lbl_name">Nom & Prénom *</label>
+                    <input type="text" id="f_name" name="Nom" required placeholder="Ex: Amina Benali">
+                </div>
+                <div class="form-group">
+                    <label for="f_phone" id="lbl_phone">Numéro de Téléphone *</label>
+                    <input type="tel" id="f_phone" name="Telephone" required placeholder="0550 00 00 00">
+                </div>
+            </div>
 
-      <textarea id="hidden_cart_data" name="Contenu_Commande" style="display:none;"></textarea>
-      <input type="hidden" name="Total_Final" id="hidden_total_val">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="f_wilaya" id="lbl_wilaya">Wilaya de Livraison *</label>
+                    <select id="f_wilaya" name="Wilaya" required>
+                        <option value="" id="select_default_opt">-- Sélectionner votre Wilaya --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="f_address" id="lbl_addr">Adresse de Livraison *</label>
+                    <input type="text" id="f_address" name="Adresse" required placeholder="Rue, Quartier, N° de Maison...">
+                </div>
+            </div>
 
-      <button type="submit" class="submit-btn" id="submit_btn">
-        <span class="spinner" id="form_spinner"></span>
-        <span id="btn_text" data-key="btn_order">Confirmer ma Commande</span>
-      </button>
-      <div id="form_msg" style="margin-top:20px; text-align:center; font-weight:900; font-size: 1.2rem;"></div>
-    </form>
-  </div>
+            <div class="form-group" style="margin-bottom:1.5rem;">
+                <label for="f_occasion" id="lbl_occ">Type d'Événement</label>
+                <select id="f_occasion" name="Occasion">
+                    <option value="" id="occ_0">-- Choisir une occasion --</option>
+                    <option value="Mariage" id="occ_1">Mariage / Fiançailles</option>
+                    <option value="Naissance" id="occ_2">Naissance / Circoncision</option>
+                    <option value="Aid" id="occ_3">Aïd El Fitr / El Adha</option>
+                    <option value="Cadeau" id="occ_4">Cadeau Prestige</option>
+                </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.5rem;">
+                <label for="f_message" id="lbl_msg">Demandes Spécifiques / Personnalisation</label>
+                <textarea id="f_message" name="Message_Personnalisation" placeholder="Indiquez ici vos souhaits particuliers (couleurs, emballage spécial, etc...)"></textarea>
+            </div>
+
+            <textarea id="hidden_cart_data" name="Contenu_Commande" style="display:none;"></textarea>
+            <input type="hidden" name="Total_Final" id="hidden_total_val">
+
+            <button type="submit" class="submit-btn" id="submit_btn">
+                <span class="spinner" id="form_spinner"></span>
+                <span id="btn_text">Confirmer ma Commande</span>
+            </button>
+            <div id="form_msg" style="margin-top:20px; text-align:center; font-weight:900; font-size:1.2rem;"></div>
+        </form>
+    </div>
 </div>
 
+<!-- FOOTER -->
 <footer id="contact">
-  <img src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/logosite.png" alt="MyZina Footer Logo" class="footer-logo">
-  <div class="footer-info">
-    <p data-key="foot_contact">Service Client :</p>
-    📍 Alger, Algérie • 📞 +213 559 55 92 98<br>
-    📧 myzina@outlook.fr
-  </div>
-  <div class="hd" style="opacity: 0.15; margin: 3rem 0;"><span></span><span class="hd-star">✦</span><span></span></div>
-  <small style="opacity:0.7; font-size:0.9rem; font-weight: 500;">© 2026 MyZina . Tous droits réservés.</small>
+    <img src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/logosite.png"
+         alt="MyZina Footer Logo" class="footer-logo"
+         onerror="this.src='https://via.placeholder.com/140x140/ffffff/4a0404?text=MyZina'">
+    <div class="footer-info">
+        <strong>MyZina</strong>
+        <span id="foot_contact">Service Client :</span><br>
+        📍 Alger, Algérie &nbsp;•&nbsp; 📞 +213 559 55 92 98<br>
+        📧 myzina@outlook.fr
+    </div>
+    <div class="hd" style="opacity:0.15; margin:3rem 0;"><span></span><span class="hd-star">✦</span><span></span></div>
+    <small style="opacity:0.7; font-size:0.9rem; font-weight:500;">© 2026 MyZina · Tous droits réservés.</small>
 </footer>
 
 <!-- FLOATING CART BAR -->
 <div class="cart-bar" id="cart_bar">
-  <div style="font-size:1.1rem; font-weight: 600;">🛒 <span id="cart_count">0</span> • <strong id="cart_total">0</strong> DA</div>
-  <button onclick="document.getElementById('commande').scrollIntoView()" style="background:var(--gold); color:var(--burgundy); padding:10px 25px; border-radius:50px; font-weight:900; font-size:0.9rem; cursor:pointer;" data-key="cart_val">Valider mon Panier →</button>
+    <div style="font-size:1.1rem; font-weight:600;">
+        🛒 <span id="cart_count">0</span> &nbsp;•&nbsp; <strong id="cart_total">0</strong> DA
+    </div>
+    <button class="cart-bar-btn" onclick="document.getElementById('commande').scrollIntoView({behavior:'smooth'})" id="cart_val_btn">
+        Valider mon Panier →
+    </button>
 </div>
 
-<div class="notif" id="notif">Ajouté avec succès !</div>
+<!-- TOAST NOTIF -->
+<div class="notif" id="notif"></div>
 
-<!-- ══════════════════════════════
-     ENHANCED PRODUCT MODAL
-══════════════════════════════ -->
+<!-- PRODUCT MODAL -->
 <div class="modal-bg" id="modal_bg" onclick="handleModalBgClick(event)">
-  <div class="modal" id="modal">
-
-    <!-- Product image (changes with variant) -->
-    <div class="modal-img">
-      <img id="m_img" src="" alt="">
-      <div class="modal-img-txt">
-        <h3 id="m_name" style="font-size:2rem; font-family:'Playfair Display',serif;">Nom du Gâteau</h3>
-        <span id="m_variant_label" style="font-size:1rem; opacity:0.85;"></span>
-      </div>
-      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+    <div class="modal" id="modal">
+        <div class="modal-img">
+            <img id="m_img" src="" alt="">
+            <div class="modal-img-txt">
+                <h3 id="m_name" style="font-size:2rem; font-family:'Playfair Display',serif;"></h3>
+                <span id="m_variant_label" style="font-size:1rem; opacity:0.85;"></span>
+            </div>
+            <button class="modal-close-btn" onclick="closeModal()">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="variant-tabs" id="m_variants"></div>
+            <div class="variant-details" id="variant_details">
+                <div class="modal-price-block" id="m_price_block"></div>
+                <div class="modal-divider"></div>
+                <span class="ingredients-label" id="m_ing_label">Ingrédients</span>
+                <div class="ingredients-list" id="m_ingredients"></div>
+                <span class="ingredients-label" id="m_nut_label">Valeurs Nutritionnelles (pour 1 pièce)</span>
+                <div class="nutrition-grid" id="m_nutrition"></div>
+                <div class="modal-divider"></div>
+                <div class="qty-section">
+                    <span class="qty-label" id="m_qty_label">Quantité Souhaitée (Minimum 10 pièces)</span>
+                    <div class="qty-control">
+                        <button id="qty_minus" type="button">−</button>
+                        <input type="number" id="m_qty_val" value="10" min="10">
+                        <button id="qty_plus" type="button">+</button>
+                    </div>
+                    <div class="cart-total-preview">
+                        <span id="m_line_lbl">Total ligne</span>
+                        <span id="m_line_total_val">0 DA</span>
+                    </div>
+                    <button class="add-cart-btn-full" id="add_to_cart_btn" type="button">
+                        🛒 <span id="m_add_txt">Ajouter au Panier</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <div class="modal-body">
-
-      <!-- Variant tabs -->
-      <div class="variant-tabs" id="m_variants"></div>
-
-      <!-- All dynamic content wrapped for fade animation -->
-      <div class="variant-details" id="variant_details">
-
-        <!-- Price display -->
-        <div class="modal-price-block" id="m_price_block">
-          <span class="modal-price-current" id="m_price_current">0 DA</span>
-          <!-- m_price_original and m_price_badge injected dynamically -->
-        </div>
-
-        <div class="modal-divider"></div>
-
-        <!-- Ingredients -->
-        <span class="ingredients-label" data-key="m_ingredients_label">Ingrédients</span>
-        <div class="ingredients-list" id="m_ingredients"></div>
-
-        <!-- Nutrition -->
-        <span class="ingredients-label" data-key="m_nutrition_label">Valeurs Nutritionnelles (pour 1 pièce)</span>
-        <div class="nutrition-grid" id="m_nutrition"></div>
-
-        <div class="modal-divider"></div>
-
-        <!-- Qty + Add to Cart -->
-        <div class="qty-section">
-          <span class="qty-label" data-key="m_qty">Quantité Souhaitée (Minimum 10 pièces)</span>
-          <div class="qty-control">
-            <button id="qty_minus" type="button">−</button>
-            <input type="number" id="m_qty_val" value="10" min="10">
-            <button id="qty_plus" type="button">+</button>
-          </div>
-
-          <!-- Live total preview -->
-          <div class="cart-total-preview">
-            <span data-key="m_line_total">Total ligne</span>
-            <span id="m_line_total_val">0 DA</span>
-          </div>
-
-          <button class="add-cart-btn-full" id="add_to_cart_btn" type="button">
-            🛒 <span data-key="m_add">Ajouter au Panier</span>
-          </button>
-        </div>
-
-      </div><!-- /variant-details -->
-    </div><!-- /modal-body -->
-  </div><!-- /modal -->
-</div><!-- /modal-bg -->
-
+<!-- ═══════════════════════════════════ SCRIPT ═══════════════════════════════════ -->
 <script>
-/* ═══════════════════════════════════════════════════════════
-   DATA — WILAYAS
-═══════════════════════════════════════════════════════════ */
+/* ─── WILAYAS ─── */
 const WILAYAS = ["01 Adrar","02 Chlef","03 Laghouat","04 Oum El Bouaghi","05 Batna","06 Béjaïa","07 Biskra","08 Béchar","09 Blida","10 Bouira","11 Tamanrasset","12 Tébessa","13 Tlemcen","14 Tiaret","15 Tizi Ouzou","16 Alger","17 Djelfa","18 Jijel","19 Sétif","20 Saïda","21 Skikda","22 Sidi Bel Abbès","23 Annaba","24 Guelma","25 Constantine","26 Médéa","27 Mostaganem","28 M'Sila","29 Mascara","30 Ouargla","31 Oran","32 El Bayadh","33 Illizi","34 Bordj Bou Arreridj","35 Boumerdès","36 El Tarf","37 Tindouf","38 Tissemsilt","39 El Oued","40 Khenchela","41 Souk Ahras","42 Tipaza","43 Mila","44 Aïn Defla","45 Naâma","46 Aïn Témouchent","47 Ghardaïa","48 Relizane","49 El M'Ghair","50 El Meniaa","51 Ouled Djellal","52 Bordj Baji Mokhtar","53 Béni Abbès","54 Timimoun","55 Touggourt","56 Djanet","57 In Salah","58 In Guezzam"];
 
-/* ═══════════════════════════════════════════════════════════
-   DATA — CATALOG WITH RICH VARIANTS
-   Each product has multiple variants, each with:
-     name (fr/ar), image, prix, prix_promo (optional),
-     ingredients (fr/ar), nutrition { calories, sucre, gras }
-═══════════════════════════════════════════════════════════ */
+/* ─── CATALOG ─── */
 const CATALOG = [
   {
-    id: 'baklava',
-    fr: 'Baklawa',
-    ar: 'بقلاوة',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/baklava.png', // default fallback
-    variants: [
-      {
-        key: 'classique',
-        fr: 'Classique', ar: 'كلاسيكي',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/baklava.png',
-        prix: 120,
-        ingredients: { fr: ['Pâte filo','Amandes','Miel','Beurre','Cannelle'], ar: ['عجينة فيلو','لوز','عسل','زبدة','قرفة'] },
-        nutrition: { calories: '340 kcal', sucre: '22 g', gras: '18 g' }
-      },
-      {
-        key: 'Pistache',
-        fr: 'Pistache', ar: 'فستق',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_rendre%20la%20photo%20variante%20baklawa%20prestige%20avec%20pistache%20%20766352.png',
-        prix: 180,
-        prix_promo: null,
-        ingredients: { fr: ['Pâte filo premium','Pistache extra-fines','Miel de montagne','Beurre clarifié'], ar: ['عجينة فيلو فاخرة','فستق ممتاز','عسل جبلي','سمن مذاب'] },
-        nutrition: { calories: '360 kcal', sucre: '24 g', gras: '20 g' }
-      }
+    id:'baklava', fr:'Baklawa', ar:'بقلاوة',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/baklava.png',
+    variants:[
+      { key:'classique', fr:'Classique', ar:'كلاسيكي', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/baklava.png', prix:120,
+        ingredients:{ fr:['Pâte filo','Amandes','Miel','Beurre','Cannelle'], ar:['عجينة فيلو','لوز','عسل','زبدة','قرفة'] },
+        nutrition:{ calories:'340 kcal', sucre:'22 g', gras:'18 g' } },
+      { key:'Pistache', fr:'Pistache', ar:'فستق', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_rendre%20la%20photo%20variante%20baklawa%20prestige%20avec%20pistache%20%20766352.png', prix:180,
+        ingredients:{ fr:['Pâte filo premium','Pistache extra-fines','Miel de montagne','Beurre clarifié'], ar:['عجينة فيلو فاخرة','فستق ممتاز','عسل جبلي','سمن مذاب'] },
+        nutrition:{ calories:'360 kcal', sucre:'24 g', gras:'20 g' } }
     ]
   },
   {
-    id: 'tcherek',
-    fr: 'Tcherek el Aryan',
-    ar: 'تشاراك العريان',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png',
-    variants: [
-      {
-        key: 'classique',
-        fr: 'Classique', ar: 'كلاسيكي',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png',
-        prix: 100,
-        ingredients: { fr: ['Semoule fine','Beurre','Sucre glace','Essence de fleur d\'oranger'], ar: ['سميدة ناعمة','زبدة','سكر مطحون','ماء زهر'] },
-        nutrition: { calories: '290 kcal', sucre: '18 g', gras: '14 g' }
-      },
-      {
-        key: 'prestige',
-        fr: 'Prestige Amande', ar: 'بريستيج باللوز',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png',
-        prix: 150,
-        ingredients: { fr: ['Semoule premium','Beurre clarifié','Sucre glace','Amandes','Fleur d\'oranger'], ar: ['سميدة فاخرة','سمن','سكر مطحون','لوز','ماء زهر'] },
-        nutrition: { calories: '320 kcal', sucre: '20 g', gras: '16 g' }
-      }
-    ]
-  },
- {
-    id: 'tcherek',
-    fr: 'Tcherek el mseker',
-    ar: 'تشاراك المسكّر',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png',
-    variants: [
-      {
-        key: 'classique',
-        fr: 'Classique', ar: 'كلاسيكي',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png',
-        prix: 100,
-        ingredients: { fr: ['Semoule fine','Beurre','Sucre glace','Essence de fleur d\'oranger'], ar: ['سميدة ناعمة','زبدة','سكر مطحون','ماء زهر'] },
-        nutrition: { calories: '290 kcal', sucre: '18 g', gras: '14 g' }
-      },
-      {
-        key: 'prestige',
-        fr: 'Prestige Amande', ar: 'بريستيج باللوز',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png',
-        prix: 150,
-        ingredients: { fr: ['Semoule premium','Beurre clarifié','Sucre glace','Amandes','Fleur d\'oranger'], ar: ['سميدة فاخرة','سمن','سكر مطحون','لوز','ماء زهر'] },
-        nutrition: { calories: '320 kcal', sucre: '20 g', gras: '16 g' }
-      }
-    ]
-  },
-
-  {
-    id: 'makrout',
-    fr: 'Makrout',
-    ar: 'مقروط',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',
-    variants: [
-      {
-        key: 'dattes',
-        fr: 'Aux Dattes', ar: 'بالتمر',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',
-        prix: 130,
-        ingredients: { fr: ['Semoule','Pâte de dattes','Huile','Miel'], ar: ['سميدة','عجينة تمر','زيت','عسل'] },
-        nutrition: { calories: '310 kcal', sucre: '28 g', gras: '12 g' }
-      },
-      {
-        key: 'amandes',
-        fr: 'Aux Amandes', ar: 'باللوز',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',
-        prix: 160,
-        prix_promo: 140,
-        ingredients: { fr: ['Semoule','Pâte d\'amandes','Huile d\'argan','Miel de montagne','Cannelle'], ar: ['سميدة','عجينة لوز','زيت أركان','عسل جبلي','قرفة'] },
-        nutrition: { calories: '330 kcal', sucre: '22 g', gras: '18 g' }
-      },
-      {
-        key: 'prestige',
-        fr: 'Prestige Miel', ar: 'بريستيج بالعسل',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',
-        prix: 190,
-        ingredients: { fr: ['Semoule fine','Dattes Deglet Nour','Miel Sidr','Beurre clarifié'], ar: ['سميدة ناعمة','تمر دقلة نور','عسل سدر','سمن'] },
-        nutrition: { calories: '350 kcal', sucre: '30 g', gras: '14 g' }
-      }
+    id:'tcherek', fr:'Tcherek el Aryan', ar:'تشاراك العريان',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png',
+    variants:[
+      { key:'classique', fr:'Classique', ar:'كلاسيكي', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png', prix:100,
+        ingredients:{ fr:['Semoule fine','Beurre','Sucre glace','Fleur d\'oranger'], ar:['سميدة ناعمة','زبدة','سكر مطحون','ماء زهر'] },
+        nutrition:{ calories:'290 kcal', sucre:'18 g', gras:'14 g' } },
+      { key:'prestige', fr:'Prestige Amande', ar:'بريستيج باللوز', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png', prix:150,
+        ingredients:{ fr:['Semoule premium','Beurre clarifié','Sucre glace','Amandes','Fleur d\'oranger'], ar:['سميدة فاخرة','سمن','سكر مطحون','لوز','ماء زهر'] },
+        nutrition:{ calories:'320 kcal', sucre:'20 g', gras:'16 g' } }
     ]
   },
   {
-    id: 'mchawek',
-    fr: 'Mchawek',
-    ar: 'مشوك باللوز',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png',
-    variants: [
-      {
-        key: 'classique',
-        fr: 'Classique', ar: 'كلاسيكي',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png',
-        prix: 110,
-        ingredients: { fr: ['Pâte d\'amandes','Blancs d\'œufs','Sucre','Colorant naturel'], ar: ['عجينة لوز','بياض بيض','سكر','صبغة طبيعية'] },
-        nutrition: { calories: '280 kcal', sucre: '26 g', gras: '10 g' }
-      },
-      {
-        key: 'prestige',
-        fr: 'Prestige', ar: 'بريستيج',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png',
-        prix: 160,
-        ingredients: { fr: ['Amandes de Californie','Blancs d\'œufs frais','Sucre glace','Extrait de pistache','Rose naturelle'], ar: ['لوز كاليفورني','بياض بيض طازج','سكر ناعم','خلاصة فستق','ورد طبيعي'] },
-        nutrition: { calories: '295 kcal', sucre: '28 g', gras: '12 g' }
-      }
+    id:'tcherek2', fr:'Tcherek el mseker', ar:'تشاراك المسكّر',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png',
+    variants:[
+      { key:'classique', fr:'Classique', ar:'كلاسيكي', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png', prix:100,
+        ingredients:{ fr:['Semoule fine','Beurre','Sucre glace','Fleur d\'oranger'], ar:['سميدة ناعمة','زبدة','سكر مطحون','ماء زهر'] },
+        nutrition:{ calories:'290 kcal', sucre:'18 g', gras:'14 g' } },
+      { key:'prestige', fr:'Prestige Amande', ar:'بريستيج باللوز', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png', prix:150,
+        ingredients:{ fr:['Semoule premium','Beurre clarifié','Sucre glace','Amandes','Fleur d\'oranger'], ar:['سميدة فاخرة','سمن','سكر مطحون','لوز','ماء زهر'] },
+        nutrition:{ calories:'320 kcal', sucre:'20 g', gras:'16 g' } }
     ]
   },
   {
-    id: 'ghribia',
-    fr: 'Ghribia',
-    ar: 'غريبية',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',
-    variants: [
-      {
-        key: 'nature',
-        fr: 'Nature', ar: 'طبيعية',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',
-        prix: 60,
-        ingredients: { fr: ['Farine','Beurre','Sucre glace','Vanille'], ar: ['دقيق','زبدة','سكر ناعم','فانيليا'] },
-        nutrition: { calories: '220 kcal', sucre: '16 g', gras: '12 g' }
-      },
-      {
-        key: 'amandes',
-        fr: 'Amandes', ar: 'باللوز',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',
-        prix: 100,
-        prix_promo: 85,
-        ingredients: { fr: ['Farine d\'amandes','Beurre','Sucre','Fleur d\'oranger'], ar: ['دقيق لوز','زبدة','سكر','ماء زهر'] },
-        nutrition: { calories: '245 kcal', sucre: '18 g', gras: '14 g' }
-      }
+    id:'makrout', fr:'Makrout', ar:'مقروط',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',
+    variants:[
+      { key:'dattes', fr:'Aux Dattes', ar:'بالتمر', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png', prix:130,
+        ingredients:{ fr:['Semoule','Pâte de dattes','Huile','Miel'], ar:['سميدة','عجينة تمر','زيت','عسل'] },
+        nutrition:{ calories:'310 kcal', sucre:'28 g', gras:'12 g' } },
+      { key:'amandes', fr:'Aux Amandes', ar:'باللوز', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png', prix:160, prix_promo:140,
+        ingredients:{ fr:['Semoule','Pâte d\'amandes','Huile d\'argan','Miel de montagne','Cannelle'], ar:['سميدة','عجينة لوز','زيت أركان','عسل جبلي','قرفة'] },
+        nutrition:{ calories:'330 kcal', sucre:'22 g', gras:'18 g' } },
+      { key:'prestige', fr:'Prestige Miel', ar:'بريستيج بالعسل', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png', prix:190,
+        ingredients:{ fr:['Semoule fine','Dattes Deglet Nour','Miel Sidr','Beurre clarifié'], ar:['سميدة ناعمة','تمر دقلة نور','عسل سدر','سمن'] },
+        nutrition:{ calories:'350 kcal', sucre:'30 g', gras:'14 g' } }
     ]
   },
   {
-    id: 'sable_bracelet',
-    fr: 'Sablé Bracelet',
-    ar: 'سابلِي على شكل سوار',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
-    variants: [
-      {
-        key: 'chocolat',
-        fr: 'Chocolat', ar: 'بالشوكولاتة',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
-        prix: 90,
-        ingredients: { fr: ['Beurre','Farine','Chocolat noir','Sucre','Œuf'], ar: ['زبدة','دقيق','شوكولاتة داكنة','سكر','بيض'] },
-        nutrition: { calories: '260 kcal', sucre: '20 g', gras: '14 g' }
-      },
-      {
-        key: 'nature',
-        fr: 'Nature Vanille', ar: 'فانيليا طبيعية',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
-        prix: 80,
-        ingredients: { fr: ['Beurre','Farine','Vanille naturelle','Sucre glace'], ar: ['زبدة','دقيق','فانيليا طبيعية','سكر ناعم'] },
-        nutrition: { calories: '240 kcal', sucre: '17 g', gras: '13 g' }
-      },
-      {
-        key: 'prestige',
-        fr: 'Prestige Caramel', ar: 'كراميل فاخر',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
-        prix: 140,
-        ingredients: { fr: ['Beurre clarifié','Farine T45','Caramel fleur de sel','Chocolat belge'], ar: ['سمن مذاب','دقيق فاخر','كراميل بملح البحر','شوكولاتة بلجيكية'] },
-        nutrition: { calories: '300 kcal', sucre: '24 g', gras: '17 g' }
-      }
+    id:'mchawek', fr:'Mchawek', ar:'مشوك باللوز',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png',
+    variants:[
+      { key:'classique', fr:'Classique', ar:'كلاسيكي', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png', prix:110,
+        ingredients:{ fr:['Pâte d\'amandes','Blancs d\'œufs','Sucre','Colorant naturel'], ar:['عجينة لوز','بياض بيض','سكر','صبغة طبيعية'] },
+        nutrition:{ calories:'280 kcal', sucre:'26 g', gras:'10 g' } },
+      { key:'prestige', fr:'Prestige', ar:'بريستيج', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png', prix:160,
+        ingredients:{ fr:['Amandes de Californie','Blancs d\'œufs frais','Sucre glace','Extrait de pistache','Rose naturelle'], ar:['لوز كاليفورني','بياض بيض طازج','سكر ناعم','خلاصة فستق','ورد طبيعي'] },
+        nutrition:{ calories:'295 kcal', sucre:'28 g', gras:'12 g' } }
     ]
   },
   {
-    id: 'mini_cake',
-    fr: 'Mini Cake',
-    ar: 'ميني كيك',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png',
-    variants: [
-      {
-        key: 'citron',
-        fr: 'Citron', ar: 'بالليمون',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png',
-        prix: 90,
-        ingredients: { fr: ['Farine','Œufs','Beurre','Citron','Sucre'], ar: ['دقيق','بيض','زبدة','ليمون','سكر'] },
-        nutrition: { calories: '270 kcal', sucre: '22 g', gras: '13 g' }
-      },
-      {
-        key: 'chocolat',
-        fr: 'Chocolat', ar: 'بالشوكولاتة',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png',
-        prix: 100,
-        prix_promo: 90,
-        ingredients: { fr: ['Farine','Œufs','Beurre','Chocolat noir 70%','Crème'], ar: ['دقيق','بيض','زبدة','شوكولاتة 70٪','كريمة'] },
-        nutrition: { calories: '310 kcal', sucre: '26 g', gras: '16 g' }
-      },
-      {
-        key: 'prestige',
-        fr: 'Prestige Fruits Rouges', ar: 'بريستيج فواكه حمراء',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png',
-        prix: 140,
-        ingredients: { fr: ['Farine T55','Œufs bio','Beurre clarifié','Fraises','Framboises','Myrtilles'], ar: ['دقيق فاخر','بيض عضوي','سمن','فراولة','توت','عنب بري'] },
-        nutrition: { calories: '290 kcal', sucre: '24 g', gras: '14 g' }
-      }
+    id:'ghribia', fr:'Ghribia', ar:'غريبية',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',
+    variants:[
+      { key:'nature', fr:'Nature', ar:'طبيعية', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png', prix:60,
+        ingredients:{ fr:['Farine','Beurre','Sucre glace','Vanille'], ar:['دقيق','زبدة','سكر ناعم','فانيليا'] },
+        nutrition:{ calories:'220 kcal', sucre:'16 g', gras:'12 g' } },
+      { key:'amandes', fr:'Amandes', ar:'باللوز', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png', prix:100, prix_promo:85,
+        ingredients:{ fr:['Farine d\'amandes','Beurre','Sucre','Fleur d\'oranger'], ar:['دقيق لوز','زبدة','سكر','ماء زهر'] },
+        nutrition:{ calories:'245 kcal', sucre:'18 g', gras:'14 g' } }
     ]
   },
   {
-    id: 'petit_four',
-    fr: 'Petit Four',
-    ar: 'بيتي فور',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20petit%20four%20algerienne%20presentable%20pour%20presente%C3%A9%20petit%20four%20da%20818302.png',
-    variants: [
-      {
-        key: 'assortis',
-        fr: 'Assortis', ar: 'متنوع',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20petit%20four%20algerienne%20presentable%20pour%20presente%C3%A9%20petit%20four%20da%20818302.png',
-        prix: 90,
-        ingredients: { fr: ['Pâte sablée','Ganache chocolat','Confiture fraise','Amandes','Sucre glace'], ar: ['عجينة هشة','غاناش شوكولاتة','مربى فراولة','لوز','سكر ناعم'] },
-        nutrition: { calories: '250 kcal', sucre: '20 g', gras: '13 g' }
-      },
-      {
-        key: 'prestige',
-        fr: 'Prestige', ar: 'بريستيج',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20petit%20four%20algerienne%20presentable%20pour%20presente%C3%A9%20petit%20four%20da%20818302.png',
-        prix: 140,
-        ingredients: { fr: ['Pâte feuilletée','Ganache Valrhona','Gelée fruits exotiques','Pistaches','Feuille d\'or comestible'], ar: ['عجينة مورقة','غاناش فالرونا','هلام فواكه استوائية','فستق','ورق ذهب صالح للأكل'] },
-        nutrition: { calories: '270 kcal', sucre: '22 g', gras: '15 g' }
-      }
+    id:'sable_bracelet', fr:'Sablé Bracelet', ar:'سابلِي على شكل سوار',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
+    variants:[
+      { key:'chocolat', fr:'Chocolat', ar:'بالشوكولاتة', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png', prix:90,
+        ingredients:{ fr:['Beurre','Farine','Chocolat noir','Sucre','Œuf'], ar:['زبدة','دقيق','شوكولاتة داكنة','سكر','بيض'] },
+        nutrition:{ calories:'260 kcal', sucre:'20 g', gras:'14 g' } },
+      { key:'nature', fr:'Nature Vanille', ar:'فانيليا طبيعية', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png', prix:80,
+        ingredients:{ fr:['Beurre','Farine','Vanille naturelle','Sucre glace'], ar:['زبدة','دقيق','فانيليا طبيعية','سكر ناعم'] },
+        nutrition:{ calories:'240 kcal', sucre:'17 g', gras:'13 g' } },
+      { key:'prestige', fr:'Prestige Caramel', ar:'كراميل فاخر', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png', prix:140,
+        ingredients:{ fr:['Beurre clarifié','Farine T45','Caramel fleur de sel','Chocolat belge'], ar:['سمن مذاب','دقيق فاخر','كراميل بملح البحر','شوكولاتة بلجيكية'] },
+        nutrition:{ calories:'300 kcal', sucre:'24 g', gras:'17 g' } }
     ]
   },
   {
-    id: 'pomme_amande',
-    fr: 'Pomme Amande',
-    ar: 'حلوى التفاح بعجينة اللوز',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20pomme%20pate%20dammande%20algerienne%20presentable%20pour%20presente%C3%A9%20pomm%20818302.png',
-    variants: [
-      {
-        key: 'classique',
-        fr: 'Classique', ar: 'كلاسيكي',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20pomme%20pate%20dammande%20algerienne%20presentable%20pour%20presente%C3%A9%20pomm%20818302.png',
-        prix: 90,
-        ingredients: { fr: ['Pâte d\'amandes','Colorant vert','Sucre','Clou de girofle'], ar: ['عجينة لوز','صبغة خضراء','سكر','قرنفل'] },
-        nutrition: { calories: '265 kcal', sucre: '24 g', gras: '11 g' }
-      },
-      {
-        key: 'prestige',
-        fr: 'Prestige Pistache', ar: 'بريستيج بالفستق',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20pomme%20pate%20dammande%20algerienne%20presentable%20pour%20presente%C3%A9%20pomm%20818302.png',
-        prix: 140,
-        ingredients: { fr: ['Pâte d\'amandes premium','Poudre de pistache','Colorant naturel','Rose','Sucre glace'], ar: ['عجينة لوز ممتازة','مسحوق فستق','صبغة طبيعية','ورد','سكر ناعم'] },
-        nutrition: { calories: '280 kcal', sucre: '26 g', gras: '13 g' }
-      }
+    id:'mini_cake', fr:'Mini Cake', ar:'ميني كيك',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png',
+    variants:[
+      { key:'citron', fr:'Citron', ar:'بالليمون', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png', prix:90,
+        ingredients:{ fr:['Farine','Œufs','Beurre','Citron','Sucre'], ar:['دقيق','بيض','زبدة','ليمون','سكر'] },
+        nutrition:{ calories:'270 kcal', sucre:'22 g', gras:'13 g' } },
+      { key:'chocolat', fr:'Chocolat', ar:'بالشوكولاتة', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png', prix:100, prix_promo:90,
+        ingredients:{ fr:['Farine','Œufs','Beurre','Chocolat noir 70%','Crème'], ar:['دقيق','بيض','زبدة','شوكولاتة 70٪','كريمة'] },
+        nutrition:{ calories:'310 kcal', sucre:'26 g', gras:'16 g' } },
+      { key:'prestige', fr:'Prestige Fruits Rouges', ar:'بريستيج فواكه حمراء', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png', prix:140,
+        ingredients:{ fr:['Farine T55','Œufs bio','Beurre clarifié','Fraises','Framboises','Myrtilles'], ar:['دقيق فاخر','بيض عضوي','سمن','فراولة','توت','عنب بري'] },
+        nutrition:{ calories:'290 kcal', sucre:'24 g', gras:'14 g' } }
     ]
   },
   {
-    id: 'araysh',
-    fr: 'Arayech ',
-    ar: 'عرايش ',
-    img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png',
-    variants: [
-      {
-        key: 'Arayech',
-        fr: 'Arayech', ar: 'عرايش',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png',
-        prix: 140,
-        ingredients: { fr: ['Semoule fine','Miel d\'acacia','Beurre','Cannelle','Graines de sésame'], ar: ['سميدة ناعمة','عسل أكاسيا','زبدة','قرفة','سمسم'] },
-        nutrition: { calories: '320 kcal', sucre: '30 g', gras: '14 g' }
-      },
-      {
-        key: 'framboise',
-        fr: 'Framboise', ar: 'بالتوت الأحمر',
-        img: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_transformer%20au%20arayeshe%20couleur%20framboise%20rose%20claire%20avec%20une%20indication%20framboise%20737184.png',
-        prix: 155,
-        prix_promo: 140,
-        ingredients: { fr: ['Semoule','Confiture framboise maison','Beurre','Sucre'], ar: ['سميدة','مربى توت أحمر بيتي','زبدة','سكر'] },
-        nutrition: { calories: '290 kcal', sucre: '25 g', gras: '12 g' }
-      },
+    id:'petit_four', fr:'Petit Four', ar:'بيتي فور',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20petit%20four%20algerienne%20presentable%20pour%20presente%C3%A9%20petit%20four%20da%20818302.png',
+    variants:[
+      { key:'assortis', fr:'Assortis', ar:'متنوع', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20petit%20four%20algerienne%20presentable%20pour%20presente%C3%A9%20petit%20four%20da%20818302.png', prix:90,
+        ingredients:{ fr:['Pâte sablée','Ganache chocolat','Confiture fraise','Amandes','Sucre glace'], ar:['عجينة هشة','غاناش شوكولاتة','مربى فراولة','لوز','سكر ناعم'] },
+        nutrition:{ calories:'250 kcal', sucre:'20 g', gras:'13 g' } },
+      { key:'prestige', fr:'Prestige', ar:'بريستيج', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20petit%20four%20algerienne%20presentable%20pour%20presente%C3%A9%20petit%20four%20da%20818302.png', prix:140,
+        ingredients:{ fr:['Pâte feuilletée','Ganache Valrhona','Gelée fruits exotiques','Pistaches','Feuille d\'or comestible'], ar:['عجينة مورقة','غاناش فالرونا','هلام فواكه استوائية','فستق','ورق ذهب صالح للأكل'] },
+        nutrition:{ calories:'270 kcal', sucre:'22 g', gras:'15 g' } }
+    ]
+  },
+  {
+    id:'pomme_amande', fr:'Pomme Amande', ar:'حلوى التفاح بعجينة اللوز',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20pomme%20pate%20dammande%20algerienne%20presentable%20pour%20presente%C3%A9%20pomm%20818302.png',
+    variants:[
+      { key:'classique', fr:'Classique', ar:'كلاسيكي', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20pomme%20pate%20dammande%20algerienne%20presentable%20pour%20presente%C3%A9%20pomm%20818302.png', prix:90,
+        ingredients:{ fr:['Pâte d\'amandes','Colorant vert','Sucre','Clou de girofle'], ar:['عجينة لوز','صبغة خضراء','سكر','قرنفل'] },
+        nutrition:{ calories:'265 kcal', sucre:'24 g', gras:'11 g' } },
+      { key:'prestige', fr:'Prestige Pistache', ar:'بريستيج بالفستق', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20pomme%20pate%20dammande%20algerienne%20presentable%20pour%20presente%C3%A9%20pomm%20818302.png', prix:140,
+        ingredients:{ fr:['Pâte d\'amandes premium','Poudre de pistache','Colorant naturel','Rose','Sucre glace'], ar:['عجينة لوز ممتازة','مسحوق فستق','صبغة طبيعية','ورد','سكر ناعم'] },
+        nutrition:{ calories:'280 kcal', sucre:'26 g', gras:'13 g' } }
+    ]
+  },
+  {
+    id:'araysh', fr:'Arayech', ar:'عرايش',
+    img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png',
+    variants:[
+      { key:'Arayech', fr:'Arayech', ar:'عرايش', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png', prix:140,
+        ingredients:{ fr:['Semoule fine','Miel d\'acacia','Beurre','Cannelle','Graines de sésame'], ar:['سميدة ناعمة','عسل أكاسيا','زبدة','قرفة','سمسم'] },
+        nutrition:{ calories:'320 kcal', sucre:'30 g', gras:'14 g' } },
+      { key:'framboise', fr:'Framboise', ar:'بالتوت الأحمر', img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_transformer%20au%20arayeshe%20couleur%20framboise%20rose%20claire%20avec%20une%20indication%20framboise%20737184.png', prix:155, prix_promo:140,
+        ingredients:{ fr:['Semoule','Confiture framboise maison','Beurre','Sucre'], ar:['سميدة','مربى توت أحمر بيتي','زبدة','سكر'] },
+        nutrition:{ calories:'290 kcal', sucre:'25 g', gras:'12 g' } }
     ]
   }
 ];
 
-/* ═══════════════════════════════════════════════════════════
-   I18N
-═══════════════════════════════════════════════════════════ */
+/* ─── I18N ─── */
 const I18N = {
-    fr: {
-        tagline: "L'Excellence de la Pâtisserie Algérienne",
-        nav1:"Nos Créations",nav2:"Nos Gammes",nav3:"Commander",
-        hero_h:"L'Art des Gâteaux<br>Traditionnels Algériens",
-        hero_p:"Une immersion sensorielle dans le patrimoine sucré de l'Algérie. Chaque pièce est une œuvre d'art, façonnée à la main avec passion.",
-        spec_h:"Nos Spécialités",spec_p:"Sélectionnez vos douceurs pour composer votre coffret",
-        qual_h:"Nos Standards d'Excellence",qual_p:"Deux expériences adaptées à vos exigences",
-        q1_n:"Classique",q1_d:"L'authenticité pure. Recettes familiales transmises et saveurs équilibrées pour vos moments quotidiens.",
-        q2_n:"Prestige",q2_d:"Le luxe ultime. Amandes extra-fines, miel de montagne pur et finitions délicates à la feuille d'or.",
-        order_h:"Finaliser la Commande",order_p:"Un service prestige pour des moments inoubliables",
-        f_name:"Nom & Prénom *",f_phone:"Téléphone *",f_wilaya:"Wilaya *",f_addr:"Adresse *",
-        f_occ:"Événement",select_default:"-- Sélectionner votre Wilaya --",
-        occ_0:"-- Choisir une occasion --",occ_1:"Mariage / Fiançailles",occ_2:"Naissance / Circoncision",occ_3:"Aïd El Fitr / El Adha",occ_4:"Cadeau Prestige",
-        f_msg_label:"Demandes Spécifiques / Personnalisation",f_msg_placeholder:"Indiquez ici vos souhaits particuliers (couleurs, emballage spécial, etc...)",
-        btn_order:"Confirmer ma Commande",sum_h:"Récapitulatif de votre Panier",sum_empty:"Aucun produit sélectionné...",
-        s_sub:"Sous-total",s_disc:"Remise Volume (-10%)",s_ship:"Frais de Livraison",s_total:"Total Général",
-        foot_t:"MyZina – Haute Pâtisserie Traditionnelle",foot_contact:"Service Client :",cart_pcs:"pièces",cart_val:"Valider mon Panier →",
-        m_qty:"Quantité Souhaitée (Min 10 pièces)",m_add:"Ajouter au Panier",
-        m_ingredients_label:"Ingrédients",m_nutrition_label:"Valeurs Nutritionnelles (pour 1 pièce)",
-        m_line_total:"Total ligne",
-        added:"Ajouté avec succès !",order_ok:"Merci ! Votre commande a été transmise avec succès.",
-        loading:"Traitement en cours...",error:"Une erreur est survenue. Veuillez réessayer.",
-        promo:"Promo",
-        nutri_cal:"Calories",nutri_sug:"Sucre",nutri_fat:"Lipides"
-    },
-    ar: {
-        tagline:"التميز في الحلويات الجزائرية التقليدية",
-        nav1:"إبداعاتنا",nav2:"مجموعاتنا",nav3:"اطلب الآن",
-        hero_h:"فن الحلويات<br>الجزائرية التقليدية",
-        hero_p:"انغماس حسي في التراث الحلوي للجزائر. كل قطعة هي لوحة فنية، مصنوعة يدوياً بكل شغف.",
-        spec_h:"تخصصاتنا",spec_p:"اختر حلوياتك المفضلة لتكوين علبتك الخاصة",
-        qual_h:"معايير التميز لدينا",qual_p:"تجربتان راقيتان تتناسبان مع جميع متطلباتكم",
-        q1_n:"كلاسيكي",q1_d:"الأصالة الخالصة. وصفات عائلية متوارثة ونكهات متوازنة لمناسباتكم اليومية.",
-        q2_n:"بريستيج",q2_d:"الفخامة المطلقة. لوز رفيع جداً، عسل جبلي حر ولمسات نهائية بماء الذهب.",
-        order_h:"إتمام عملية الطلب",order_p:"خدمة راقية للحظات لا تُنسى",
-        f_name:"الاسم واللقب *",f_phone:"رقم الهاتف *",f_wilaya:"الولاية *",f_addr:"العنوان الكامل *",
-        f_occ:"نوع المناسبة",select_default:"-- اختر الولاية --",
-        occ_0:"-- اختر المناسبة --",occ_1:"زواج / خطوبة",occ_2:"ولادة / ختان",occ_3:"عيد الفطر / الأضحى",occ_4:"هدية فاخرة",
-        f_msg_label:"طلبات خاصة / تخصيص الطلبية",f_msg_placeholder:"أدخل هنا أي طلبات خاصة...",
-        btn_order:"تأكيد الطلبية الآن",sum_h:"ملخص سلة المشتريات",sum_empty:"السلة فارغة حالياً...",
-        s_sub:"المجموع الفرعي",s_disc:"خصم الكمية (-10%)",s_ship:"تكاليف التوصيل",s_total:"الإجمالي العام",
-        foot_t:"ماي زينا – حلويات جزائرية فاخرة",foot_contact:"اتصل بنا :",cart_pcs:"قطعة",cart_val:"تأكيد السلة ←",
-        m_qty:"الكمية المطلوبة (أدنى 10)",m_add:"أضف إلى السلة",
-        m_ingredients_label:"المكونات",m_nutrition_label:"القيم الغذائية (لقطعة واحدة)",
-        m_line_total:"إجمالي السطر",
-        added:"تمت الإضافة بنجاح!",order_ok:"شكراً لكم! تم استلام طلبيتكم بنجاح.",
-        loading:"جاري المعالجة...",error:"حدث خطأ ما. يرجى المحاولة مرة أخرى.",
-        promo:"عرض",
-        nutri_cal:"سعرات",nutri_sug:"سكر",nutri_fat:"دهون"
-    }
+  fr:{
+    tagline:"L'Excellence de la Pâtisserie Algérienne",
+    nav1:"Nos Créations", nav2:"Nos Gammes", nav3:"Commander", nav_choco:"🍫 Coffrets Chocolats",
+    hero_h:"L'Art des Gâteaux<br>Traditionnels Algériens",
+    hero_p:"Une immersion sensorielle dans le patrimoine sucré de l'Algérie. Chaque pièce est une œuvre d'art, façonnée à la main avec passion.",
+    spec_h:"Nos Spécialités", spec_p:"Sélectionnez vos douceurs pour composer votre coffret",
+    qual_h:"Nos Standards d'Excellence", qual_p:"Deux expériences adaptées à vos exigences",
+    q1_n:"Classique", q1_d:"L'authenticité pure. Recettes familiales transmises et saveurs équilibrées pour vos moments quotidiens.",
+    q2_n:"Prestige", q2_d:"Le luxe ultime. Amandes extra-fines, miel de montagne pur et finitions délicates à la feuille d'or.",
+    q3_n:"Coffrets Chocolats", q3_d:"Nouvelle collection. Composez votre propre box de 6, 12 ou 24 chocolats artisanaux. Idéal en cadeau.",
+    order_h:"Finaliser la Commande", order_p:"Un service prestige pour des moments inoubliables",
+    lbl_name:"Nom & Prénom *", lbl_phone:"Téléphone *", lbl_wilaya:"Wilaya *", lbl_addr:"Adresse *",
+    lbl_occ:"Événement", select_default:"-- Sélectionner votre Wilaya --",
+    occ_0:"-- Choisir une occasion --", occ_1:"Mariage / Fiançailles", occ_2:"Naissance / Circoncision",
+    occ_3:"Aïd El Fitr / El Adha", occ_4:"Cadeau Prestige",
+    lbl_msg:"Demandes Spécifiques / Personnalisation",
+    f_msg_ph:"Indiquez ici vos souhaits particuliers (couleurs, emballage spécial, etc...)",
+    btn_order:"Confirmer ma Commande", sum_h:"Récapitulatif de votre Panier",
+    sum_empty:"Aucun produit sélectionné...",
+    s_sub:"Sous-total", s_disc:"Remise Volume (-10%)", s_ship:"Frais de Livraison", s_total:"Total Général",
+    foot_contact:"Service Client :", cart_val:"Valider mon Panier →",
+    m_qty:"Quantité Souhaitée (Min 10 pièces)", m_add:"Ajouter au Panier",
+    m_ing_label:"Ingrédients", m_nut_label:"Valeurs Nutritionnelles (pour 1 pièce)",
+    m_line_lbl:"Total ligne", added:"Ajouté avec succès !",
+    order_ok:"Merci ! Votre commande a été transmise avec succès ✓",
+    loading:"Traitement en cours...", error:"Une erreur est survenue. Veuillez réessayer.",
+    promo:"Promo", nutri_cal:"Calories", nutri_sug:"Sucre", nutri_fat:"Lipides",
+    choco_banner_title:"🍫 Coffret Chocolats Ajouté !",
+    choco_banner_msg:"Votre coffret chocolats a été ajouté au panier. Remplissez le formulaire ci-dessous pour finaliser.",
+    choco_cart_name:"Coffret Chocolats",
+    choco_promo_h:"🍫 Nouvelle Collection", choco_promo_p:"Coffrets chocolats artisanaux à composer",
+    choco_promo_cta:"Composer mon Coffret →"
+  },
+  ar:{
+    tagline:"التميز في الحلويات الجزائرية التقليدية",
+    nav1:"إبداعاتنا", nav2:"مجموعاتنا", nav3:"اطلب الآن", nav_choco:"🍫 علب الشوكولاتة",
+    hero_h:"فن الحلويات<br>الجزائرية التقليدية",
+    hero_p:"انغماس حسي في التراث الحلوي للجزائر. كل قطعة هي لوحة فنية، مصنوعة يدوياً بكل شغف.",
+    spec_h:"تخصصاتنا", spec_p:"اختر حلوياتك المفضلة لتكوين علبتك الخاصة",
+    qual_h:"معايير التميز لدينا", qual_p:"تجربتان راقيتان تتناسبان مع جميع متطلباتكم",
+    q1_n:"كلاسيكي", q1_d:"الأصالة الخالصة. وصفات عائلية متوارثة ونكهات متوازنة لمناسباتكم اليومية.",
+    q2_n:"بريستيج", q2_d:"الفخامة المطلقة. لوز رفيع جداً، عسل جبلي حر ولمسات نهائية بماء الذهب.",
+    q3_n:"علب الشوكولاتة", q3_d:"مجموعة جديدة. صمم علبتك من 6 أو 12 أو 24 شوكولاتة يدوية. مثالية كهدية.",
+    order_h:"إتمام عملية الطلب", order_p:"خدمة راقية للحظات لا تُنسى",
+    lbl_name:"الاسم واللقب *", lbl_phone:"رقم الهاتف *", lbl_wilaya:"الولاية *", lbl_addr:"العنوان الكامل *",
+    lbl_occ:"نوع المناسبة", select_default:"-- اختر الولاية --",
+    occ_0:"-- اختر المناسبة --", occ_1:"زواج / خطوبة", occ_2:"ولادة / ختان",
+    occ_3:"عيد الفطر / الأضحى", occ_4:"هدية فاخرة",
+    lbl_msg:"طلبات خاصة / تخصيص الطلبية",
+    f_msg_ph:"أدخل هنا أي طلبات خاصة (الألوان، التغليف الخاص، إلخ...)",
+    btn_order:"تأكيد الطلبية الآن", sum_h:"ملخص سلة المشتريات",
+    sum_empty:"السلة فارغة حالياً...",
+    s_sub:"المجموع الفرعي", s_disc:"خصم الكمية (-10%)", s_ship:"تكاليف التوصيل", s_total:"الإجمالي العام",
+    foot_contact:"اتصل بنا :", cart_val:"تأكيد السلة ←",
+    m_qty:"الكمية المطلوبة (أدنى 10)", m_add:"أضف إلى السلة",
+    m_ing_label:"المكونات", m_nut_label:"القيم الغذائية (لقطعة واحدة)",
+    m_line_lbl:"إجمالي السطر", added:"تمت الإضافة بنجاح!",
+    order_ok:"شكراً لكم! تم استلام طلبيتكم بنجاح ✓",
+    loading:"جاري المعالجة...", error:"حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    promo:"عرض", nutri_cal:"سعرات", nutri_sug:"سكر", nutri_fat:"دهون",
+    choco_banner_title:"🍫 تم استلام طلب علبة الشوكولاتة",
+    choco_banner_msg:"تمت إضافة علبة الشوكولاتة إلى سلتك. أكمل النموذج أدناه لإتمام طلبيتك.",
+    choco_cart_name:"علبة شوكولاتة",
+    choco_promo_h:"🍫 مجموعة جديدة", choco_promo_p:"علب شوكولاتة يدوية لتصميمها بنفسك",
+    choco_promo_cta:"صمم علبتي ←"
+  }
 };
 
-/* ═══════════════════════════════════════════════════════════
-   STATE
-═══════════════════════════════════════════════════════════ */
+/* ─── STATE ─── */
 let currentLang = 'fr';
 let cart = [];
-// currentSel now holds the full variant object
 let currentSel = { product: null, variantIndex: 0, qty: 10 };
 
-/* ═══════════════════════════════════════════════════════════
-   INIT
-═══════════════════════════════════════════════════════════ */
+/* ─── INIT ─── */
 function init() {
     populateWilayas();
     renderProducts();
     setupEvents();
     applyI18N();
     gsap.to('body', { opacity: 1, duration: 1 });
-    lucide.createIcons();
+    gsap.from('header', { y: -30, opacity: 0, duration: 1, delay: 0.2 });
+    gsap.from('.hero', { y: 40, opacity: 0, duration: 1, delay: 0.4 });
+    checkChocoTransfer();
 }
 
+/* ─── CHOCOLAT TRANSFER RECEIVER ─── */
+function checkChocoTransfer() {
+    const params = new URLSearchParams(window.location.search);
+    if (!params.get('choco_order')) return;
+
+    const lang       = params.get('lang') || 'fr';
+    const boxSize    = params.get('box_size');
+    const boxQty     = parseInt(params.get('box_qty')) || 1;
+    const items      = params.get('items') || '';
+    const pricePerBox = parseInt(params.get('price_per_box')) || 0;
+    const total      = parseInt(params.get('total')) || 0;
+
+    if (lang !== currentLang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.getElementById('lang_btn').textContent = lang === 'fr' ? 'العربية' : 'Français';
+        applyI18N();
+        renderProducts();
+    }
+
+    const t = I18N[currentLang];
+    const boxLabel = currentLang === 'fr' ? `Coffret ${boxSize} pièces` : `علبة ${boxSize} قطعة`;
+
+    cart.push({
+        id: Date.now(),
+        variantKey: `choco_box_${boxSize}_${Date.now()}`,
+        productId: 'choco_box',
+        name: `🍫 ${t.choco_cart_name} (${boxLabel})`,
+        variantName: items.length > 60 ? items.substring(0, 60) + '…' : items,
+        variant: `box_${boxSize}`,
+        qty: boxQty,
+        price: pricePerBox,
+        originalPrice: null,
+        isChocoBox: true
+    });
+    updateCartUI();
+
+    const banner = document.getElementById('choco_transfer_banner');
+    banner.style.display = 'block';
+    document.getElementById('banner_title_txt').textContent = t.choco_banner_title;
+    document.getElementById('banner_detail_txt').innerHTML =
+        `${t.choco_banner_msg}<br>
+         <strong style="color:var(--gold);">${boxLabel} × ${boxQty} — ${total.toLocaleString()} DA</strong><br>
+         <small style="opacity:0.7;">${items}</small>`;
+
+    const msgBox = document.getElementById('f_message');
+    const msgNote = currentLang === 'fr'
+        ? `🍫 COFFRET CHOCOLATS :\n• ${boxLabel} × ${boxQty} coffret(s)\n• Contenu : ${items}\n• Total coffret(s) : ${total.toLocaleString()} DA\n\n`
+        : `🍫 علبة شوكولاتة:\n• ${boxLabel} × ${boxQty}\n• المحتوى: ${items}\n• إجمالي العلب: ${total.toLocaleString()} دج\n\n`;
+    msgBox.value = msgNote + msgBox.value;
+
+    setTimeout(() => confetti({ particleCount: 100, spread: 120, origin: { y: 0.5 } }), 500);
+
+    window.history.replaceState({}, document.title, window.location.pathname + '#commande');
+
+    setTimeout(() => {
+        document.getElementById('commande').scrollIntoView({ behavior: 'smooth' });
+    }, 700);
+}
+
+/* ─── WILAYAS ─── */
 function populateWilayas() {
     const select = document.getElementById('f_wilaya');
     WILAYAS.forEach(w => {
@@ -986,88 +957,149 @@ function populateWilayas() {
     });
 }
 
-/* ═══════════════════════════════════════════════════════════
-   LANGUAGE
-═══════════════════════════════════════════════════════════ */
+/* ─── LANG TOGGLE ─── */
 function toggleLang() {
     currentLang = currentLang === 'fr' ? 'ar' : 'fr';
     document.documentElement.lang = currentLang;
     document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-    document.querySelector('.lang-btn').textContent = currentLang === 'fr' ? 'العربية' : 'Français';
+    document.getElementById('lang_btn').textContent = currentLang === 'fr' ? 'العربية' : 'Français';
     applyI18N();
     renderProducts();
     updateCartUI();
 }
 
+/* ─── APPLY I18N ─── */
 function applyI18N() {
-    const keys = I18N[currentLang];
-    document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (!keys[key]) return;
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            if (key.includes('placeholder')) el.placeholder = keys[key];
-        } else {
-            el.innerHTML = keys[key];
+    const T = I18N[currentLang];
+    const map = {
+        'tagline_txt':    'tagline',
+        'hero_h':         'hero_h',
+        'hero_p':         'hero_p',
+        'spec_h':         'spec_h',
+        'spec_p':         'spec_p',
+        'qual_h':         'qual_h',
+        'qual_p':         'qual_p',
+        'q1_n':           'q1_n',
+        'q1_d':           'q1_d',
+        'q2_n':           'q2_n',
+        'q2_d':           'q2_d',
+        'q3_n':           'q3_n',
+        'q3_d':           'q3_d',
+        'order_h':        'order_h',
+        'order_p':        'order_p',
+        'lbl_name':       'lbl_name',
+        'lbl_phone':      'lbl_phone',
+        'lbl_wilaya':     'lbl_wilaya',
+        'lbl_addr':       'lbl_addr',
+        'lbl_occ':        'lbl_occ',
+        'lbl_msg':        'lbl_msg',
+        'btn_text':       'btn_order',
+        'sum_h':          'sum_h',
+        's_sub':          's_sub',
+        's_disc':         's_disc',
+        's_ship':         's_ship',
+        's_total':        's_total',
+        'foot_contact':   'foot_contact',
+        'm_qty_label':    'm_qty',
+        'm_add_txt':      'm_add',
+        'm_ing_label':    'm_ing_label',
+        'm_nut_label':    'm_nut_label',
+        'm_line_lbl':     'm_line_lbl',
+        'cart_val_btn':   'cart_val',
+    };
+    Object.entries(map).forEach(([id, key]) => {
+        const el = document.getElementById(id);
+        if (el && T[key]) {
+            if (el.tagName === 'BUTTON' || el.tagName === 'SPAN' || el.tagName === 'LABEL' || el.tagName === 'P' || el.tagName === 'DIV' || el.tagName === 'H2' || el.tagName === 'H3') {
+                el.innerHTML = T[key];
+            } else {
+                el.textContent = T[key];
+            }
         }
     });
+
+    // nav data-key
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const k = el.getAttribute('data-key');
+        if (T[k]) el.innerHTML = T[k];
+    });
+
+    // Select options
+    const defs = { select_default_opt:'select_default', occ_0:'occ_0', occ_1:'occ_1', occ_2:'occ_2', occ_3:'occ_3', occ_4:'occ_4' };
+    Object.entries(defs).forEach(([id, k]) => {
+        const el = document.getElementById(id);
+        if (el && T[k]) el.textContent = T[k];
+    });
+
+    // Textarea placeholder
+    const ta = document.getElementById('f_message');
+    if (ta && T.f_msg_ph) ta.placeholder = T.f_msg_ph;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RENDER PRODUCT GRID
-   Shows the starting price (cheapest variant) on the card.
-═══════════════════════════════════════════════════════════ */
+/* ─── RENDER PRODUCTS ─── */
 function renderProducts() {
     const grid = document.getElementById('product_grid');
-    grid.innerHTML = CATALOG.map(p => {
-        // Lowest price variant
-        const baseVariant = p.variants[0];
+    const T = I18N[currentLang];
+
+    const productCards = CATALOG.map(p => {
         const hasPromo = p.variants.some(v => v.prix_promo);
         const minPrice = Math.min(...p.variants.map(v => v.prix_promo || v.prix));
         const maxPrice = Math.max(...p.variants.map(v => v.prix));
         const priceHtml = hasPromo
-            ? `<span class="price-current">${minPrice} DA</span><span class="price-badge">${I18N[currentLang].promo}</span>`
+            ? `<span class="price-current">${minPrice} DA</span><span class="price-badge">${T.promo}</span>`
             : (p.variants.length > 1
                 ? `<span class="price-current">${minPrice} – ${maxPrice} DA</span>`
-                : `<span class="price-current">${baseVariant.prix} DA</span>`);
+                : `<span class="price-current">${p.variants[0].prix} DA</span>`);
         return `
-            <div class="product-card" onclick="openProduct('${p.id}')">
-                <div class="product-img-wrap">
-                    <img src="${baseVariant.img}" class="product-img" alt="${p[currentLang]}"
-                         onerror="this.src='https://r2.flowith.net/sandbox-placeholder.png'">
-                </div>
-                <div class="product-info">
-                    <h4>${p[currentLang]}</h4>
-                    <div class="price-tag">${priceHtml}</div>
-                </div>
-            </div>`;
+        <div class="product-card" onclick="openProduct('${p.id}')">
+            <div class="product-img-wrap">
+                <img src="${p.variants[0].img}" class="product-img" alt="${p[currentLang]}"
+                     onerror="this.src='https://via.placeholder.com/600x400/4a0404/d4af37?text=MyZina'">
+            </div>
+            <div class="product-info">
+                <h4>${p[currentLang]}</h4>
+                <div class="price-tag">${priceHtml}</div>
+            </div>
+        </div>`;
     }).join('');
+
+    const chocoCard = `
+    <a href="chocolat.html" class="choco-promo-card">
+        <span class="choco-promo-new-badge">${currentLang === 'fr' ? 'Nouveau' : 'جديد'}</span>
+        <div class="choco-promo-img">
+            <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&q=80"
+                 alt="Chocolats MyZina"
+                 onerror="this.src='https://via.placeholder.com/600x400/1a0a00/d4af37?text=Chocolats'">
+        </div>
+        <div class="choco-promo-info">
+            <h4>${T.choco_promo_h}</h4>
+            <p>${T.choco_promo_p}</p>
+            <div class="choco-promo-cta">${T.choco_promo_cta}</div>
+        </div>
+    </a>`;
+
+    grid.innerHTML = productCards + chocoCard;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   OPEN PRODUCT MODAL
-═══════════════════════════════════════════════════════════ */
+/* ─── OPEN PRODUCT MODAL ─── */
 window.openProduct = function(id) {
     const p = CATALOG.find(x => x.id === id);
+    if (!p) return;
     currentSel = { product: p, variantIndex: 0, qty: 10 };
-
     document.getElementById('m_name').textContent = p[currentLang];
     document.getElementById('m_qty_val').value = 10;
 
-    // Build variant tabs
     const tabsEl = document.getElementById('m_variants');
     tabsEl.innerHTML = p.variants.map((v, i) => {
         const label = v[currentLang] || v.fr;
         const hasPromo = !!v.prix_promo;
-        return `<button type="button" class="variant-tab${i===0?' active':''}" 
-                    onclick="selectVariant(${i})" id="vtab_${i}">
+        return `<button type="button" class="variant-tab${i===0?' active':''}" onclick="selectVariant(${i})">
                     ${label}${hasPromo ? ` <span style="color:#e53e3e; font-size:0.75rem;">★</span>` : ''}
                 </button>`;
     }).join('');
 
-    // Render first variant
     renderVariantDetails(0, false);
 
-    // Open modal
     const bg = document.getElementById('modal_bg');
     const modal = document.getElementById('modal');
     bg.style.display = 'flex';
@@ -1078,19 +1110,10 @@ window.openProduct = function(id) {
     document.body.style.overflow = 'hidden';
 };
 
-/* ═══════════════════════════════════════════════════════════
-   SELECT VARIANT (with animation)
-═══════════════════════════════════════════════════════════ */
 window.selectVariant = function(index) {
     if (index === currentSel.variantIndex) return;
     currentSel.variantIndex = index;
-
-    // Update tab active state
-    document.querySelectorAll('.variant-tab').forEach((t, i) => {
-        t.classList.toggle('active', i === index);
-    });
-
-    // Animate details out → update → animate in
+    document.querySelectorAll('.variant-tab').forEach((t, i) => t.classList.toggle('active', i === index));
     renderVariantDetails(index, true);
 };
 
@@ -1098,70 +1121,48 @@ function renderVariantDetails(index, animate) {
     const p = currentSel.product;
     const v = p.variants[index];
     const details = document.getElementById('variant_details');
-    const imgEl  = document.getElementById('m_img');
+    const imgEl = document.getElementById('m_img');
 
     const doUpdate = () => {
-        // Image with crossfade
         imgEl.classList.add('fading');
         setTimeout(() => {
             imgEl.src = v.img || p.img;
-            imgEl.onerror = () => { imgEl.src = 'https://r2.flowith.net/sandbox-placeholder.png'; };
+            imgEl.onerror = () => { imgEl.src = 'https://via.placeholder.com/620x300/4a0404/d4af37?text=MyZina'; };
             imgEl.classList.remove('fading');
         }, 180);
 
-        // Variant sub-label
         document.getElementById('m_variant_label').textContent = v[currentLang] || v.fr;
-
-        // Price
         renderModalPrice(v);
 
-        // Ingredients
-        const lang = currentLang;
-        const ings = v.ingredients[lang] || v.ingredients.fr;
-        document.getElementById('m_ingredients').innerHTML =
-            ings.map(i => `<span class="ingredient-chip">${i}</span>`).join('');
+        const ings = v.ingredients[currentLang] || v.ingredients.fr;
+        document.getElementById('m_ingredients').innerHTML = ings.map(i => `<span class="ingredient-chip">${i}</span>`).join('');
 
-        // Nutrition
-        const t = I18N[currentLang];
+        const T = I18N[currentLang];
         document.getElementById('m_nutrition').innerHTML = `
-            <div class="nutri-cell"><span class="nutri-val">${v.nutrition.calories}</span><span class="nutri-key">${t.nutri_cal}</span></div>
-            <div class="nutri-cell"><span class="nutri-val">${v.nutrition.sucre}</span><span class="nutri-key">${t.nutri_sug}</span></div>
-            <div class="nutri-cell"><span class="nutri-val">${v.nutrition.gras}</span><span class="nutri-key">${t.nutri_fat}</span></div>
-        `;
+            <div class="nutri-cell"><span class="nutri-val">${v.nutrition.calories}</span><span class="nutri-key">${T.nutri_cal}</span></div>
+            <div class="nutri-cell"><span class="nutri-val">${v.nutrition.sucre}</span><span class="nutri-key">${T.nutri_sug}</span></div>
+            <div class="nutri-cell"><span class="nutri-val">${v.nutrition.gras}</span><span class="nutri-key">${T.nutri_fat}</span></div>`;
 
-        // Line total
         updateLineTotalPreview();
-
         details.classList.remove('fading');
     };
 
-    if (animate) {
-        details.classList.add('fading');
-        setTimeout(doUpdate, 200);
-    } else {
-        doUpdate();
-    }
+    if (animate) { details.classList.add('fading'); setTimeout(doUpdate, 200); }
+    else { doUpdate(); }
 }
 
-/* ── Render price area (normal or promo) ── */
 function renderModalPrice(v) {
     const block = document.getElementById('m_price_block');
-    const qty   = currentSel.qty;
-    const basePrice = v.prix_promo || v.prix;
-    const total = basePrice * qty * (qty >= 50 ? 0.9 : 1);
-
+    const T = I18N[currentLang];
     if (v.prix_promo) {
-        block.innerHTML = `
-            <span class="modal-price-current">${v.prix_promo} DA</span>
-            <span class="modal-price-original">${v.prix} DA</span>
-            <span class="modal-price-badge">${I18N[currentLang].promo}</span>
-        `;
+        block.innerHTML = `<span class="modal-price-current">${v.prix_promo} DA</span>
+                           <span class="modal-price-original">${v.prix} DA</span>
+                           <span class="modal-price-badge">${T.promo}</span>`;
     } else {
         block.innerHTML = `<span class="modal-price-current">${v.prix} DA <small style="font-size:0.85rem; font-weight:500; color:#777;">/ pièce</small></span>`;
     }
 }
 
-/* ── Update line total at bottom of modal ── */
 function updateLineTotalPreview() {
     const v = currentSel.product.variants[currentSel.variantIndex];
     const unitPrice = v.prix_promo || v.prix;
@@ -1170,9 +1171,6 @@ function updateLineTotalPreview() {
     document.getElementById('m_line_total_val').textContent = `${Math.round(total)} DA`;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   CLOSE MODAL
-═══════════════════════════════════════════════════════════ */
 window.closeModal = function() {
     const bg = document.getElementById('modal_bg');
     const modal = document.getElementById('modal');
@@ -1181,184 +1179,135 @@ window.closeModal = function() {
     setTimeout(() => { bg.style.display = 'none'; document.body.style.overflow = ''; }, 300);
 };
 
-// Close when clicking outside modal
 window.handleModalBgClick = function(e) {
     if (e.target === document.getElementById('modal_bg')) closeModal();
 };
 
-/* ═══════════════════════════════════════════════════════════
-   EVENT LISTENERS
-═══════════════════════════════════════════════════════════ */
+/* ─── EVENTS ─── */
 function setupEvents() {
-    // Qty + button
     document.getElementById('qty_plus').addEventListener('click', () => {
         currentSel.qty++;
         document.getElementById('m_qty_val').value = currentSel.qty;
-        renderModalPrice(currentSel.product.variants[currentSel.variantIndex]);
         updateLineTotalPreview();
     });
-
-    // Qty − button
     document.getElementById('qty_minus').addEventListener('click', () => {
         if (currentSel.qty > 10) {
             currentSel.qty--;
             document.getElementById('m_qty_val').value = currentSel.qty;
-            renderModalPrice(currentSel.product.variants[currentSel.variantIndex]);
             updateLineTotalPreview();
         }
     });
-
-    // Qty input change
-    document.getElementById('m_qty_val').addEventListener('change', (e) => {
+    document.getElementById('m_qty_val').addEventListener('change', e => {
         let v = parseInt(e.target.value);
         if (isNaN(v) || v < 10) v = 10;
-        currentSel.qty = v;
-        e.target.value = v;
-        renderModalPrice(currentSel.product.variants[currentSel.variantIndex]);
+        currentSel.qty = v; e.target.value = v;
         updateLineTotalPreview();
     });
-
-    // Add to cart
     document.getElementById('add_to_cart_btn').addEventListener('click', addToCart);
-
-    // Wilaya change → recalculate shipping
     document.getElementById('f_wilaya').addEventListener('change', updateCartUI);
-
-    // Form submit
     document.getElementById('order_form').addEventListener('submit', handleOrder);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ADD TO CART
-   Guard: must have a product + variant selected
-═══════════════════════════════════════════════════════════ */
+/* ─── ADD TO CART ─── */
 function addToCart() {
-    if (!currentSel.product) {
-        showNotif(currentLang === 'fr' ? 'Aucune variante sélectionnée' : 'لم يتم اختيار أي نوع');
-        return;
-    }
-
+    if (!currentSel.product) return;
     const p = currentSel.product;
     const v = p.variants[currentSel.variantIndex];
-    const unitPrice = v.prix_promo || v.prix; // use promo price if available
+    const unitPrice = v.prix_promo || v.prix;
     const variantKey = `${p.id}_${v.key}`;
-
     const exists = cart.find(x => x.variantKey === variantKey);
-    if (exists) {
-        exists.qty += currentSel.qty;
-    } else {
+
+    if (exists) { exists.qty += currentSel.qty; }
+    else {
         cart.push({
-            id: Date.now(),
-            variantKey,
-            productId: p.id,
-            name: p[currentLang],
-            variantName: v[currentLang] || v.fr,
-            variant: v.key,
-            qty: currentSel.qty,
-            price: unitPrice,
-            originalPrice: v.prix_promo ? v.prix : null  // for display
+            id: Date.now(), variantKey, productId: p.id,
+            name: p[currentLang], variantName: v[currentLang] || v.fr,
+            variant: v.key, qty: currentSel.qty, price: unitPrice,
+            originalPrice: v.prix_promo ? v.prix : null
         });
     }
-
     confetti({ particleCount: 70, spread: 80, origin: { y: 0.8 } });
     closeModal();
     updateCartUI();
     showNotif(I18N[currentLang].added);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   REMOVE FROM CART
-═══════════════════════════════════════════════════════════ */
 window.removeItem = function(id) {
     cart = cart.filter(x => x.id !== id);
     updateCartUI();
 };
 
-/* ═══════════════════════════════════════════════════════════
-   UPDATE CART UI  (summary + cart bar)
-═══════════════════════════════════════════════════════════ */
+/* ─── UPDATE CART UI ─── */
 function updateCartUI() {
+    const T = I18N[currentLang];
     const list = document.getElementById('summary_items_list');
     let subtotal = 0, discount = 0, pieces = 0;
     let cartText = '';
 
     if (cart.length === 0) {
-        list.innerHTML = `<p style="opacity:0.7; font-style:italic; font-size:1.2rem;">${I18N[currentLang].sum_empty}</p>`;
+        list.innerHTML = `<p style="opacity:0.7; font-style:italic; font-size:1.2rem;">${T.sum_empty}</p>`;
         document.getElementById('cart_bar').classList.remove('active');
     } else {
         document.getElementById('cart_bar').classList.add('active');
         list.innerHTML = cart.map(item => {
             const base = item.price * item.qty;
-            const itemDiscount = item.qty >= 50 ? base * 0.1 : 0;
+            const itemDiscount = (!item.isChocoBox && item.qty >= 50) ? base * 0.1 : 0;
             const final = base - itemDiscount;
             discount += itemDiscount;
             subtotal += base;
-            pieces   += item.qty;
-
-            // Promo label in summary
+            pieces += item.qty;
             const promoTag = item.originalPrice
-                ? ` <small style="text-decoration:line-through; opacity:0.55; font-size:0.9em;">${item.originalPrice} DA</small>`
-                : '';
-
+                ? ` <small style="text-decoration:line-through; opacity:0.55; font-size:0.9em;">${item.originalPrice} DA</small>` : '';
             cartText += `${item.qty}x ${item.name} (${item.variantName}) - ${Math.round(final)} DA\n`;
-
             return `<div class="summary-item">
-                <span>${item.qty}× ${item.name}<br>
-                  <small style="opacity:0.65; font-size:0.85em;">${item.variantName}</small>
-                </span>
+                <span>${item.qty}× ${item.name}<br><small style="opacity:0.65; font-size:0.85em;">${item.variantName}</small></span>
                 <span style="text-align:right;">
                   ${Math.round(final)} DA${promoTag}
-                  <button type="button" onclick="removeItem(${item.id})" 
-                    style="color:#ff6b6b; font-weight:bold; margin-left:10px; cursor:pointer; font-size:1.1rem;">✕</button>
+                  <button type="button" onclick="removeItem(${item.id})" style="color:#ff6b6b; font-weight:bold; margin-left:10px; cursor:pointer; font-size:1.1rem; background:none; border:none;">✕</button>
                 </span>
             </div>`;
         }).join('');
     }
 
-    const wilaya  = document.getElementById('f_wilaya').value;
+    const wilaya = document.getElementById('f_wilaya').value;
     const shipping = wilaya ? (wilaya.includes('16 Alger') ? 450 : 800) : 0;
     const totalFinal = Math.round(subtotal - discount + shipping);
 
-    document.getElementById('cart_count').textContent  = pieces;
-    document.getElementById('cart_total').textContent  = Math.round(subtotal - discount);
-    document.getElementById('sum_subtotal').textContent = `${Math.round(subtotal)} DA`;
+    document.getElementById('cart_count').textContent = pieces;
+    document.getElementById('cart_total').textContent = Math.round(subtotal - discount).toLocaleString();
+    document.getElementById('sum_subtotal').textContent = `${Math.round(subtotal).toLocaleString()} DA`;
     document.getElementById('sum_discount_row').style.display = discount > 0 ? 'flex' : 'none';
-    document.getElementById('sum_discount').textContent = `-${Math.round(discount)} DA`;
+    document.getElementById('sum_discount').textContent = `-${Math.round(discount).toLocaleString()} DA`;
     document.getElementById('sum_shipping').textContent = `${shipping} DA`;
-    document.getElementById('sum_total_final').textContent = `${totalFinal} DA`;
-
+    document.getElementById('sum_total_final').textContent = `${totalFinal.toLocaleString()} DA`;
     document.getElementById('hidden_cart_data').value = cartText;
     document.getElementById('hidden_total_val').value = `${totalFinal} DA`;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   NOTIFICATION TOAST
-═══════════════════════════════════════════════════════════ */
+/* ─── NOTIF ─── */
 function showNotif(msg) {
     const n = document.getElementById('notif');
     n.textContent = msg;
     n.classList.add('show');
-    setTimeout(() => n.classList.remove('show'), 3000);
+    clearTimeout(n._t);
+    n._t = setTimeout(() => n.classList.remove('show'), 3000);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ORDER SUBMIT
-═══════════════════════════════════════════════════════════ */
+/* ─── HANDLE ORDER ─── */
 async function handleOrder(e) {
     e.preventDefault();
-
+    const T = I18N[currentLang];
     if (cart.length === 0) {
-        alert(currentLang === 'fr' ? 'Votre panier est vide' : 'سلة المشتريات فارغة');
+        alert(currentLang === 'fr' ? 'Votre panier est vide.' : 'سلة المشتريات فارغة.');
         return;
     }
-
     const btn     = document.getElementById('submit_btn');
     const btnText = document.getElementById('btn_text');
     const spinner = document.getElementById('form_spinner');
     const msg     = document.getElementById('form_msg');
 
     btn.disabled = true;
-    btnText.textContent = I18N[currentLang].loading;
+    btnText.textContent = T.loading;
     spinner.style.display = 'block';
     msg.innerHTML = '';
 
@@ -1371,41 +1320,33 @@ async function handleOrder(e) {
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(data)
         });
-
         if (response.ok) {
-            confetti({ particleCount: 150, spread: 100, origin: { y: 0.5 } });
-            msg.innerHTML = `<span style="color:var(--burgundy)">${I18N[currentLang].order_ok}</span>`;
+            confetti({ particleCount: 160, spread: 120, origin: { y: 0.5 } });
+            msg.innerHTML = `<span style="color:var(--burgundy); font-size:1.3rem;">${T.order_ok}</span>`;
             cart = [];
             updateCartUI();
             e.target.reset();
-            setTimeout(() => { msg.innerHTML = ''; }, 8000);
-        } else {
-            throw new Error('Submission failed');
-        }
-    } catch (err) {
-        msg.innerHTML = `<span style="color:red">${I18N[currentLang].error}</span>`;
-        console.error(err);
+            document.getElementById('choco_transfer_banner').style.display = 'none';
+            setTimeout(() => { msg.innerHTML = ''; }, 9000);
+        } else { throw new Error('fail'); }
+    } catch {
+        msg.innerHTML = `<span style="color:red;">${T.error}</span>`;
     } finally {
         btn.disabled = false;
-        btnText.innerHTML = I18N[currentLang].btn_order;
+        btnText.textContent = I18N[currentLang].btn_order;
         spinner.style.display = 'none';
     }
 }
 
+/* ─── ERROR IMAGES ─── */
+document.addEventListener('error', e => {
+    if (e.target.tagName === 'IMG') {
+        e.target.onerror = null;
+        e.target.src = 'https://via.placeholder.com/600x400/4a0404/d4af37?text=MyZina';
+    }
+}, true);
+
 document.addEventListener('DOMContentLoaded', init);
 </script>
-
-<!-- Error image fallback -->
-<script async>
-document.addEventListener('error', (e) => {
-  if (e.target.tagName === 'IMG') {
-    e.target.onerror = null;
-    e.target.src = 'https://r2.flowith.net/sandbox-placeholder.png';
-    e.target.style.objectFit = 'cover';
-    e.target.style.objectPosition = 'center';
-  }
-}, true);
-</script>
-
 </body>
 </html>
