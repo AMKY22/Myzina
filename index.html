@@ -6,7 +6,8 @@
     <title>MyZina – Gâteaux Traditionnels Algériens</title>
     <meta name="description" content="Découvrez l'excellence de la pâtisserie traditionnelle algérienne avec MyZina.">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- ✦ FONTS: Cinzel Decorative pour le titre hero, Josefin Sans pour les prix ✦ -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Amiri:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -160,7 +161,25 @@
 
         /* ══ HERO ══ */
         .hero { padding: 6rem 1.5rem 6rem; text-align: center; max-width: 900px; margin: 0 auto; }
-        .hero h2 { font-size: clamp(2.4rem, 8vw, 4.2rem); color: var(--gold2); margin-bottom: 2.5rem; font-weight: 700; }
+
+        /* ✦ NOUVEAU: police Cinzel Decorative pour le titre principal hero ✦ */
+        .hero h2 {
+            font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 6vw, 3.6rem);
+            color: var(--gold2);
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 24px rgba(201,153,58,0.22);
+        }
+        /* Arabic stays Amiri */
+        [dir="rtl"] .hero h2 {
+            font-family: 'Amiri', Georgia, serif;
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            letter-spacing: 0;
+        }
+
         .ornament { color: var(--gold); margin: 3rem 0; font-size: 1.3rem; letter-spacing: 18px; opacity: 0.65; }
         .hero p { font-size: clamp(1.2rem, 3.5vw, 1.5rem); color: rgba(245,234,214,0.92); max-width: 700px; margin: 0 auto; line-height: 1.85; }
 
@@ -215,16 +234,24 @@
         .product-info h4 { font-size: clamp(1.35rem, 3.5vw, 1.55rem); color: var(--burg); font-weight: 700; line-height: 1.3; }
         .price-tag { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 1.2rem; border-top: 1px solid #f0ebe0; }
 
-        /* ─── FIX #1: price spans always LTR ─── */
+        /* ✦ NOUVEAU: police Josefin Sans pour tous les prix ✦ */
         .price-current {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Josefin Sans', 'Playfair Display', sans-serif;
             color: var(--gold);
-            font-weight: 800;
+            font-weight: 700;
             font-size: 1.45rem;
             direction: ltr;
             unicode-bidi: embed;
+            letter-spacing: 0.5px;
         }
-        .price-original { color: #b0a090; font-size: 1.1rem; text-decoration: line-through; direction: ltr; unicode-bidi: embed; }
+        .price-original {
+            font-family: 'Josefin Sans', sans-serif;
+            color: #b0a090;
+            font-size: 1.1rem;
+            text-decoration: line-through;
+            direction: ltr;
+            unicode-bidi: embed;
+        }
         .price-badge {
             background: #c0392b; color: white;
             font-size: 0.82rem; font-weight: 900;
@@ -287,7 +314,16 @@
         .summary-total-box { margin-top: 2.5rem; border-top: 1.5px solid rgba(201,153,58,0.35); padding-top: 1.75rem; }
         .total-row { display:flex; justify-content:space-between; align-items:baseline; margin-top: 1.75rem; }
         .total-label { color: var(--gold2); text-transform: uppercase; font-size: 1rem; font-weight:700; letter-spacing:1px; }
-        .total-val { font-family:'Playfair Display',serif; font-size: 2.6rem; font-weight:900; }
+
+        /* ✦ NOUVEAU: Josefin Sans pour le total général ✦ */
+        .total-val {
+            font-family: 'Josefin Sans', 'Playfair Display', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            direction: ltr;
+            unicode-bidi: embed;
+        }
 
         .order-form-container { background: var(--white); padding: 3rem 2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.07); border: 1px solid #e8dfd0; }
         .form-row { display:grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
@@ -350,7 +386,7 @@
         }
         .cart-bar.active { transform: translateX(-50%) translateY(0); }
         .cart-bar-info { font-size:1.15rem; font-weight:600; }
-        .cart-bar-info strong { color:var(--gold2); }
+        .cart-bar-info strong { color:var(--gold2); font-family:'Josefin Sans',sans-serif; }
         .cart-bar-btn { background: var(--gold); color: var(--dark); padding: 13px 26px; border-radius:50px; font-weight:900; font-size:1rem; cursor:pointer; border:none; white-space:nowrap; min-height: 48px; }
 
         /* ══ NOTIFICATION ══ */
@@ -373,7 +409,6 @@
         }
         @media (min-width:640px) { .modal-bg { align-items:center; } .modal { border-radius:24px; transform:scale(0.9); max-height:90vh; } }
 
-        /* ─── FIX #2: Bigger modal image ─── */
         .modal-img { height: 340px; position:relative; overflow:hidden; }
         @media (min-width:520px) { .modal-img { height: 380px; } }
         .modal-img img { width:100%; height:100%; object-fit:cover; transition: opacity 0.3s; }
@@ -394,7 +429,6 @@
         .modal-close-btn:hover { background:rgba(0,0,0,0.85); }
         .modal-body { padding:2.5rem 2rem; color:var(--ink); }
 
-        /* ─── FIX #2: Bigger variant tabs ─── */
         .variant-tabs { display:flex; gap:10px; margin-bottom:2rem; overflow-x:auto; padding-bottom:4px; scrollbar-width:none; }
         .variant-tabs::-webkit-scrollbar { display:none; }
         .variant-tab {
@@ -414,14 +448,22 @@
         .variant-details { transition: opacity 0.25s, transform 0.25s; }
         .variant-details.fading { opacity:0; transform:translateY(5px); }
 
-        /* ─── FIX #1: modal price always LTR ─── */
+        /* ✦ NOUVEAU: Josefin Sans pour le prix modal ✦ */
         .modal-price-block { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:1rem; }
         .modal-price-current {
-            font-family:'Playfair Display',serif; font-size:2.5rem;
-            font-weight:900; color:var(--burg);
+            font-family: 'Josefin Sans', 'Playfair Display', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--burg);
+            direction: ltr;
+            unicode-bidi: embed;
+            letter-spacing: 1px;
+        }
+        .modal-price-original {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size:1.3rem; color:#aaa; text-decoration:line-through;
             direction: ltr; unicode-bidi: embed;
         }
-        .modal-price-original { font-size:1.3rem; color:#aaa; text-decoration:line-through; direction: ltr; unicode-bidi: embed; }
         .modal-price-badge { background:#c0392b; color:white; font-size:0.85rem; font-weight:900; padding:5px 12px; border-radius:6px; text-transform:uppercase; letter-spacing:0.8px; }
 
         .modal-divider { height:1px; background:#f0ebe0; margin:1.5rem 0; }
@@ -432,10 +474,9 @@
 
         .nutrition-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:2rem; }
         .nutri-cell { background:#faf7f2; border:1px solid #eee; border-radius:12px; padding:14px; text-align:center; }
-        .nutri-val { font-size:1.25rem; font-weight:800; color:var(--burg); display:block; }
+        .nutri-val { font-family:'Josefin Sans',sans-serif; font-size:1.25rem; font-weight:700; color:var(--burg); display:block; }
         .nutri-key { font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:0.8px; }
 
-        /* ─── FIX #2: bigger qty section ─── */
         .qty-section { border-top:2px solid #f0ebe0; padding-top:2rem; margin-top:0.5rem; }
         .qty-label { font-size:0.85rem; font-weight:900; text-transform:uppercase; letter-spacing:1.5px; color:#999; margin-bottom:14px; display:block; }
         .qty-control { display:flex; align-items:center; gap:14px; margin-bottom:1.5rem; }
@@ -448,7 +489,7 @@
             padding:18px 22px; display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;
         }
         .cart-total-preview span:first-child { font-size:0.9rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:700; }
-        .cart-total-preview span:last-child { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:800; color:var(--burg); direction:ltr; unicode-bidi:embed; }
+        .cart-total-preview span:last-child { font-family:'Josefin Sans',sans-serif; font-size:1.8rem; font-weight:700; color:var(--burg); direction:ltr; unicode-bidi:embed; }
 
         .add-cart-btn-full {
             width:100%; padding:22px; background: var(--burg); color: var(--gold2);
@@ -461,7 +502,7 @@
         .add-cart-btn-full:active { transform:scale(0.99); }
 
         /* ══════════════════════════════
-           CHOCOLAT PAGE — FIX #3: Mobile-first redesign
+           CHOCOLAT PAGE
         ══════════════════════════════ */
         #page_choco { background: #1a0a00; min-height:100vh; }
 
@@ -493,7 +534,6 @@
         .choco-gold-divider { display:flex; align-items:center; justify-content:center; gap:12px; color:var(--gold); opacity:0.55; font-size:1rem; letter-spacing:8px; margin:2rem 0; }
         .choco-gold-divider::before,.choco-gold-divider::after { content:''; flex:1; max-width:80px; height:1px; background:var(--gold); opacity:0.5; }
 
-        /* ─── STEP INDICATOR: bigger, clearer on mobile ─── */
         .steps-bar {
             display:flex; align-items:center; justify-content:center; gap:0;
             padding:0 20px 0; margin-bottom:2.5rem; position:sticky; top:80px; z-index:50;
@@ -526,7 +566,6 @@
         .choco-panel-title h2 { font-size:clamp(1.8rem, 5vw, 2.8rem); color:var(--gold2); margin-bottom:0.6rem; }
         .choco-panel-title p { color:rgba(245,234,214,0.8); font-size:1.1rem; font-style:italic; }
 
-        /* ─── BOX SIZES: scroll on mobile ─── */
         .box-sizes {
             display:grid;
             grid-template-columns: repeat(2, 1fr);
@@ -550,16 +589,29 @@
             background: rgba(201,153,58,0.1);
         }
         .box-size-card.selected::after { content:'✓'; position:absolute; top:10px; right:14px; color:var(--gold); font-size:1.1rem; font-weight:900; }
-        .box-size-num { font-family:'Playfair Display',serif; font-size:3rem; font-weight:700; color:var(--gold2); line-height:1; }
+
+        /* ✦ NOUVEAU: Josefin Sans pour les chiffres des box sizes ✦ */
+        .box-size-num {
+            font-family: 'Josefin Sans', 'Playfair Display', sans-serif;
+            font-size:3rem; font-weight:700; color:var(--gold2); line-height:1;
+        }
         .box-size-label { font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; opacity:0.6; margin-top:6px; color:var(--parchment); }
-        .box-size-price { font-size:1rem; color:var(--gold); opacity:0.85; margin-top:10px; font-weight:700; direction:ltr; unicode-bidi:embed; }
+
+        /* ✦ NOUVEAU: affichage prix avec réduction ✦ */
+        .box-size-price { font-family:'Josefin Sans',sans-serif; font-size:1rem; color:var(--gold); opacity:0.85; margin-top:10px; font-weight:700; direction:ltr; unicode-bidi:embed; }
+        .box-size-price-original { font-family:'Josefin Sans',sans-serif; font-size:0.82rem; color:rgba(201,153,58,0.45); text-decoration:line-through; direction:ltr; unicode-bidi:embed; margin-top:3px; }
+        .box-size-discount-badge {
+            display:inline-block; background:linear-gradient(135deg,#27ae60,#1e8449);
+            color:white; font-size:0.72rem; font-weight:900;
+            padding:4px 10px; border-radius:50px; margin-top:6px;
+            letter-spacing:1px; text-transform:uppercase;
+        }
         .box-size-badge {
             position:absolute; top:-10px; left:50%; transform:translateX(-50%);
             background:var(--gold); color:#1a0a00; font-size:0.7rem; font-weight:900;
             padding:4px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:1px; white-space:nowrap;
         }
 
-        /* ─── CHOCO PICKER GRID: optimized for mobile ─── */
         .choco-picker-grid {
             display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem;
         }
@@ -572,8 +624,6 @@
             overflow:hidden; cursor:pointer; transition:all 0.3s; position:relative;
         }
         .choco-picker-card:hover { border-color:rgba(201,153,58,0.55); transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.4); }
-
-        /* ─── FIX #3: much clearer selected state ─── */
         .choco-picker-card.selected {
             border-color:var(--gold);
             box-shadow:0 0 0 3px rgba(201,153,58,0.35), 0 12px 30px rgba(0,0,0,0.4);
@@ -586,7 +636,6 @@
         .choco-picker-img { width:100%; height:100%; object-fit:cover; transition:transform 0.55s; }
         .choco-picker-card:hover .choco-picker-img { transform:scale(1.07); }
 
-        /* Clear selected badge in top-right */
         .choco-selected-badge {
             position:absolute; top:0; right:0;
             background:var(--gold); color:#1a0a00;
@@ -597,14 +646,6 @@
         }
         .choco-picker-card.selected .choco-selected-badge { opacity:1; transform:scale(1); }
 
-        /* Qty overlay at bottom of image */
-        .choco-qty-overlay {
-            position:absolute; bottom:0; left:0; right:0;
-            background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
-            padding:12px 10px 6px;
-            display:flex; align-items:center; justify-content:center; gap:8px;
-        }
-
         .choco-picker-info { padding:0.9rem 1rem 0; }
         .choco-picker-name {
             font-family:'Playfair Display',serif; font-size:1.05rem;
@@ -613,9 +654,10 @@
         [dir="rtl"] .choco-picker-name { font-family:'Amiri',serif; font-size:1.15rem; }
         .choco-picker-desc { font-size:0.78rem; color:rgba(245,234,214,0.5); font-style:italic; line-height:1.4; margin-bottom:0.4rem; display:none; }
         @media (min-width:600px) { .choco-picker-desc { display:block; } }
-        .choco-picker-price { font-size:0.85rem; color:var(--gold); font-weight:700; direction:ltr; unicode-bidi:embed; }
 
-        /* ─── Qty control at bottom of card ─── */
+        /* ✦ NOUVEAU: Josefin Sans pour le prix par pièce dans picker ✦ */
+        .choco-picker-price { font-family:'Josefin Sans',sans-serif; font-size:0.88rem; color:var(--gold); font-weight:700; direction:ltr; unicode-bidi:embed; }
+
         .choco-qty-control {
             display:flex; align-items:center; justify-content:space-between;
             background:rgba(0,0,0,0.3); border-top:1px solid rgba(201,153,58,0.15);
@@ -632,9 +674,10 @@
         .choco-qty-btn:hover { background:rgba(201,153,58,0.25); border-color:var(--gold); }
         .choco-qty-btn:disabled { opacity:0.2; cursor:default; }
         .choco-qty-btn:active { transform:scale(0.92); }
-        .choco-qty-num { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--white); min-width:32px; text-align:center; }
 
-        /* ─── COUNTER BAR: redesigned for mobile ─── */
+        /* ✦ NOUVEAU: Josefin Sans pour les chiffres de quantité ✦ */
+        .choco-qty-num { font-family:'Josefin Sans',sans-serif; font-size:1.5rem; font-weight:700; color:var(--white); min-width:32px; text-align:center; }
+
         .choco-counter-bar {
             position:sticky; bottom:0; z-index:50;
             background:rgba(10,4,0,0.97); backdrop-filter:blur(20px);
@@ -646,7 +689,9 @@
 
         .choco-counter-info { display:flex; align-items:center; gap:16px; }
         .choco-counter-pieces { display:flex; align-items:baseline; gap:6px; }
-        .choco-counter-num { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700; color:var(--gold2); line-height:1; }
+
+        /* ✦ NOUVEAU: Josefin Sans pour le compteur ✦ */
+        .choco-counter-num { font-family:'Josefin Sans',sans-serif; font-size:2.4rem; font-weight:700; color:var(--gold2); line-height:1; }
         .choco-counter-denom { font-size:1rem; color:rgba(245,234,214,0.5); }
         .choco-counter-progress-wrap { flex:1; }
         .choco-counter-progress { width:100%; max-width:220px; height:8px; background:rgba(255,255,255,0.1); border-radius:8px; overflow:hidden; margin-bottom:4px; }
@@ -682,15 +727,25 @@
         .choco-recap-item-img { width:60px; height:60px; border-radius:12px; object-fit:cover; border:2px solid rgba(201,153,58,0.25); flex-shrink:0; }
         .choco-recap-item-info { flex:1; }
         .choco-recap-item-name { font-size:1.05rem; font-weight:700; color:var(--parchment); }
-        .choco-recap-item-qty { font-size:0.9rem; color:var(--gold); opacity:0.8; margin-top:3px; direction:ltr; unicode-bidi:embed; }
-        .choco-recap-item-subtotal { font-family:'Playfair Display',serif; font-weight:800; color:var(--gold2); font-size:1.2rem; direction:ltr; unicode-bidi:embed; }
+        .choco-recap-item-qty { font-family:'Josefin Sans',sans-serif; font-size:0.9rem; color:var(--gold); opacity:0.8; margin-top:3px; direction:ltr; unicode-bidi:embed; }
+        .choco-recap-item-subtotal { font-family:'Josefin Sans',sans-serif; font-weight:700; color:var(--gold2); font-size:1.2rem; direction:ltr; unicode-bidi:embed; }
+
+        /* ✦ NOUVEAU: zone totale avec affichage réduction ✦ */
         .choco-recap-total-row {
             background:rgba(201,153,58,0.1); border:1.5px solid rgba(201,153,58,0.25);
             border-radius:14px; padding:1.25rem 1.5rem;
-            display:flex; justify-content:space-between; align-items:center; margin:1.5rem 0 2rem;
+            margin:1.5rem 0 2rem;
         }
+        .choco-recap-total-inner { display:flex; justify-content:space-between; align-items:center; }
         .choco-recap-total-label { font-size:0.9rem; text-transform:uppercase; letter-spacing:2px; color:rgba(245,234,214,0.85); font-weight:700; }
-        .choco-recap-total-val { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:700; color:var(--gold2); direction:ltr; unicode-bidi:embed; }
+        .choco-recap-total-val { font-family:'Josefin Sans',sans-serif; font-size:2.2rem; font-weight:700; color:var(--gold2); direction:ltr; unicode-bidi:embed; }
+        .choco-recap-original-price { font-family:'Josefin Sans',sans-serif; font-size:1.1rem; color:rgba(201,153,58,0.45); text-decoration:line-through; direction:ltr; unicode-bidi:embed; }
+        .choco-recap-discount-line {
+            display:flex; align-items:center; justify-content:space-between;
+            margin-top:10px; padding-top:10px; border-top:1px solid rgba(201,153,58,0.15);
+        }
+        .choco-recap-discount-label { font-size:0.85rem; color:#5dde87; font-weight:700; display:flex; align-items:center; gap:6px; }
+        .choco-recap-discount-amount { font-family:'Josefin Sans',sans-serif; font-size:1.1rem; font-weight:700; color:#5dde87; direction:ltr; unicode-bidi:embed; }
 
         .choco-error-msg { color:#e74c3c; font-weight:700; font-size:1rem; text-align:center; margin-bottom:1.25rem; display:none; background:rgba(231,76,60,0.1); border:1px solid rgba(231,76,60,0.3); border-radius:10px; padding:14px; }
 
@@ -713,7 +768,7 @@
         /* ══ MOBILE OVERRIDES ══ */
         @media (max-width:520px) {
             html { font-size:18px; }
-            .hero h2 { font-size:2.1rem; }
+            .hero h2 { font-size:1.7rem; }
             .modal-img { height:280px; }
             .choco-hero { padding:3rem 1rem 2rem; }
             .choco-section-wrap { padding:0 1rem 5rem; }
@@ -752,6 +807,7 @@
 </header>
 
 <div class="hero">
+    <!-- ✦ Titre hero avec police Cinzel Decorative ✦ -->
     <h2 id="hero_h">L'Art des Gâteaux<br>Traditionnels Algériens</h2>
     <div class="ornament">✦ ✦ ✦</div>
 </div>
@@ -805,11 +861,11 @@
                 <p style="opacity:0.65; font-style:italic; font-size:1.15rem;" id="sum_empty_txt">Aucun produit sélectionné...</p>
             </div>
             <div class="summary-total-box">
-                <div class="summary-item"><span id="s_sub">Sous-total</span><span id="sum_subtotal">0 DA</span></div>
+                <div class="summary-item"><span id="s_sub">Sous-total</span><span id="sum_subtotal" style="font-family:'Josefin Sans',sans-serif;direction:ltr;unicode-bidi:embed;">0 DA</span></div>
                 <div class="summary-item" id="sum_discount_row" style="display:none; color:var(--gold2); font-weight:700;">
-                    <span id="s_disc">Remise Volume (-10%)</span><span id="sum_discount">-0 DA</span>
+                    <span id="s_disc">Remise Volume (-10%)</span><span id="sum_discount" style="font-family:'Josefin Sans',sans-serif;direction:ltr;unicode-bidi:embed;">-0 DA</span>
                 </div>
-                <div class="summary-item"><span id="s_ship">Frais de Livraison</span><span id="sum_shipping">0 DA</span></div>
+                <div class="summary-item"><span id="s_ship">Frais de Livraison</span><span id="sum_shipping" style="font-family:'Josefin Sans',sans-serif;direction:ltr;unicode-bidi:embed;">0 DA</span></div>
                 <div class="total-row">
                     <span class="total-label" id="s_total">Total Général</span>
                     <span class="total-val" id="sum_total_final">0 DA</span>
@@ -1008,8 +1064,20 @@
             <p class="choco-recap-sub" id="c_recap_sub">Composition de votre box artisanale</p>
             <div id="c_recap_list"></div>
             <div class="choco-recap-total-row">
-                <span class="choco-recap-total-label" id="c_recap_total_lbl">Total Coffret</span>
-                <span class="choco-recap-total-val" id="c_recap_total_val">0 DA</span>
+                <div class="choco-recap-total-inner">
+                    <span class="choco-recap-total-label" id="c_recap_total_lbl">Total Coffret</span>
+                    <div style="text-align:right;">
+                        <div id="c_recap_original_price_wrap" style="display:none;">
+                            <span class="choco-recap-original-price" id="c_recap_original_val">0 DA</span>
+                        </div>
+                        <span class="choco-recap-total-val" id="c_recap_total_val">0 DA</span>
+                    </div>
+                </div>
+                <!-- ✦ NOUVEAU: ligne de réduction ✦ -->
+                <div class="choco-recap-discount-line" id="c_recap_discount_line" style="display:none;">
+                    <span class="choco-recap-discount-label" id="c_recap_discount_label">🎉 Réduction appliquée</span>
+                    <span class="choco-recap-discount-amount" id="c_recap_discount_amount">-0 DA</span>
+                </div>
             </div>
             <div style="text-align:center; display:flex; flex-direction:column; gap:12px;">
                 <button class="choco-validate-btn" onclick="validateCoffret()">
@@ -1107,6 +1175,7 @@ const CATALOG = [
   ]}
 ];
 
+// ✦ NOUVEAU: discount ajouté pour 20 pièces (5%) et 30 pièces (10%) ✦
 const CHOCO_DATA = {
   fr:{
     chocolates:[
@@ -1121,10 +1190,10 @@ const CHOCO_DATA = {
       {id:"speculoos",name:"Spéculoos Caramel",desc:"Biscuit spéculoos fondant dans un écrin de chocolat caramel.",img:"https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_remouve%20fork%20%20860115.png",price_per:31},
     ],
     box_sizes:[
-      {size:6,price_per:280,label:"pièces",badge:""},
-      {size:12,price_per:265,label:"pièces",badge:"Populaire"},
-      {size:20,price_per:250,label:"pièces",badge:""},
-      {size:30,price_per:235,label:"pièces",badge:"Meilleur Prix"},
+      {size:6,  price_per:280, label:"pièces",  badge:"",            discount:0},
+      {size:12, price_per:265, label:"pièces",  badge:"Populaire",   discount:0},
+      {size:20, price_per:250, label:"pièces",  badge:"-5%",         discount:0.05},
+      {size:30, price_per:235, label:"pièces",  badge:"Meilleur Prix -10%", discount:0.10},
     ]
   },
   ar:{
@@ -1140,10 +1209,10 @@ const CHOCO_DATA = {
       {id:"speculoos",name:"كراميل مقرمش",desc:"بسكويت مقرمش في شوكولاتة كراميل.",img:"https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_remouve%20fork%20%20860115.png",price_per:31},
     ],
     box_sizes:[
-      {size:6,price_per:280,label:"قطع",badge:""},
-      {size:12,price_per:265,label:"قطعة",badge:"الأكثر طلبًا"},
-      {size:20,price_per:250,label:"قطعة",badge:""},
-      {size:30,price_per:235,label:"قطعة",badge:"أفضل سعر"},
+      {size:6,  price_per:280, label:"قطع",    badge:"",                discount:0},
+      {size:12, price_per:265, label:"قطعة",   badge:"الأكثر طلبًا",   discount:0},
+      {size:20, price_per:250, label:"قطعة",   badge:"-5%",             discount:0.05},
+      {size:30, price_per:235, label:"قطعة",   badge:"أفضل سعر -10%",  discount:0.10},
     ]
   }
 };
@@ -1194,7 +1263,9 @@ const I18N = {
     c_recap_sub:"Composition de votre box artisanale",c_recap_total_lbl:"Total Coffret",
     c_validate_lbl:"Valider & Commander",c_back_to_1:"← Format",c_go_recap:"Récap →",c_back_to_2:"← Modifier",
     c_toast_over:"Capacité dépassée ! Réduisez la quantité.",c_toast_add:"🍫 Coffret ajouté au panier !",
-    c_to_step2:"Choisir mes chocolats →",c_da:"DA"
+    c_to_step2:"Choisir mes chocolats →",c_da:"DA",
+    c_discount_lbl_5:"🎉 Réduction -5% coffret 20 pièces",
+    c_discount_lbl_10:"🎉 Réduction -10% coffret 30 pièces",
   },
   ar:{
     tagline:"التميز في الحلويات الجزائرية التقليدية",
@@ -1241,7 +1312,9 @@ const I18N = {
     c_recap_sub:"تشكيلة علبتك الفاخرة",c_recap_total_lbl:"إجمالي العلبة",
     c_validate_lbl:"تأكيد الطلب",c_back_to_1:"الحجم ←",c_go_recap:"الملخص →",c_back_to_2:"← تعديل",
     c_toast_over:"تجاوزت السعة! قلّل الكمية.",c_toast_add:"🍫 تمت العلبة! جارٍ الإضافة…",
-    c_to_step2:"اختر شوكولاتتي →",c_da:"دج"
+    c_to_step2:"اختر شوكولاتتي →",c_da:"دج",
+    c_discount_lbl_5:"🎉 تخفيض -5% علبة 20 قطعة",
+    c_discount_lbl_10:"🎉 تخفيض -10% علبة 30 قطعة",
   }
 };
 
@@ -1314,12 +1387,11 @@ function renderProducts(){
         const hasPromo=p.variants.some(v=>v.prix_promo);
         const minPrice=Math.min(...p.variants.map(v=>v.prix_promo||v.prix));
         const maxPrice=Math.max(...p.variants.map(v=>v.prix));
-        // FIX #1: wrap price in ltr span so Arabic RTL doesn't flip it
         const priceHtml=hasPromo
-            ?`<span class="price-current" style="direction:ltr;unicode-bidi:embed;">${minPrice} DA</span><span class="price-badge">${T.promo}</span>`
+            ?`<span class="price-current">${minPrice} DA</span><span class="price-badge">${T.promo}</span>`
             :(p.variants.length>1
-                ?`<span class="price-current" style="direction:ltr;unicode-bidi:embed;">${minPrice} – ${maxPrice} DA</span>`
-                :`<span class="price-current" style="direction:ltr;unicode-bidi:embed;">${p.variants[0].prix} DA</span>`);
+                ?`<span class="price-current">${minPrice} – ${maxPrice} DA</span>`
+                :`<span class="price-current">${p.variants[0].prix} DA</span>`);
         return `<div class="product-card" onclick="openProduct('${p.id}')">
             <div class="product-img-wrap">
                 <img src="${p.variants[0].img}" class="product-img" alt="${p[currentLang]}"
@@ -1392,7 +1464,6 @@ function renderVariantDetails(index,animate){
 
 function renderModalPrice(v){
     const T=I18N[currentLang];
-    // FIX #1: force LTR direction on price elements
     document.getElementById('m_price_block').innerHTML=v.prix_promo
         ?`<span class="modal-price-current">${v.prix_promo} DA</span><span class="modal-price-original">${v.prix} DA</span><span class="modal-price-badge">${T.promo}</span>`
         :`<span class="modal-price-current">${v.prix} DA</span><small style="font-size:0.85rem;font-weight:500;color:#999;"> / pièce</small>`;
@@ -1456,7 +1527,7 @@ function updateCartUI(){
             cartText+=`${item.qty}x ${item.name} (${item.variantName}) - ${Math.round(final)} DA\n`;
             return `<div class="summary-item">
                 <span style="flex:1;">${item.qty}× ${item.name}<br><small style="opacity:0.6;font-size:0.9em;">${item.variantName}</small></span>
-                <span style="text-align:right;white-space:nowrap;direction:ltr;unicode-bidi:embed;">${Math.round(final)} DA${promoTag}
+                <span style="text-align:right;white-space:nowrap;direction:ltr;unicode-bidi:embed;font-family:'Josefin Sans',sans-serif;">${Math.round(final)} DA${promoTag}
                 <button type="button" onclick="removeItem(${item.id})" style="color:#e74c3c;font-weight:bold;margin-left:12px;cursor:pointer;font-size:1.3rem;background:none;border:none;padding:4px;">✕</button></span>
             </div>`;
         }).join('');
@@ -1517,15 +1588,34 @@ function applyChocoI18N(){
     Object.entries(map).forEach(([id,key])=>{const el=document.getElementById(id);if(el&&T[key]!==undefined)el.innerHTML=T[key];});
 }
 
+// ✦ NOUVEAU: renderChocoBoxSizes affiche les réductions -5% et -10% ✦
 function renderChocoBoxSizes(){
     const T=I18N[currentLang],data=CHOCO_DATA[currentLang];
     document.getElementById('c_box_sizes_container').innerHTML=data.box_sizes.map(b=>{
-        const total=b.size*b.price_per;
+        const baseTotal=b.size*b.price_per;
+        const discountedTotal=Math.round(baseTotal*(1-b.discount));
+        const savings=baseTotal-discountedTotal;
+
+        // Badge de la carte
+        let badgeHtml='';
+        if(b.badge) badgeHtml=`<span class="box-size-badge">${b.badge}</span>`;
+
+        // Affichage du prix
+        let priceHtml='';
+        if(b.discount>0){
+            priceHtml=`
+                <div class="box-size-price-original">${baseTotal.toLocaleString()} ${T.c_da}</div>
+                <div class="box-size-price">${discountedTotal.toLocaleString()} ${T.c_da}</div>
+                <div class="box-size-discount-badge">-${Math.round(b.discount*100)}% • -${savings} ${T.c_da}</div>`;
+        } else {
+            priceHtml=`<div class="box-size-price">${baseTotal.toLocaleString()} ${T.c_da}</div>`;
+        }
+
         return `<div class="box-size-card${selectedBoxSize===b.size?' selected':''}" onclick="chocoSelectBoxSize(${b.size})">
-            ${b.badge?`<span class="box-size-badge">${b.badge}</span>`:''}
+            ${badgeHtml}
             <div class="box-size-num">${b.size}</div>
             <div class="box-size-label">${b.label}</div>
-            <div class="box-size-price">${total.toLocaleString()} ${T.c_da}</div>
+            ${priceHtml}
         </div>`;
     }).join('');
 }
@@ -1572,7 +1662,6 @@ function chocoChangeQty(id,delta){
     const card=document.getElementById('ccard_'+id);
     if(card){
         card.classList.toggle('selected',newQty>0);
-        // update minus button disabled state
         const minusBtn=card.querySelector('.choco-qty-btn');
         if(minusBtn)minusBtn.disabled=(newQty===0);
     }
@@ -1581,6 +1670,14 @@ function chocoChangeQty(id,delta){
 }
 
 function getChocoTotal(){return Object.values(chocoQuantities).reduce((a,b)=>a+b,0);}
+
+// ✦ NOUVEAU: helper pour obtenir le taux de réduction de la box sélectionnée ✦
+function getSelectedBoxDiscount(){
+    if(!selectedBoxSize) return 0;
+    const data=CHOCO_DATA[currentLang];
+    const box=data.box_sizes.find(b=>b.size===selectedBoxSize);
+    return box ? box.discount : 0;
+}
 
 function updateChocoCounter(){
     const T=I18N[currentLang];
@@ -1633,13 +1730,15 @@ function chocoGoToStep(step){
     window.scrollTo({top:0,behavior:'smooth'});
 }
 
+// ✦ NOUVEAU: renderChocoRecap calcule et affiche la réduction ✦
 function renderChocoRecap(){
     const T=I18N[currentLang],data=CHOCO_DATA[currentLang];
     const items=data.chocolates.filter(c=>(chocoQuantities[c.id]||0)>0);
-    let grandTotal=0;
+    let baseTotal=0;
+
     document.getElementById('c_recap_title').textContent=`🍫 ${currentLang==='fr'?'Coffret':'علبة'} ${selectedBoxSize} ${T.c_pieces}`;
     document.getElementById('c_recap_list').innerHTML=items.map(c=>{
-        const qty=chocoQuantities[c.id],sub=qty*c.price_per;grandTotal+=sub;
+        const qty=chocoQuantities[c.id],sub=qty*c.price_per;baseTotal+=sub;
         return `<div class="choco-recap-item">
             <img class="choco-recap-item-img" src="${c.img}" alt="${c.name}"
                  onerror="this.src='https://via.placeholder.com/50x50/3b1a08/c9993a?text=M'">
@@ -1650,30 +1749,66 @@ function renderChocoRecap(){
             <div class="choco-recap-item-subtotal">${sub.toLocaleString()} ${T.c_da}</div>
         </div>`;
     }).join('');
-    document.getElementById('c_recap_total_val').textContent=`${grandTotal.toLocaleString()} ${T.c_da}`;
+
+    // ✦ Calcul réduction ✦
+    const discount=getSelectedBoxDiscount();
+    const savings=Math.round(baseTotal*discount);
+    const finalTotal=baseTotal-savings;
+
+    if(discount>0){
+        // Afficher le prix barré
+        document.getElementById('c_recap_original_price_wrap').style.display='block';
+        document.getElementById('c_recap_original_val').textContent=`${baseTotal.toLocaleString()} ${T.c_da}`;
+        // Afficher la ligne de réduction
+        document.getElementById('c_recap_discount_line').style.display='flex';
+        const discLabel=discount===0.05?T.c_discount_lbl_5:T.c_discount_lbl_10;
+        document.getElementById('c_recap_discount_label').textContent=discLabel;
+        document.getElementById('c_recap_discount_amount').textContent=`-${savings.toLocaleString()} ${T.c_da}`;
+    } else {
+        document.getElementById('c_recap_original_price_wrap').style.display='none';
+        document.getElementById('c_recap_discount_line').style.display='none';
+    }
+
+    document.getElementById('c_recap_total_val').textContent=`${finalTotal.toLocaleString()} ${T.c_da}`;
 }
 
+// ✦ NOUVEAU: validateCoffret applique la réduction au prix final ✦
 function validateCoffret(){
     const T=I18N[currentLang],data=CHOCO_DATA[currentLang];
     const items=data.chocolates.filter(c=>(chocoQuantities[c.id]||0)>0);
-    const priceTotal=items.reduce((sum,c)=>sum+(chocoQuantities[c.id]*c.price_per),0);
+    const baseTotal=items.reduce((sum,c)=>sum+(chocoQuantities[c.id]*c.price_per),0);
+    const discount=getSelectedBoxDiscount();
+    const savings=Math.round(baseTotal*discount);
+    const priceTotal=baseTotal-savings;
+
     const itemsStr=items.map(c=>`${chocoQuantities[c.id]}x ${c.name}`).join(', ');
     const boxLabel=currentLang==='fr'?`Coffret ${selectedBoxSize} pièces`:`علبة ${selectedBoxSize} قطعة`;
+    const discountInfo=discount>0?(currentLang==='fr'?` (Réduction -${Math.round(discount*100)}%)`:`(تخفيض -${Math.round(discount*100)}%)`):'';
+
     cart.push({
         id:Date.now(),variantKey:`choco_box_${selectedBoxSize}_${Date.now()}`,
-        productId:'choco_box',name:`🍫 ${T.choco_cart_name} (${boxLabel})`,
+        productId:'choco_box',name:`🍫 ${T.choco_cart_name} (${boxLabel}${discountInfo})`,
         variantName:itemsStr.length>80?itemsStr.substring(0,80)+'…':itemsStr,
-        variant:`box_${selectedBoxSize}`,qty:1,price:priceTotal,originalPrice:null,isChocoBox:true
+        variant:`box_${selectedBoxSize}`,qty:1,price:priceTotal,originalPrice:discount>0?baseTotal:null,isChocoBox:true
     });
+
     const banner=document.getElementById('choco_transfer_banner');
     banner.style.display='block';
     document.getElementById('banner_title_txt').textContent=T.choco_banner_title;
-    document.getElementById('banner_detail_txt').innerHTML=`${T.choco_banner_msg}<br><strong style="color:var(--gold2);">${boxLabel} — ${priceTotal.toLocaleString()} ${T.c_da}</strong><br><small style="opacity:0.65;">${itemsStr}</small>`;
+    const discountLine=discount>0?(currentLang==='fr'
+        ?`<span style="color:#5dde87;font-weight:800;">🎉 Réduction -${Math.round(discount*100)}% appliquée ! Économie : ${savings.toLocaleString()} DA</span><br>`
+        :`<span style="color:#5dde87;font-weight:800;">🎉 تخفيض -${Math.round(discount*100)}% مطبق! وفرت: ${savings.toLocaleString()} دج</span><br>`):'';
+    document.getElementById('banner_detail_txt').innerHTML=`${T.choco_banner_msg}<br>${discountLine}<strong style="color:var(--gold2);">${boxLabel} — ${priceTotal.toLocaleString()} ${T.c_da}</strong><br><small style="opacity:0.65;">${itemsStr}</small>`;
+
     const msgBox=document.getElementById('f_message');
+    const discountNote=discount>0?(currentLang==='fr'
+        ?`• Réduction -${Math.round(discount*100)}% : -${savings.toLocaleString()} DA\n`
+        :`• تخفيض -${Math.round(discount*100)}%: -${savings.toLocaleString()} دج\n`):'';
     const msgNote=currentLang==='fr'
-        ?`🍫 COFFRET CHOCOLATS :\n• ${boxLabel}\n• Contenu : ${itemsStr}\n• Total : ${priceTotal.toLocaleString()} DA\n\n`
-        :`🍫 علبة شوكولاتة:\n• ${boxLabel}\n• المحتوى: ${itemsStr}\n• الإجمالي: ${priceTotal.toLocaleString()} دج\n\n`;
+        ?`🍫 COFFRET CHOCOLATS :\n• ${boxLabel}\n• Contenu : ${itemsStr}\n${discountNote}• Total : ${priceTotal.toLocaleString()} DA\n\n`
+        :`🍫 علبة شوكولاتة:\n• ${boxLabel}\n• المحتوى: ${itemsStr}\n${discountNote}• الإجمالي: ${priceTotal.toLocaleString()} دج\n\n`;
     msgBox.value=msgNote+msgBox.value;
+
     confetti({particleCount:150,spread:120,origin:{y:0.6}});
     showChocoToast(T.c_toast_add,false);
     setTimeout(()=>{
