@@ -14,7 +14,6 @@
             --parchment:#f5ead6;--ink:#1e0e00;--muted:#7a5c3a;--white:#ffffff;
             --choco-deep:#1a0a00;--choco-mid:#3b1a08;--choco-light:#5a2a10;
             --green-ok:#27ae60;--r:cubic-bezier(0.23,1,0.32,1);
-            --sable-warm:#c8965a;--sable-deep:#7a4a1e;
         }
         [dir="rtl"]{font-family:'Amiri',Georgia,serif;}
         [dir="ltr"]{font-family:'Lora',Georgia,serif;}
@@ -35,36 +34,8 @@
         .lang-btn{background:rgba(201,153,58,0.15);border:2px solid var(--gold);color:var(--gold2);padding:13px 26px;border-radius:50px;font-size:1.1rem;font-weight:700;cursor:pointer;letter-spacing:0.5px;transition:background 0.3s;font-family:'Lora',serif;min-height:50px;}
         .lang-btn:hover{background:rgba(201,153,58,0.3);}
 
-        /* ══════════════════════════════════════
-           ██  HERO SLIDER  ██
-        ══════════════════════════════════════ */
-        .hero-slider{position:relative;width:100%;overflow:hidden;background:var(--dark);}
-        .slider-track{display:flex;transition:transform 0.75s cubic-bezier(0.77,0,0.175,1);}
-        .slide{min-width:100%;position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-        @media(max-width:640px){.slide{height:300px;}}
-        @media(min-width:1100px){.slide{height:500px;}}
-        .slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);transition:transform 8s ease;}
-        .slide.active .slide-bg{transform:scale(1);}
-        .slide-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:2rem;}
-        .slide-content{text-align:center;position:relative;z-index:2;max-width:700px;}
-        .slide-eyebrow{display:inline-block;background:rgba(201,153,58,0.18);border:1.5px solid rgba(201,153,58,0.6);border-radius:50px;padding:7px 20px;font-size:0.75rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:1rem;backdrop-filter:blur(6px);}
-        .slide-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,3rem);color:var(--white);margin-bottom:0.8rem;text-shadow:0 2px 20px rgba(0,0,0,0.7);line-height:1.2;}
-        .slide-title em{font-style:italic;color:var(--gold2);}
-        .slide-subtitle{font-size:clamp(0.9rem,2.5vw,1.1rem);color:rgba(245,234,214,0.88);margin-bottom:1.5rem;text-shadow:0 1px 8px rgba(0,0,0,0.6);}
-        .slide-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--gold);color:var(--dark);border-radius:50px;font-weight:900;font-size:0.95rem;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;transition:background 0.25s,transform 0.2s;border:none;min-height:52px;}
-        .slide-cta:hover{background:var(--gold2);transform:scale(1.04);}
-        /* Slider controls */
-        .slider-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10;}
-        .slider-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.35);border:2px solid rgba(201,153,58,0.4);cursor:pointer;transition:all 0.3s;}
-        .slider-dot.active{background:var(--gold);border-color:var(--gold);transform:scale(1.3);}
-        .slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(0,0,0,0.45);border:2px solid rgba(201,153,58,0.35);color:var(--gold2);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.3rem;transition:all 0.2s;backdrop-filter:blur(4px);}
-        .slider-arrow:hover{background:rgba(201,153,58,0.25);border-color:var(--gold);}
-        .slider-arrow.prev{left:16px;}
-        .slider-arrow.next{right:16px;}
-        @media(max-width:480px){.slider-arrow{width:38px;height:38px;font-size:1rem;}}
-
         /* ══ HEADER ══ */
-        header{padding:5rem 1.5rem 4rem;text-align:center;background:linear-gradient(175deg,var(--dark) 0%,var(--burg) 100%);border-bottom:1px solid rgba(201,153,58,0.25);position:relative;overflow:hidden;}
+        header{padding:6rem 1.5rem 5rem;text-align:center;background:linear-gradient(175deg,var(--dark) 0%,var(--burg) 100%);border-bottom:1px solid rgba(201,153,58,0.25);position:relative;overflow:hidden;}
         header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,153,58,0.08) 0%,transparent 65%);pointer-events:none;}
         .logo-img{width:175px;height:175px;border-radius:50%;border:3px solid var(--gold);padding:5px;object-fit:cover;background:white;margin:0 auto 2.5rem;box-shadow:0 0 60px rgba(201,153,58,0.35);display:block;}
         .divider-line{display:flex;align-items:center;justify-content:center;gap:16px;margin:1.5rem 0;}
@@ -78,44 +49,206 @@
         .choco-nav-link{background:linear-gradient(135deg,#3b1a08,#1a0a00)!important;border:2px solid var(--gold)!important;color:var(--gold2)!important;padding:14px 26px!important;border-radius:50px!important;border-bottom:none!important;}
 
         /* ══════════════════════════════════════
-           ██  SABLÉ SHOWCASE BANNER  ██
+           PROMO SLIDER
         ══════════════════════════════════════ */
-        .sable-showcase{position:relative;overflow:hidden;background:linear-gradient(135deg,#3d1a00 0%,#6b3010 30%,#3d1a00 60%,#1a0800 100%);padding:0;}
-        .sable-showcase::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9993a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
-        .sable-inner{display:grid;grid-template-columns:1fr;min-height:360px;max-width:1200px;margin:0 auto;}
-        @media(min-width:768px){.sable-inner{grid-template-columns:1fr 1fr;min-height:420px;}}
-        @media(min-width:1100px){.sable-inner{grid-template-columns:5fr 4fr;}}
+        .promo-slider-section{
+            position:relative;overflow:hidden;
+            background:var(--dark);
+            border-bottom:2px solid rgba(201,153,58,0.3);
+        }
+        .promo-track{
+            display:flex;
+            transition:transform 0.75s cubic-bezier(0.23,1,0.32,1);
+            will-change:transform;
+        }
+        .promo-slide{
+            min-width:100%;
+            height:420px;
+            position:relative;
+            display:flex;
+            align-items:center;
+            overflow:hidden;
+        }
+        @media(max-width:600px){.promo-slide{height:340px;}}
+        @media(min-width:1100px){.promo-slide{height:480px;}}
 
-        /* Visual side */
-        .sable-visual{position:relative;overflow:hidden;min-height:280px;}
-        @media(min-width:768px){.sable-visual{min-height:420px;}}
-        .sable-visual-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease;}
-        .sable-showcase:hover .sable-visual-img{transform:scale(1.04);}
-        .sable-visual-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 50%,#3d1a00 95%);}
-        @media(max-width:767px){.sable-visual-overlay{background:linear-gradient(to bottom,transparent 60%,#3d1a00 100%);}}
-        .sable-badge-float{position:absolute;top:20px;left:20px;background:var(--gold);color:#3d1a00;padding:8px 18px;border-radius:50px;font-weight:900;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;box-shadow:0 4px 16px rgba(0,0,0,0.4);}
-        [dir="rtl"] .sable-badge-float{left:auto;right:20px;}
+        /* Backgrounds per slide */
+        .ps-sable{background:linear-gradient(125deg,#2a1500 0%,#5c2e08 40%,#8b4513 70%,#2a1500 100%);}
+        .ps-new{background:linear-gradient(125deg,#0a0a1a 0%,#1a0a2e 40%,#2e1052 70%,#0a0a1a 100%);}
+        .ps-choco{background:linear-gradient(125deg,#0d0500 0%,#1a0800 40%,#3b1a08 70%,#0d0500 100%);}
+        .ps-livraison{background:linear-gradient(125deg,#021a08 0%,#05350e 40%,#0a5218 70%,#021a08 100%);}
 
-        /* Text side */
-        .sable-text{padding:3rem 2rem 3rem;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;}
-        @media(min-width:768px){.sable-text{padding:3.5rem 3rem 3.5rem 2rem;}}
-        @media(max-width:767px){.sable-text{padding:2rem 1.5rem 3rem;margin-top:-3rem;background:linear-gradient(to bottom,transparent,#3d1a00 20%);}}
-        .sable-overline{font-family:'Josefin Sans',sans-serif;font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;opacity:0.9;}
-        .sable-headline{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3.2rem);color:var(--white);line-height:1.15;margin-bottom:1.25rem;}
-        .sable-headline em{font-style:italic;color:var(--gold2);}
-        [dir="rtl"] .sable-headline{font-family:'Amiri',serif;font-size:clamp(2rem,5.5vw,3.5rem);}
-        .sable-desc{font-size:clamp(0.95rem,2.5vw,1.1rem);color:rgba(245,234,214,0.82);line-height:1.8;margin-bottom:1.75rem;}
-        .sable-features{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;}
-        .sable-feat-chip{background:rgba(201,153,58,0.12);border:1.5px solid rgba(201,153,58,0.3);color:var(--gold2);padding:7px 14px;border-radius:50px;font-size:0.8rem;font-weight:700;letter-spacing:0.5px;}
-        .sable-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
-        .sable-btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:var(--gold);color:#2d0202;border:none;border-radius:50px;font-weight:900;font-size:0.95rem;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;transition:all 0.25s;min-height:56px;}
-        .sable-btn-primary:hover{background:var(--gold2);transform:scale(1.04);}
-        .sable-btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:15px 24px;background:transparent;border:2px solid rgba(201,153,58,0.4);color:var(--gold2);border-radius:50px;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.25s;min-height:56px;}
-        .sable-btn-ghost:hover{border-color:var(--gold);background:rgba(201,153,58,0.1);}
-        .sable-count-row{display:flex;gap:2rem;margin-bottom:1.75rem;}
-        .sable-count{text-align:center;}
-        .sable-count-num{font-family:'Josefin Sans',sans-serif;font-size:1.9rem;font-weight:700;color:var(--gold2);line-height:1;}
-        .sable-count-lbl{font-size:0.72rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(245,234,214,0.55);margin-top:3px;}
+        /* Geometric deco elements */
+        .ps-deco{
+            position:absolute;inset:0;pointer-events:none;overflow:hidden;
+        }
+        .ps-deco::before{
+            content:'';position:absolute;
+            width:600px;height:600px;
+            border-radius:50%;
+            border:1.5px solid rgba(201,153,58,0.1);
+            top:-200px;right:-150px;
+        }
+        .ps-deco::after{
+            content:'';position:absolute;
+            width:400px;height:400px;
+            border-radius:50%;
+            border:1px solid rgba(201,153,58,0.07);
+            bottom:-180px;left:-100px;
+        }
+
+        /* Slide image */
+        .ps-img{
+            position:absolute;
+            right:0;top:0;bottom:0;
+            width:52%;
+            object-fit:cover;
+            opacity:0.55;
+            mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.6) 25%,black 60%);
+            -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.6) 25%,black 60%);
+            transition:transform 8s ease,opacity 0.5s;
+        }
+        [dir="rtl"] .ps-img{
+            left:0;right:auto;
+            mask-image:linear-gradient(to left,transparent 0%,rgba(0,0,0,0.6) 25%,black 60%);
+            -webkit-mask-image:linear-gradient(to left,transparent 0%,rgba(0,0,0,0.6) 25%,black 60%);
+        }
+        .promo-slide.ps-active .ps-img{transform:scale(1.06);}
+
+        @media(max-width:700px){
+            .ps-img{width:100%;opacity:0.25;mask-image:none;-webkit-mask-image:none;}
+        }
+
+        /* Content */
+        .ps-content{
+            position:relative;z-index:2;
+            padding:0 5% 0 6%;
+            max-width:620px;
+        }
+        [dir="rtl"] .ps-content{padding:0 6% 0 5%;}
+
+        .ps-eyebrow{
+            display:inline-flex;align-items:center;gap:8px;
+            background:rgba(201,153,58,0.15);
+            border:1.5px solid rgba(201,153,58,0.5);
+            border-radius:50px;
+            padding:8px 20px;
+            color:var(--gold2);
+            font-size:0.78rem;
+            font-weight:800;
+            letter-spacing:3px;
+            text-transform:uppercase;
+            margin-bottom:1.2rem;
+            opacity:0;transform:translateY(14px);
+            transition:opacity 0.5s 0.1s,transform 0.5s 0.1s;
+        }
+        .ps-active .ps-eyebrow{opacity:1;transform:translateY(0);}
+
+        .ps-title{
+            font-family:'Playfair Display',serif;
+            font-size:clamp(1.7rem,4.5vw,3rem);
+            color:var(--white);
+            line-height:1.2;
+            margin-bottom:0.9rem;
+            opacity:0;transform:translateY(18px);
+            transition:opacity 0.55s 0.22s,transform 0.55s 0.22s;
+        }
+        [dir="rtl"] .ps-title{font-family:'Amiri',serif;font-size:clamp(1.9rem,5vw,3.2rem);}
+        .ps-active .ps-title{opacity:1;transform:translateY(0);}
+        .ps-title em{color:var(--gold2);font-style:italic;}
+
+        .ps-desc{
+            font-size:clamp(0.95rem,2.2vw,1.15rem);
+            color:rgba(245,234,214,0.82);
+            line-height:1.75;
+            margin-bottom:1.6rem;
+            opacity:0;transform:translateY(14px);
+            transition:opacity 0.5s 0.34s,transform 0.5s 0.34s;
+        }
+        .ps-active .ps-desc{opacity:1;transform:translateY(0);}
+
+        .ps-cta{
+            display:inline-flex;align-items:center;gap:10px;
+            padding:16px 34px;
+            background:var(--gold);color:var(--dark);
+            border:none;border-radius:50px;
+            font-family:'Playfair Display',serif;
+            font-size:1.05rem;font-weight:900;
+            text-transform:uppercase;letter-spacing:1.5px;
+            cursor:pointer;
+            opacity:0;transform:translateY(14px);
+            transition:opacity 0.5s 0.44s,transform 0.5s 0.44s,background 0.25s,scale 0.2s;
+        }
+        .ps-active .ps-cta{opacity:1;transform:translateY(0);}
+        .ps-cta:hover{background:var(--gold2);scale:1.04;}
+
+        .ps-badge{
+            position:absolute;top:28px;left:5%;
+            background:linear-gradient(135deg,#c0392b,#962424);
+            color:white;font-size:0.75rem;font-weight:900;
+            padding:7px 18px;border-radius:50px;
+            text-transform:uppercase;letter-spacing:1.5px;
+            box-shadow:0 4px 16px rgba(192,57,43,0.5);
+            z-index:5;
+        }
+        [dir="rtl"] .ps-badge{left:auto;right:5%;}
+
+        /* Flavor dots */
+        .ps-flavors{
+            display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.4rem;
+            opacity:0;transform:translateY(10px);
+            transition:opacity 0.5s 0.38s,transform 0.5s 0.38s;
+        }
+        .ps-active .ps-flavors{opacity:1;transform:translateY(0);}
+        .ps-flavor-pill{
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(201,153,58,0.3);
+            color:rgba(245,234,214,0.85);
+            padding:5px 14px;border-radius:50px;
+            font-size:0.76rem;font-weight:600;
+            letter-spacing:0.5px;
+        }
+
+        /* ── Dots navigation ── */
+        .ps-dots{
+            position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
+            display:flex;gap:8px;z-index:10;
+        }
+        .ps-dot{
+            width:8px;height:8px;border-radius:50%;
+            background:rgba(201,153,58,0.3);
+            border:1.5px solid rgba(201,153,58,0.5);
+            cursor:pointer;
+            transition:all 0.3s;
+        }
+        .ps-dot.active{width:28px;border-radius:6px;background:var(--gold);}
+
+        /* ── Arrow buttons ── */
+        .ps-arrow{
+            position:absolute;top:50%;transform:translateY(-50%);
+            background:rgba(201,153,58,0.12);
+            border:1.5px solid rgba(201,153,58,0.4);
+            color:var(--gold2);
+            width:52px;height:52px;border-radius:50%;
+            display:flex;align-items:center;justify-content:center;
+            font-size:1.3rem;cursor:pointer;z-index:10;
+            transition:background 0.25s,border-color 0.25s;
+        }
+        .ps-arrow:hover{background:rgba(201,153,58,0.28);border-color:var(--gold);}
+        .ps-arrow-prev{left:16px;}
+        .ps-arrow-next{right:16px;}
+        @media(max-width:480px){.ps-arrow{width:42px;height:42px;font-size:1rem;}}
+
+        /* ── Progress bar ── */
+        .ps-progress{
+            position:absolute;bottom:0;left:0;right:0;
+            height:3px;background:rgba(201,153,58,0.15);z-index:10;
+        }
+        .ps-progress-fill{
+            height:100%;background:var(--gold);
+            width:0%;
+            transition:width 4.5s linear;
+        }
 
         /* ══ HERO ══ */
         .hero{padding:6rem 1.5rem 6rem;text-align:center;max-width:900px;margin:0 auto;}
@@ -130,72 +263,6 @@
         .sec-title h3{font-size:clamp(2.1rem,6vw,3.2rem);color:var(--burg);margin-bottom:0.8rem;}
         .sec-title p{font-style:italic;color:var(--muted);font-size:clamp(1.15rem,3vw,1.35rem);}
 
-        /* ══════════════════════════════════════
-           ██  SABLÉ SECTION  ██
-        ══════════════════════════════════════ */
-        #sables{background:linear-gradient(180deg,#fdf8f0 0%,#f5ead6 100%);}
-        .sable-section-title{text-align:center;margin-bottom:3rem;padding:0 1rem;}
-        .sable-section-title .overline{font-family:'Josefin Sans',sans-serif;font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--sable-deep);opacity:0.7;margin-bottom:0.5rem;display:block;}
-        .sable-section-title h3{font-size:clamp(2rem,5.5vw,3rem);color:var(--burg);margin-bottom:0.6rem;}
-        .sable-section-title p{font-style:italic;color:var(--muted);font-size:clamp(1.1rem,2.8vw,1.3rem);}
-
-        /* Sablé master card */
-        .sable-master-card{max-width:1100px;margin:0 auto;background:var(--white);border-radius:28px;overflow:hidden;box-shadow:0 12px 60px rgba(74,4,4,0.12);border:1px solid rgba(201,153,58,0.2);}
-        .smc-hero{position:relative;height:340px;overflow:hidden;cursor:pointer;}
-        @media(min-width:640px){.smc-hero{height:400px;}}
-        @media(min-width:900px){.smc-hero{height:460px;}}
-        .smc-hero-img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;}
-        .smc-hero:hover .smc-hero-img{transform:scale(1.04);}
-        .smc-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,14,0,0.8) 0%,rgba(30,14,0,0.2) 50%,transparent 100%);}
-        .smc-hero-content{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 2rem;}
-        .smc-hero-content h2{font-size:clamp(1.8rem,5vw,3rem);color:var(--white);text-shadow:0 2px 12px rgba(0,0,0,0.6);margin-bottom:0.4rem;}
-        .smc-hero-content p{color:rgba(245,234,214,0.85);font-size:clamp(0.95rem,2.5vw,1.15rem);font-style:italic;}
-        .smc-selected-badge{position:absolute;top:20px;right:20px;background:var(--gold);color:#1e0e00;padding:8px 18px;border-radius:50px;font-weight:900;font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;display:none;}
-        [dir="rtl"] .smc-selected-badge{right:auto;left:20px;}
-        .smc-selected-badge.show{display:block;}
-
-        /* Variant tabs */
-        .smc-variants{padding:1.5rem 1.5rem 0;}
-        .smc-tab-scroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
-        .smc-tab-scroll::-webkit-scrollbar{display:none;}
-        .smc-tab{flex-shrink:0;padding:13px 22px;border:2.5px solid #e5ddd0;border-radius:50px;background:var(--white);color:#7a5c3a;font-family:'Lora',serif;font-size:1rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.22s;min-height:52px;display:flex;flex-direction:column;align-items:center;gap:2px;}
-        .smc-tab span.tab-name{font-size:1rem;}
-        .smc-tab span.tab-price{font-family:'Josefin Sans',sans-serif;font-size:0.78rem;color:#aaa;transition:color 0.22s;}
-        .smc-tab.active{border-color:var(--gold);background:var(--burg);color:var(--gold2);}
-        .smc-tab.active span.tab-price{color:var(--gold2);}
-        .smc-tab.promo-tab::after{content:'★';color:#c0392b;margin-left:4px;font-size:0.7rem;}
-
-        /* Variant detail */
-        .smc-detail{padding:1.5rem;display:grid;grid-template-columns:1fr;gap:1.5rem;}
-        @media(min-width:700px){.smc-detail{grid-template-columns:1fr 1fr;}}
-        @media(min-width:1000px){.smc-detail{grid-template-columns:2fr 1fr 1fr;}}
-        .smc-detail-info{display:flex;flex-direction:column;gap:0.75rem;}
-        .smc-detail-name{font-size:1.35rem;font-weight:700;color:var(--burg);}
-        .smc-detail-desc{font-size:1rem;color:var(--muted);line-height:1.7;font-style:italic;}
-        .smc-price-block{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:0.25rem;}
-        .smc-price-now{font-family:'Josefin Sans',sans-serif;font-size:1.8rem;font-weight:700;color:var(--gold);direction:ltr;unicode-bidi:embed;}
-        .smc-price-old{font-family:'Josefin Sans',sans-serif;font-size:1.1rem;color:#aaa;text-decoration:line-through;direction:ltr;unicode-bidi:embed;}
-        .smc-price-badge{background:#c0392b;color:white;font-size:0.78rem;font-weight:900;padding:4px 10px;border-radius:6px;text-transform:uppercase;}
-        .smc-ings{display:flex;flex-wrap:wrap;gap:7px;margin-top:0.5rem;}
-        .smc-ing-chip{background:#fdf8f0;border:1px solid rgba(201,153,58,0.25);color:var(--ink);padding:6px 13px;border-radius:50px;font-size:0.9rem;}
-        .smc-nutri{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-        .smc-nutri-cell{background:#faf7f2;border:1px solid #eee;border-radius:12px;padding:12px 8px;text-align:center;}
-        .smc-nutri-val{font-family:'Josefin Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--burg);display:block;}
-        .smc-nutri-key{font-size:0.72rem;color:#aaa;text-transform:uppercase;letter-spacing:0.5px;}
-        .smc-order-side{display:flex;flex-direction:column;gap:1rem;}
-        .smc-qty-wrap{border:2px solid #e5ddd0;border-radius:16px;padding:1.25rem;}
-        .smc-qty-label{font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;margin-bottom:10px;display:block;}
-        .smc-qty-ctrl{display:flex;align-items:center;gap:10px;}
-        .smc-qty-btn{width:52px;height:52px;border:2.5px solid #e5ddd0;border-radius:12px;background:var(--white);color:#1e0e00;font-size:1.6rem;font-weight:700;cursor:pointer;transition:border-color 0.2s;display:flex;align-items:center;justify-content:center;}
-        .smc-qty-btn:hover{border-color:var(--gold);}
-        .smc-qty-input{width:72px;text-align:center;font-size:1.3rem;font-weight:700;border:2px solid #e5ddd0;border-radius:12px;padding:10px;font-family:'Josefin Sans',sans-serif;color:var(--burg);}
-        .smc-qty-input:focus{outline:none;border-color:var(--gold);}
-        .smc-line-total{background:#fdf8f0;border:2px solid rgba(201,153,58,0.3);border-radius:12px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;}
-        .smc-line-lbl{font-size:0.8rem;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
-        .smc-line-val{font-family:'Josefin Sans',sans-serif;font-size:1.6rem;font-weight:700;color:var(--burg);direction:ltr;unicode-bidi:embed;}
-        .smc-add-btn{width:100%;padding:18px;background:var(--burg);color:var(--gold2);border:none;border-radius:14px;font-family:'Playfair Display',serif;font-weight:900;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background 0.25s,transform 0.15s;min-height:64px;}
-        .smc-add-btn:hover{background:var(--dark);transform:scale(1.01);}
-
         /* ══ PRODUCT GRID ══ */
         .products-grid{display:grid;grid-template-columns:1fr;gap:2rem;max-width:1200px;margin:0 auto;}
         @media(min-width:520px){.products-grid{grid-template-columns:repeat(2,1fr);}}
@@ -203,8 +270,41 @@
         @media(min-width:1200px){.products-grid{grid-template-columns:repeat(4,1fr);}}
         .product-card{background:var(--white);border-radius:20px;overflow:hidden;border:1px solid rgba(201,153,58,0.18);box-shadow:0 6px 24px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.35s var(--r),box-shadow 0.35s var(--r),border-color 0.3s;display:flex;flex-direction:column;}
         .product-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(74,4,4,0.14);border-color:var(--gold);}
+
+        /* ── Sablé featured card ── */
+        .product-card.sable-featured{
+            grid-column:span 1;
+            border:2px solid rgba(201,153,58,0.4);
+            position:relative;
+        }
+        @media(min-width:900px){.product-card.sable-featured{grid-column:span 2;}}
+        .sable-new-ribbon{
+            position:absolute;top:0;left:0;
+            background:linear-gradient(135deg,var(--gold),#b8841a);
+            color:var(--dark);
+            font-size:0.72rem;font-weight:900;
+            padding:7px 24px 7px 14px;
+            border-radius:0 0 20px 0;
+            text-transform:uppercase;letter-spacing:1.5px;
+            z-index:2;box-shadow:0 4px 14px rgba(0,0,0,0.2);
+        }
+        [dir="rtl"] .sable-new-ribbon{left:auto;right:0;border-radius:0 0 0 20px;padding:7px 14px 7px 24px;}
+
+        /* ── Sablé flavors strip on card ── */
+        .sable-flavors-strip{
+            display:flex;gap:6px;flex-wrap:wrap;
+            padding:0 1.5rem 1.2rem;
+        }
+        .sable-flavor-chip{
+            background:#fdf8f0;border:1px solid rgba(201,153,58,0.25);
+            color:var(--burg);padding:4px 12px;border-radius:50px;
+            font-size:0.78rem;font-weight:600;
+        }
+
         .product-img-wrap{height:260px;overflow:hidden;position:relative;}
         @media(min-width:520px){.product-img-wrap{height:280px;}}
+        .product-card.sable-featured .product-img-wrap{height:300px;}
+        @media(min-width:900px){.product-card.sable-featured .product-img-wrap{height:340px;}}
         .product-img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;}
         .product-card:hover .product-img{transform:scale(1.07);}
         .product-info{padding:1.75rem 1.5rem;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between;gap:1.2rem;}
@@ -329,9 +429,9 @@
         .variant-details{transition:opacity 0.25s,transform 0.25s;}
         .variant-details.fading{opacity:0;transform:translateY(5px);}
 
-        /* ══════════════════════════════════
-           ██  CHOCO PAGE  ██
-        ══════════════════════════════════ */
+        /* ═══════════════════════════════════════
+           ██████  CHOCO PAGE ██████
+        ═══════════════════════════════════════ */
         #page_choco{background:var(--choco-deep);min-height:100vh;}
         .choco-site-header{position:sticky;top:0;z-index:100;background:rgba(26,10,0,0.97);backdrop-filter:blur(20px);border-bottom:2px solid rgba(201,153,58,0.25);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
         .choco-back-btn{display:flex;align-items:center;gap:8px;color:var(--gold2);font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;transition:opacity 0.25s;background:none;border:none;min-height:48px;}
@@ -365,8 +465,10 @@
         @media(min-width:520px){.box-grid{grid-template-columns:repeat(4,1fr);gap:1.5rem;}}
         .box-card{background:linear-gradient(160deg,rgba(59,26,8,0.7),rgba(20,8,0,0.9));border:2.5px solid rgba(201,153,58,0.2);border-radius:24px;padding:2.5rem 1rem 2rem;cursor:pointer;transition:all 0.3s var(--r);text-align:center;position:relative;overflow:hidden;min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
         @media(min-width:520px){.box-card{min-height:200px;padding:3rem 1rem 2.5rem;}}
+        .box-card::after{content:'';position:absolute;inset:0;background:rgba(201,153,58,0.06);opacity:0;transition:opacity 0.3s;}
         .box-card:hover{border-color:rgba(201,153,58,0.6);transform:translateY(-5px);box-shadow:0 12px 40px rgba(0,0,0,0.4);}
         .box-card.selected{border-color:var(--gold);box-shadow:0 0 35px rgba(201,153,58,0.35),0 12px 40px rgba(0,0,0,0.4);background:linear-gradient(160deg,rgba(90,42,16,0.6),rgba(40,16,0,0.95));}
+        .box-card.selected::after{opacity:1;}
         .box-check{position:absolute;top:12px;right:14px;color:var(--gold);font-size:1.1rem;font-weight:900;opacity:0;transition:opacity 0.2s;}
         .box-card.selected .box-check{opacity:1;}
         .box-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--choco-deep);font-size:0.7rem;font-weight:900;padding:4px 14px;border-radius:0 0 12px 12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;}
@@ -388,6 +490,7 @@
         .cc-card:active{transform:scale(0.97);}
         .cc-card.selected{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,153,58,0.3),0 10px 30px rgba(0,0,0,0.5);}
         .cc-card:hover{border-color:rgba(201,153,58,0.5);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.4);}
+        .cc-card.selected:hover{transform:translateY(-3px);}
         .cc-img-wrap{position:relative;overflow:hidden;height:180px;flex-shrink:0;}
         @media(min-width:380px){.cc-img-wrap{height:200px;}}
         @media(min-width:560px){.cc-img-wrap{height:220px;}}
@@ -400,8 +503,10 @@
         .cc-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--parchment);font-weight:700;line-height:1.3;margin-bottom:0.45rem;}
         @media(min-width:380px){.cc-name{font-size:1.15rem;}}
         @media(min-width:560px){.cc-name{font-size:1.25rem;}}
+        [dir="rtl"] .cc-name{font-family:'Amiri',serif;font-size:1.2rem;}
         .cc-desc{font-size:0.82rem;color:rgba(245,234,214,0.78);font-style:italic;line-height:1.55;display:block;margin-bottom:0.4rem;}
         @media(min-width:380px){.cc-desc{font-size:0.86rem;}}
+        @media(min-width:560px){.cc-desc{font-size:0.9rem;}}
         .cc-price{font-family:'Josefin Sans',sans-serif;font-size:0.9rem;color:var(--gold);font-weight:700;margin-top:3px;direction:ltr;unicode-bidi:embed;}
         .cc-qty{display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,0.55);border-top:1.5px solid rgba(201,153,58,0.2);padding:12px 12px;margin-top:10px;gap:8px;}
         .cc-btn{width:56px;height:56px;min-width:56px;border-radius:14px;border:2px solid rgba(201,153,58,0.3);background:rgba(201,153,58,0.12);color:var(--gold2);font-size:1.9rem;font-weight:700;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.18s;-webkit-tap-highlight-color:transparent;}
@@ -461,19 +566,16 @@
 </head>
 <body>
 
-<!-- ═══════════════ PAGE MAIN ═══════════════ -->
+<!-- ═══════════════════════ PAGE MAIN ═══════════════════════ -->
 <div class="page active" id="page_main">
 <div class="lang-switch">
     <button class="lang-btn" id="lang_btn" onclick="toggleLang()">العربية</button>
 </div>
-
-<!-- ══ HEADER ══ -->
 <header>
     <img src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/logosite.png" alt="MyZina" class="logo-img" onerror="this.src='https://via.placeholder.com/160x160/4a0404/c9993a?text=MyZina'">
     <div class="divider-line"><span></span><span class="divider-star">✦</span><span></span></div>
     <span class="site-tagline" id="tagline_txt">L'Excellence de la Pâtisserie Algérienne</span>
     <nav>
-        <a onclick="scrollToAnchor('sables')" data-key="nav_sable">🍪 Sablés</a>
         <a onclick="scrollToAnchor('produits')" data-key="nav1">Nos Créations</a>
         <a onclick="scrollToAnchor('qualite')" data-key="nav2">Nos Gammes</a>
         <a onclick="scrollToAnchor('commande')" data-key="nav3">Commander</a>
@@ -481,198 +583,121 @@
     </nav>
 </header>
 
-<!-- ══════════════════════════════════
-     ██  HERO SLIDER  ██
-══════════════════════════════════ -->
-<div class="hero-slider" id="hero_slider">
-    <div class="slider-track" id="slider_track">
+<!-- ══════════════════════════════════════════
+     PROMO SLIDER — after header
+══════════════════════════════════════════ -->
+<div class="promo-slider-section" id="promo_slider_section">
+    <div class="promo-track" id="promo_track">
 
-        <!-- Slide 1 : Sablés -->
-        <div class="slide active" id="slide_0">
-            <div class="slide-bg" style="background-image:url('https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makroutprestigo.png');filter:brightness(0.45);background-color:#3d1a00;"></div>
-            <div class="slide-overlay" style="background:linear-gradient(135deg,rgba(20,8,0,0.75) 0%,rgba(122,74,30,0.5) 100%);">
-                <div class="slide-content">
-                    <span class="slide-eyebrow" id="slide0_eyebrow">✨ Nouveauté</span>
-                    <h2 class="slide-title" id="slide0_title">Découvrez nos <em>Sablés Artisanaux</em></h2>
-                    <p class="slide-subtitle" id="slide0_sub">8 saveurs uniques — beurre fin, amandes, pistache & plus</p>
-                    <button class="slide-cta" onclick="scrollToAnchor('sables')" id="slide0_cta">Voir la Collection →</button>
+        <!-- SLIDE 1: Sablés Collection -->
+        <div class="promo-slide ps-sable ps-active" id="ps0">
+            <div class="ps-deco"></div>
+            <span class="ps-badge" id="ps_badge_0">Nouveauté 2026</span>
+            <img class="ps-img"
+                 src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png"
+                 alt="Sablés"
+                 onerror="this.src='https://via.placeholder.com/800x480/5c2e08/e8c86d?text=Sablés'">
+            <div class="ps-content">
+                <div class="ps-eyebrow" id="ps_eyebrow_0">✦ Nouvelle Collection</div>
+                <h2 class="ps-title" id="ps_title_0">Découvrez nos<br><em>Sablés Artisanaux</em></h2>
+                <div class="ps-flavors" id="ps_flavors_0">
+                    <span class="ps-flavor-pill">Vanille</span>
+                    <span class="ps-flavor-pill">Chocolat</span>
+                    <span class="ps-flavor-pill">Citron</span>
+                    <span class="ps-flavor-pill">Pistache</span>
+                    <span class="ps-flavor-pill">Coco</span>
+                    <span class="ps-flavor-pill">+3 saveurs</span>
                 </div>
+                <p class="ps-desc" id="ps_desc_0">8 saveurs artisanales, fondantes et généreuses. Fabriquées chaque matin avec du beurre frais et des ingrédients sélectionnés.</p>
+                <button class="ps-cta" onclick="openProduct('sable_collection')" id="ps_cta_0">Découvrir les Sablés →</button>
             </div>
         </div>
 
-        <!-- Slide 2 : Coffrets cadeaux -->
-        <div class="slide" id="slide_1">
-            <div class="slide-bg" style="background-image:url('https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/baklava.png');filter:brightness(0.4);background-color:#2d0202;"></div>
-            <div class="slide-overlay" style="background:linear-gradient(135deg,rgba(74,4,4,0.75) 0%,rgba(30,14,0,0.5) 100%);">
-                <div class="slide-content">
-                    <span class="slide-eyebrow" id="slide1_eyebrow">🎁 Offre Spéciale</span>
-                    <h2 class="slide-title" id="slide1_title">Coffrets <em>Cadeaux Prestige</em></h2>
-                    <p class="slide-subtitle" id="slide1_sub">Pour vos mariages, Aïd et occasions mémorables</p>
-                    <button class="slide-cta" onclick="scrollToAnchor('produits')" id="slide1_cta">Explorer →</button>
+        <!-- SLIDE 2: Coffrets Chocolats -->
+        <div class="promo-slide ps-choco" id="ps1">
+            <div class="ps-deco"></div>
+            <img class="ps-img"
+                 src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generer%20photo%20affiche%20bniwen%20sans%20ecritures%20230901.png"
+                 alt="Chocolats"
+                 onerror="this.src='https://via.placeholder.com/800x480/1a0a00/c9993a?text=Chocolats'">
+            <div class="ps-content">
+                <div class="ps-eyebrow" id="ps_eyebrow_1">🍫 Exclusivité</div>
+                <h2 class="ps-title" id="ps_title_1">Coffrets Chocolats<br><em>sur mesure</em></h2>
+                <div class="ps-flavors" id="ps_flavors_1">
+                    <span class="ps-flavor-pill">6 pièces</span>
+                    <span class="ps-flavor-pill">12 pièces</span>
+                    <span class="ps-flavor-pill">20 pièces</span>
+                    <span class="ps-flavor-pill">30 pièces</span>
                 </div>
+                <p class="ps-desc" id="ps_desc_1">Composez votre propre box parmi 9 variétés de chocolats artisanaux. Idéal en cadeau. Réductions jusqu'à -10% sur les grands coffrets.</p>
+                <button class="ps-cta" onclick="openChocoPage()" id="ps_cta_1">Composer mon Coffret →</button>
             </div>
         </div>
 
-        <!-- Slide 3 : Livraison -->
-        <div class="slide" id="slide_2">
-            <div class="slide-bg" style="background-image:url('https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png');filter:brightness(0.4);background-color:#1a0a00;"></div>
-            <div class="slide-overlay" style="background:linear-gradient(135deg,rgba(26,10,0,0.75) 0%,rgba(90,42,16,0.5) 100%);">
-                <div class="slide-content">
-                    <span class="slide-eyebrow" id="slide2_eyebrow">🚚 Livraison Alger</span>
-                    <h2 class="slide-title" id="slide2_title">Livraison <em>Rapide & Soignée</em></h2>
-                    <p class="slide-subtitle" id="slide2_sub">Vos commandes livrées fraîches dans tout Alger</p>
-                    <button class="slide-cta" onclick="scrollToAnchor('commande')" id="slide2_cta">Commander →</button>
+        <!-- SLIDE 3: Livraison Alger -->
+        <div class="promo-slide ps-livraison" id="ps2">
+            <div class="ps-deco"></div>
+            <img class="ps-img"
+                 src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/baklava.png"
+                 alt="Livraison"
+                 onerror="this.src='https://via.placeholder.com/800x480/05350e/c9993a?text=Livraison'">
+            <div class="ps-content">
+                <div class="ps-eyebrow" id="ps_eyebrow_2">📦 Service Premium</div>
+                <h2 class="ps-title" id="ps_title_2">Livraison rapide<br><em>à Alger</em></h2>
+                <div class="ps-flavors" id="ps_flavors_2">
+                    <span class="ps-flavor-pill">🏙 Alger 450 DA</span>
+                    <span class="ps-flavor-pill">🗺 Autres 800 DA</span>
                 </div>
+                <p class="ps-desc" id="ps_desc_2">Vos douceurs emballées avec soin et livrées dans les meilleures conditions. Commandez avant 14h pour une livraison le jour même.</p>
+                <button class="ps-cta" onclick="scrollToAnchor('commande')" id="ps_cta_2">Commander Maintenant →</button>
             </div>
         </div>
 
-        <!-- Slide 4 : Chocolats -->
-        <div class="slide" id="slide_3">
-            <div class="slide-bg" style="background-image:url('https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generer%20photo%20affiche%20bniwen%20sans%20ecritures%20230901.png');filter:brightness(0.45);background-color:#1a0a00;"></div>
-            <div class="slide-overlay" style="background:linear-gradient(135deg,rgba(26,10,0,0.8) 0%,rgba(59,26,8,0.5) 100%);">
-                <div class="slide-content">
-                    <span class="slide-eyebrow" id="slide3_eyebrow">🍫 Nouvelle Collection</span>
-                    <h2 class="slide-title" id="slide3_title"><em>Coffrets Chocolats</em> à Composer</h2>
-                    <p class="slide-subtitle" id="slide3_sub">Choisissez vos 6, 12, 20 ou 30 chocolats artisanaux</p>
-                    <button class="slide-cta" onclick="openChocoPage()" id="slide3_cta">Composer →</button>
+        <!-- SLIDE 4: Savoir-faire -->
+        <div class="promo-slide ps-new" id="ps3">
+            <div class="ps-deco"></div>
+            <img class="ps-img"
+                 src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makroutprestigo.png"
+                 alt="Artisanat"
+                 onerror="this.src='https://via.placeholder.com/800x480/1a0a2e/c9993a?text=Prestige'">
+            <div class="ps-content">
+                <div class="ps-eyebrow" id="ps_eyebrow_3">👑 Prestige</div>
+                <h2 class="ps-title" id="ps_title_3">L'Art de la<br><em>Pâtisserie Algérienne</em></h2>
+                <div class="ps-flavors" id="ps_flavors_3">
+                    <span class="ps-flavor-pill">Classique</span>
+                    <span class="ps-flavor-pill">Prestige</span>
+                    <span class="ps-flavor-pill">Gamme Chocolats</span>
                 </div>
+                <p class="ps-desc" id="ps_desc_3">Recettes familiales transmises de génération en génération. Ingrédients de première qualité, façonnés avec amour chaque jour.</p>
+                <button class="ps-cta" onclick="scrollToAnchor('qualite')" id="ps_cta_3">Nos Gammes →</button>
             </div>
         </div>
 
+    </div><!-- /promo-track -->
+
+    <!-- Arrows -->
+    <button class="ps-arrow ps-arrow-prev" onclick="sliderPrev()" aria-label="Précédent">‹</button>
+    <button class="ps-arrow ps-arrow-next" onclick="sliderNext()" aria-label="Suivant">›</button>
+
+    <!-- Dots -->
+    <div class="ps-dots" id="ps_dots">
+        <div class="ps-dot active" onclick="sliderGoTo(0)"></div>
+        <div class="ps-dot" onclick="sliderGoTo(1)"></div>
+        <div class="ps-dot" onclick="sliderGoTo(2)"></div>
+        <div class="ps-dot" onclick="sliderGoTo(3)"></div>
     </div>
 
-    <button class="slider-arrow prev" onclick="sliderPrev()" aria-label="Précédent">‹</button>
-    <button class="slider-arrow next" onclick="sliderNext()" aria-label="Suivant">›</button>
-    <div class="slider-dots" id="slider_dots"></div>
+    <!-- Progress -->
+    <div class="ps-progress"><div class="ps-progress-fill" id="ps_progress"></div></div>
 </div>
+<!-- /PROMO SLIDER -->
 
-<!-- ══════════════════════════════════
-     ██  SABLÉ SHOWCASE BANNER  ██
-══════════════════════════════════ -->
-<div class="sable-showcase" id="sable_showcase_banner">
-    <div class="sable-inner">
-        <div class="sable-visual">
-            <img class="sable-visual-img"
-                 src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png"
-                 alt="Sablés MyZina"
-                 onerror="this.src='https://via.placeholder.com/800x500/7a4a1e/c9993a?text=Sablés+MyZina'">
-            <div class="sable-visual-overlay"></div>
-            <div class="sable-badge-float" id="sable_badge_float">Nouvelle Collection</div>
-        </div>
-        <div class="sable-text">
-            <div class="sable-overline" id="sable_overline">Pâtisserie Algérienne · Fait Maison</div>
-            <h2 class="sable-headline" id="sable_headline">Découvrez nos<br><em>Sablés Artisanaux</em></h2>
-            <p class="sable-desc" id="sable_desc">Façonnés à la main selon des recettes familiales jalousement gardées, nos sablés allient texture fondante, beurre de qualité supérieure et garnitures généreuses. Une douceur authentique pour chaque moment.</p>
-            <div class="sable-count-row">
-                <div class="sable-count">
-                    <div class="sable-count-num">8</div>
-                    <div class="sable-count-lbl" id="sable_cnt_lbl1">Saveurs</div>
-                </div>
-                <div class="sable-count">
-                    <div class="sable-count-num">100%</div>
-                    <div class="sable-count-lbl" id="sable_cnt_lbl2">Artisanal</div>
-                </div>
-                <div class="sable-count">
-                    <div class="sable-count-num">Min 10</div>
-                    <div class="sable-count-lbl" id="sable_cnt_lbl3">Pièces</div>
-                </div>
-            </div>
-            <div class="sable-features">
-                <span class="sable-feat-chip" id="sf1">🧈 Beurre Fin</span>
-                <span class="sable-feat-chip" id="sf2">🌸 Fleur d'Oranger</span>
-                <span class="sable-feat-chip" id="sf3">🌿 Sans Conservateurs</span>
-                <span class="sable-feat-chip" id="sf4">🎁 Idéal Cadeau</span>
-            </div>
-            <div class="sable-cta-row">
-                <button class="sable-btn-primary" onclick="scrollToAnchor('sables')" id="sable_cta_main">
-                    🍪 <span id="sable_cta_main_txt">Voir tous les Sablés</span>
-                </button>
-                <button class="sable-btn-ghost" onclick="scrollToAnchor('commande')" id="sable_cta_ghost">
-                    <span id="sable_cta_ghost_txt">Commander →</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ══ HERO ══ -->
 <div class="hero">
     <h2 id="hero_h">L'Art des Gâteaux<br>Traditionnels Algériens</h2>
     <div class="ornament">✦ ✦ ✦</div>
     <p id="hero_p"></p>
 </div>
 
-<!-- ══════════════════════════════════
-     ██  SABLÉ PRODUCT SECTION  ██
-══════════════════════════════════ -->
-<section id="sables" style="background:linear-gradient(180deg,#fdf8f0 0%,#f5ead6 100%);padding:6rem 1.5rem;">
-    <div class="sable-section-title">
-        <span class="overline" id="sable_sec_overline">Nouvelle Collection · Fait Maison</span>
-        <h3 id="sable_sec_h">Nos Sablés Artisanaux</h3>
-        <p id="sable_sec_p">8 saveurs — choisissez votre préférée et composez votre commande</p>
-    </div>
-
-    <!-- Master card with variant tabs -->
-    <div class="sable-master-card" id="sable_master_card">
-        <!-- Hero image (changes with variant) -->
-        <div class="smc-hero" onclick="document.getElementById('smc_add_btn').scrollIntoView({behavior:'smooth'})">
-            <img class="smc-hero-img" id="smc_hero_img" src="" alt="Sablé"
-                 onerror="this.src='https://via.placeholder.com/900x460/7a4a1e/c9993a?text=Sablé'">
-            <div class="smc-hero-overlay"></div>
-            <div class="smc-hero-content">
-                <h2 id="smc_hero_name">Sablé Nature Beurre</h2>
-                <p id="smc_hero_desc">Fondant, délicat, irrésistible</p>
-            </div>
-            <span class="smc-selected-badge" id="smc_sel_badge">✓ Sélectionné</span>
-        </div>
-
-        <!-- Variant tabs -->
-        <div class="smc-variants">
-            <div class="smc-tab-scroll" id="smc_tabs"></div>
-        </div>
-
-        <!-- Detail panel -->
-        <div class="smc-detail" id="smc_detail">
-            <!-- Info -->
-            <div style="grid-column:1/-1;" id="smc_detail_col1">
-                <div class="smc-detail-info">
-                    <div class="smc-detail-name" id="smc_dname"></div>
-                    <div class="smc-detail-desc" id="smc_ddesc"></div>
-                    <div class="smc-price-block" id="smc_price_block"></div>
-                    <div style="margin-top:0.5rem;">
-                        <span class="ing-label" id="smc_ing_lbl">Ingrédients</span>
-                        <div class="smc-ings" id="smc_ings"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Nutrition -->
-            <div id="smc_nutri_col">
-                <span class="ing-label" id="smc_nut_lbl">Valeurs Nutritionnelles</span>
-                <div class="smc-nutri" id="smc_nutri"></div>
-            </div>
-            <!-- Order -->
-            <div class="smc-order-side">
-                <div class="smc-qty-wrap">
-                    <span class="smc-qty-label" id="smc_qty_lbl">Quantité (min. 10 pièces)</span>
-                    <div class="smc-qty-ctrl">
-                        <button class="smc-qty-btn" id="smc_minus">−</button>
-                        <input type="number" class="smc-qty-input" id="smc_qty" value="10" min="10">
-                        <button class="smc-qty-btn" id="smc_plus">+</button>
-                    </div>
-                </div>
-                <div class="smc-line-total">
-                    <span class="smc-line-lbl" id="smc_line_lbl">Total ligne</span>
-                    <span class="smc-line-val" id="smc_line_val">0 DA</span>
-                </div>
-                <button class="smc-add-btn" id="smc_add_btn" type="button">
-                    🛒 <span id="smc_add_txt">Ajouter au Panier</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══ PRODUCTS GRID ══ -->
 <section id="produits">
     <div class="sec-title">
         <h3 id="spec_h">Nos Spécialités</h3>
@@ -681,7 +706,6 @@
     <div class="products-grid" id="product_grid"></div>
 </section>
 
-<!-- ══ QUALITY ══ -->
 <section id="qualite" class="quality-section">
     <div class="sec-title">
         <h3 style="color:var(--gold2)" id="qual_h">Nos Standards d'Excellence</h3>
@@ -689,12 +713,11 @@
     </div>
     <div class="quality-grid">
         <div class="quality-card"><span class="q-icon">🌸</span><div class="q-name" id="q1_n">Classique</div><div class="q-desc" id="q1_d">L'authenticité pure. Recettes familiales transmises et saveurs équilibrées.</div></div>
-        <div class="quality-card" style="border:2px solid var(--gold);"><span class="q-icon">👑</span><div class="q-name" id="q2_n">Prestige</div><div class="q-desc" id="q2_d">Le luxe ultime. Amandes extra-fines, miel de montagne pur et finitions à la feuille d'or.</div></div>
-        <div class="quality-card" style="border:2px solid rgba(201,153,58,0.5);background:rgba(59,26,8,0.35);"><span class="q-icon">🍫</span><div class="q-name" id="q3_n">Coffrets Chocolats</div><div class="q-desc" id="q3_d">Nouvelle collection. Composez votre propre box de 6, 12 ou 24 chocolats artisanaux.</div></div>
+        <div class="quality-card" style="border:2px solid var(--gold);"><span class="q-icon">👑</span><div class="q-name" id="q2_n">Prestige</div><div class="q-desc" id="q2_d">Le luxe ultime. Amandes extra-fines, miel de montagne pur et finitions dorées.</div></div>
+        <div class="quality-card" style="border:2px solid rgba(201,153,58,0.5);background:rgba(59,26,8,0.35);"><span class="q-icon">🍫</span><div class="q-name" id="q3_n">Coffrets Chocolats</div><div class="q-desc" id="q3_d">Nouvelle collection. Composez votre box de 6, 12, 20 ou 30 chocolats artisanaux.</div></div>
     </div>
 </section>
 
-<!-- ══ ORDER ══ -->
 <div class="order-section" id="commande">
     <div class="sec-title" style="color:var(--ink);">
         <h3 style="color:var(--burg)" id="order_h">Finaliser la Commande</h3>
@@ -809,7 +832,7 @@
     </div>
 </div>
 
-<!-- ═══════════════ PAGE CHOCO ═══════════════ -->
+<!-- ═══════════════════════ PAGE CHOCO ═══════════════════════ -->
 <div class="page" id="page_choco">
 <header class="choco-site-header">
     <button class="choco-back-btn" onclick="closeChocoPage()">← <span id="choco_back_lbl">Retour</span></button>
@@ -887,100 +910,74 @@
 <div class="choco-toast" id="choco_toast"></div>
 
 <script>
-/* ════════════════════════════════
+/* ═══════════════════════════════
    DATA
-════════════════════════════════ */
+═══════════════════════════════ */
 const WILAYAS = ["16 Alger"];
 
-/* ── SABLÉ CATALOG (8 variantes) ── */
-const SABLE_VARIANTS = {
-  fr: [
-    {key:'nature_beurre', name:'Nature Beurre',
-     desc:'Le sablé originel — pur beurre fermier, fondant en bouche, légèrement vanillé. Un classique indémodable.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
-     prix:55, ingredients:['Beurre fermier','Farine T55','Sucre glace','Vanille naturelle','Œufs'],
-     nutrition:{calories:'215 kcal',sucre:'14 g',gras:'11 g'}},
-    {key:'amande_entiere', name:'Amande Entière',
-     desc:'Sablé généreusement garni d\'une amande entière dorée, légèrement grillée sur fond de pâte sablée à la fleur d\'oranger.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/dziriya.png',
-     prix:70, ingredients:['Beurre','Farine','Amande entière','Fleur d\'oranger','Sucre glace'],
-     nutrition:{calories:'240 kcal',sucre:'15 g',gras:'14 g'}},
-    {key:'pistache_rose', name:'Pistache & Rose',
-     desc:'Une alliance raffinée : pâte sablée parfumée à la rose naturelle, surmontée d\'un éclat de pistache fraîche.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mchekla.png',
-     prix:85, ingredients:['Beurre','Farine','Pistache fraîche','Eau de rose','Sucre glace'],
-     nutrition:{calories:'250 kcal',sucre:'16 g',gras:'13 g'}},
-    {key:'chocolat_noir', name:'Chocolat Noir',
-     desc:'Enrobé d\'un fin glaçage de chocolat noir 70%, avec une touche de sel de mer. Pour les amoureux du chocolat intense.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/madelinchocolati.png',
-     prix:80, prix_promo:70, ingredients:['Beurre','Farine','Chocolat 70%','Sel de mer','Sucre'],
-     nutrition:{calories:'265 kcal',sucre:'18 g',gras:'15 g'}},
-    {key:'noix_de_coco', name:'Noix de Coco',
-     desc:'Sablé tropical généreusement poudré de noix de coco fine torréfiée, sur une base croustillante légèrement sucrée.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',
-     prix:60, ingredients:['Beurre','Farine','Noix de coco râpée','Vanille','Sucre glace'],
-     nutrition:{calories:'235 kcal',sucre:'16 g',gras:'13 g'}},
-    {key:'cannelle_sésame', name:'Cannelle & Sésame',
-     desc:'Inspiré des saveurs du Maghreb profond — cannelle chaude, miel d\'acacia et graines de sésame doré.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png',
-     prix:65, ingredients:['Beurre','Semoule fine','Cannelle','Miel d\'acacia','Sésame doré'],
-     nutrition:{calories:'245 kcal',sucre:'17 g',gras:'12 g'}},
-    {key:'caramel_noix', name:'Caramel & Noix',
-     desc:'Un sablé croustillant nappé d\'un caramel maison moelleux et parsemé d\'éclats de noix croquantes.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png',
-     prix:75, prix_promo:65, ingredients:['Beurre','Farine','Caramel','Noix concassées','Fleur de sel'],
-     nutrition:{calories:'260 kcal',sucre:'20 g',gras:'14 g'}},
-    {key:'citron_lavande', name:'Citron & Lavande',
-     desc:'Zeste de citron frais et effluve de lavande naturelle pour un sablé délicat aux notes provençales et orientales.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20petit%20four%20algerienne%20presentable%20pour%20presente%C3%A9%20petit%20four%20da%20818302.png',
-     prix:68, ingredients:['Beurre','Farine','Zeste de citron','Lavande séchée','Sucre glace'],
-     nutrition:{calories:'228 kcal',sucre:'15 g',gras:'12 g'}},
-  ],
-  ar: [
-    {key:'nature_beurre', name:'ساب بالزبدة الطبيعية',
-     desc:'سابلي الأصلي — زبدة فلاحية خالصة، يذوب في الفم مع لمسة فانيليا. كلاسيكي لا يتقادم.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
-     prix:55, ingredients:['زبدة فلاحية','دقيق','سكر ناعم','فانيليا طبيعية','بيض'],
-     nutrition:{calories:'215 kcal',sucre:'14 g',gras:'11 g'}},
-    {key:'amande_entiere', name:'لوز كامل',
-     desc:'سابلي سخي بحبة لوز كاملة مذهبة ومحمصة خفيفاً على أساس من عجينة ماء الزهر.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/dziriya.png',
-     prix:70, ingredients:['زبدة','دقيق','لوز كامل','ماء زهر','سكر ناعم'],
-     nutrition:{calories:'240 kcal',sucre:'15 g',gras:'14 g'}},
-    {key:'pistache_rose', name:'فستق وورد',
-     desc:'مزيج راقٍ: عجينة سابلي بعطر الورد الطبيعي، مزيّنة بفستق طازج.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mchekla.png',
-     prix:85, ingredients:['زبدة','دقيق','فستق طازج','ماء ورد','سكر ناعم'],
-     nutrition:{calories:'250 kcal',sucre:'16 g',gras:'13 g'}},
-    {key:'chocolat_noir', name:'شوكولاتة داكنة',
-     desc:'مغطى بطبقة شوكولاتة 70% مع رشة ملح بحر. للعاشقين للشوكولاتة المركزة.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/madelinchocolati.png',
-     prix:80, prix_promo:70, ingredients:['زبدة','دقيق','شوكولاتة 70%','ملح بحر','سكر'],
-     nutrition:{calories:'265 kcal',sucre:'18 g',gras:'15 g'}},
-    {key:'noix_de_coco', name:'جوز الهند',
-     desc:'سابلي استوائي مُغطى بوفرة من جوز الهند المبشور والمحمص الناعم.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',
-     prix:60, ingredients:['زبدة','دقيق','جوز هند مبشور','فانيليا','سكر ناعم'],
-     nutrition:{calories:'235 kcal',sucre:'16 g',gras:'13 g'}},
-    {key:'cannelle_sésame', name:'قرفة وسمسم',
-     desc:'مستوحى من نكهات المغرب العميق — قرفة دافئة وعسل أكاسيا وبذور سمسم ذهبية.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png',
-     prix:65, ingredients:['زبدة','سميدة ناعمة','قرفة','عسل أكاسيا','سمسم ذهبي'],
-     nutrition:{calories:'245 kcal',sucre:'17 g',gras:'12 g'}},
-    {key:'caramel_noix', name:'كراميل وجوز',
-     desc:'سابلي مقرمش مغطى بكراميل بيتي ومزين بفتات جوز مقرمش.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png',
-     prix:75, prix_promo:65, ingredients:['زبدة','دقيق','كراميل','جوز مطحون','ملح البحر'],
-     nutrition:{calories:'260 kcal',sucre:'20 g',gras:'14 g'}},
-    {key:'citron_lavande', name:'ليمون وخزامى',
-     desc:'قشر ليمون طازج ونفحة خزامى طبيعية لسابلي رقيق بنكهات شرقية مبتكرة.',
-     img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20petit%20four%20algerienne%20presentable%20pour%20presente%C3%A9%20petit%20four%20da%20818302.png',
-     prix:68, ingredients:['زبدة','دقيق','قشر ليمون','خزامى مجففة','سكر ناعم'],
-     nutrition:{calories:'228 kcal',sucre:'15 g',gras:'12 g'}},
-  ]
+/* ── Images sablés ── */
+const SABLE_IMGS = {
+    vanille:  'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',
+    chocolat: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
+    citron:   'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generate%20photo%201%20piece%20mini%20cake%20algerienne%20presentable%20pour%20presente%C3%A9%20mini%20cake%20dans%20818302.png',
+    coco:     'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mchekla.png',
+    amande:   'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/LOUZIYA.png',
+    pistache: 'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_rendre%20la%20photo%20variante%20baklawa%20prestige%20avec%20pistache%20%20766352.png',
+    caramel:  'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',
+    framboise:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_transformer%20au%20arayeshe%20couleur%20framboise%20rose%20claire%20avec%20une%20indication%20framboise%20737184.png',
 };
 
 const CATALOG = [
+  /* ★ SABLÉS — carte featured avec 8 variantes ★ */
+  {id:'sable_collection',
+   fr:'Sablés Artisanaux',ar:'سابلِي فاخر',
+   img:SABLE_IMGS.vanille,
+   featured:true,
+   flavors_fr:['Vanille','Chocolat','Citron','Coco','Amande','Pistache','Caramel','Framboise'],
+   flavors_ar:['فانيليا','شوكولاتة','ليمون','جوز الهند','لوز','فستق','كراميل','توت'],
+   variants:[
+     {key:'vanille',
+      fr:'Vanille Pure',ar:'فانيليا',
+      img:SABLE_IMGS.vanille,prix:55,
+      ingredients:{fr:['Beurre frais','Farine T55','Sucre glace','Vanille Bourbon','Sel fin'],ar:['زبدة طازجة','دقيق','سكر ناعم','فانيليا بوربون','ملح']},
+      nutrition:{calories:'210 kcal',sucre:'12 g',gras:'11 g'}},
+     {key:'chocolat',
+      fr:'Chocolat Intense',ar:'شوكولاتة',
+      img:SABLE_IMGS.chocolat,prix:60,
+      ingredients:{fr:['Beurre frais','Cacao noir 70%','Farine','Sucre','Œuf'],ar:['زبدة','كاكاو 70٪','دقيق','سكر','بيض']},
+      nutrition:{calories:'230 kcal',sucre:'14 g',gras:'13 g'}},
+     {key:'citron',
+      fr:'Citron Frais',ar:'ليمون',
+      img:SABLE_IMGS.citron,prix:55,
+      ingredients:{fr:['Beurre','Farine','Sucre glace','Zeste de citron','Jus de citron'],ar:['زبدة','دقيق','سكر ناعم','قشر ليمون','عصير ليمون']},
+      nutrition:{calories:'200 kcal',sucre:'11 g',gras:'10 g'}},
+     {key:'coco',
+      fr:'Noix de Coco',ar:'جوز الهند',
+      img:SABLE_IMGS.coco,prix:55,
+      ingredients:{fr:['Beurre','Farine','Noix de coco râpée','Sucre','Vanille'],ar:['زبدة','دقيق','جوز هند مبشور','سكر','فانيليا']},
+      nutrition:{calories:'215 kcal',sucre:'12 g',gras:'12 g'}},
+     {key:'amande',
+      fr:'Amande & Fleur d\'oranger',ar:'لوز وماء زهر',
+      img:SABLE_IMGS.amande,prix:65,
+      ingredients:{fr:['Beurre','Poudre d\'amandes','Farine','Fleur d\'oranger','Sucre glace'],ar:['زبدة','مسحوق لوز','دقيق','ماء زهر','سكر ناعم']},
+      nutrition:{calories:'235 kcal',sucre:'13 g',gras:'14 g'}},
+     {key:'pistache',
+      fr:'Pistache & Rose',ar:'فستق وورد',
+      img:SABLE_IMGS.pistache,prix:70,prix_promo:62,
+      ingredients:{fr:['Beurre','Pâte de pistache','Farine','Rose naturelle','Sucre glace'],ar:['زبدة','عجينة فستق','دقيق','ورد طبيعي','سكر ناعم']},
+      nutrition:{calories:'240 kcal',sucre:'13 g',gras:'15 g'}},
+     {key:'caramel',
+      fr:'Caramel Beurre Salé',ar:'كراميل مملح',
+      img:SABLE_IMGS.caramel,prix:65,prix_promo:58,
+      ingredients:{fr:['Beurre salé','Caramel maison','Farine','Sucre roux','Fleur de sel'],ar:['زبدة مملحة','كراميل بيتي','دقيق','سكر بني','ملح بحري']},
+      nutrition:{calories:'245 kcal',sucre:'16 g',gras:'14 g'}},
+     {key:'framboise',
+      fr:'Framboise & Rose',ar:'توت وورد',
+      img:SABLE_IMGS.framboise,prix:60,
+      ingredients:{fr:['Beurre','Confiture framboise','Farine','Pétales de rose','Sucre glace'],ar:['زبدة','مربى توت','دقيق','بتلات ورد','سكر ناعم']},
+      nutrition:{calories:'218 kcal',sucre:'14 g',gras:'11 g'}},
+   ]},
+  /* ── Existing products ── */
   {id:'Makrout pâte amande',fr:'Makrout pâte amande',ar:'مقروط بعجينة اللوز',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makroutprestigo.png',variants:[
     {key:'Makrout pâte amande',fr:'Makrout pâte amande',ar:'مقروط بعجينة اللوز',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makroutprestigo.png',prix:140,ingredients:{fr:['Semoule fine','Miel d\'acacia','Beurre','Cannelle','Graines de sésame'],ar:['سميدة ناعمة','عسل أكاسيا','زبدة','قرفة','سمسم']},nutrition:{calories:'320 kcal',sucre:'30 g',gras:'14 g'}},
   ]},
@@ -1000,13 +997,27 @@ const CATALOG = [
     {key:'classique',fr:'Classique',ar:'كلاسيكي',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png',prix:100,ingredients:{fr:['Semoule fine','Beurre','Sucre glace','Fleur d\'oranger'],ar:['سميدة ناعمة','زبدة','سكر مطحون','ماء زهر']},nutrition:{calories:'290 kcal',sucre:'18 g',gras:'14 g'}},
     {key:'prestige',fr:'Prestige Amande',ar:'بريستيج باللوز',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/tcherek.png',prix:150,ingredients:{fr:['Semoule premium','Beurre clarifié','Sucre glace','Amandes','Fleur d\'oranger'],ar:['سميدة فاخرة','سمن','سكر مطحون','لوز','ماء زهر']},nutrition:{calories:'320 kcal',sucre:'20 g',gras:'16 g'}}
   ]},
+  {id:'tcherek2',fr:'Tcherek el mseker',ar:'تشاراك المسكّر',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png',variants:[
+    {key:'classique',fr:'Classique',ar:'كلاسيكي',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png',prix:100,ingredients:{fr:['Semoule fine','Beurre','Sucre glace','Fleur d\'oranger'],ar:['سميدة ناعمة','زبدة','سكر مطحون','ماء زهر']},nutrition:{calories:'290 kcal',sucre:'18 g',gras:'14 g'}},
+    {key:'prestige',fr:'Prestige Amande',ar:'بريستيج باللوز',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_generer%20photo%20tcherek%20mseker%20%20meme%20style%20photo%20reference%201%20avec%20meilleur%20arrier%20plan%20%20111441.png',prix:150,ingredients:{fr:['Semoule premium','Beurre clarifié','Sucre glace','Amandes','Fleur d\'oranger'],ar:['سميدة فاخرة','سمن','سكر مطحون','لوز','ماء زهر']},nutrition:{calories:'320 kcal',sucre:'20 g',gras:'16 g'}}
+  ]},
   {id:'makrout',fr:'Makrout',ar:'مقروط',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',variants:[
     {key:'dattes',fr:'Aux Dattes',ar:'بالتمر',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',prix:130,ingredients:{fr:['Semoule','Pâte de dattes','Huile','Miel'],ar:['سميدة','عجينة تمر','زيت','عسل']},nutrition:{calories:'310 kcal',sucre:'28 g',gras:'12 g'}},
-    {key:'amandes',fr:'Aux Amandes',ar:'باللوز',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',prix:160,prix_promo:140,ingredients:{fr:['Semoule','Pâte d\'amandes','Huile d\'argan','Miel de montagne','Cannelle'],ar:['سميدة','عجينة لوز','زيت أركان','عسل جبلي','قرفة']},nutrition:{calories:'330 kcal',sucre:'22 g',gras:'18 g'}}
+    {key:'amandes',fr:'Aux Amandes',ar:'باللوز',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',prix:160,prix_promo:140,ingredients:{fr:['Semoule','Pâte d\'amandes','Huile d\'argan','Miel de montagne','Cannelle'],ar:['سميدة','عجينة لوز','زيت أركان','عسل جبلي','قرفة']},nutrition:{calories:'330 kcal',sucre:'22 g',gras:'18 g'}},
+    {key:'prestige',fr:'Prestige Miel',ar:'بريستيج بالعسل',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/makrout.png',prix:190,ingredients:{fr:['Semoule fine','Dattes Deglet Nour','Miel Sidr','Beurre clarifié'],ar:['سميدة ناعمة','تمر دقلة نور','عسل سدر','سمن']},nutrition:{calories:'350 kcal',sucre:'30 g',gras:'14 g'}}
+  ]},
+  {id:'mchawek',fr:'Mchawek',ar:'مشوك باللوز',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png',variants:[
+    {key:'classique',fr:'Classique',ar:'كلاسيكي',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png',prix:110,ingredients:{fr:['Pâte d\'amandes','Blancs d\'œufs','Sucre','Colorant naturel'],ar:['عجينة لوز','بياض بيض','سكر','صبغة طبيعية']},nutrition:{calories:'280 kcal',sucre:'26 g',gras:'10 g'}},
+    {key:'prestige',fr:'Prestige',ar:'بريستيج',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/mshewek.png',prix:160,ingredients:{fr:['Amandes de Californie','Blancs d\'œufs frais','Sucre glace','Extrait de pistache'],ar:['لوز كاليفورني','بياض بيض طازج','سكر ناعم','خلاصة فستق']},nutrition:{calories:'295 kcal',sucre:'28 g',gras:'12 g'}}
   ]},
   {id:'ghribia',fr:'Ghribia',ar:'غريبية',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',variants:[
     {key:'nature',fr:'Nature',ar:'طبيعية',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',prix:60,ingredients:{fr:['Farine','Beurre','Sucre glace','Vanille'],ar:['دقيق','زبدة','سكر ناعم','فانيليا']},nutrition:{calories:'220 kcal',sucre:'16 g',gras:'12 g'}},
     {key:'amandes',fr:'Amandes',ar:'باللوز',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Ghribiya.png',prix:100,prix_promo:85,ingredients:{fr:['Farine d\'amandes','Beurre','Sucre','Fleur d\'oranger'],ar:['دقيق لوز','زبدة','سكر','ماء زهر']},nutrition:{calories:'245 kcal',sucre:'18 g',gras:'14 g'}}
+  ]},
+  {id:'sable_bracelet',fr:'Sablé Bracelet',ar:'سابلِي على شكل سوار',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',variants:[
+    {key:'chocolat',fr:'Chocolat',ar:'بالشوكولاتة',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',prix:90,ingredients:{fr:['Beurre','Farine','Chocolat noir','Sucre','Œuf'],ar:['زبدة','دقيق','شوكولاتة داكنة','سكر','بيض']},nutrition:{calories:'260 kcal',sucre:'20 g',gras:'14 g'}},
+    {key:'nature',fr:'Nature Vanille',ar:'فانيليا طبيعية',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',prix:80,ingredients:{fr:['Beurre','Farine','Vanille naturelle','Sucre glace'],ar:['زبدة','دقيق','فانيليا طبيعية','سكر ناعم']},nutrition:{calories:'240 kcal',sucre:'17 g',gras:'13 g'}},
+    {key:'prestige',fr:'Prestige Caramel',ar:'كراميل فاخر',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generate%20photo%201%20piece%20bracelet%20chocolat%20algerienne%20presentable%20pour%20presente%C3%A9%20bracel%20818302.png',prix:140,ingredients:{fr:['Beurre clarifié','Farine T45','Caramel fleur de sel','Chocolat belge'],ar:['سمن مذاب','دقيق فاخر','كراميل بملح البحر','شوكولاتة بلجيكية']},nutrition:{calories:'300 kcal',sucre:'24 g',gras:'17 g'}}
   ]},
   {id:'araysh',fr:'Arayech',ar:'عرايش',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png',variants:[
     {key:'Arayech',fr:'Arayech',ar:'عرايش',img:'https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Arayesh.png',prix:140,ingredients:{fr:['Semoule fine','Miel d\'acacia','Beurre','Cannelle','Graines de sésame'],ar:['سميدة ناعمة','عسل أكاسيا','زبدة','قرفة','سمسم']},nutrition:{calories:'320 kcal',sucre:'30 g',gras:'14 g'}},
@@ -1028,10 +1039,10 @@ const CHOCO_DATA = {
       {id:"speculoos",name:"Spéculoos Caramel",desc:"Biscuit spéculoos fondant dans un écrin de chocolat caramel.",img:"https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_remouve%20fork%20%20860115.png",price_per:31},
     ],
     box_sizes:[
-      {size:6, label:"pièces", badge:"", discount:0},
-      {size:12, label:"pièces", badge:"Populaire", discount:0},
-      {size:20, label:"pièces", badge:"-5%", discount:0.05},
-      {size:30, label:"pièces", badge:"Meilleur Prix", discount:0.10},
+      {size:6,label:"pièces",badge:"",discount:0},
+      {size:12,label:"pièces",badge:"Populaire",discount:0},
+      {size:20,label:"pièces",badge:"-5%",discount:0.05},
+      {size:30,label:"pièces",badge:"Meilleur Prix",discount:0.10},
     ]
   },
   ar:{
@@ -1058,7 +1069,7 @@ const CHOCO_DATA = {
 const I18N = {
   fr:{
     tagline:"L'Excellence de la Pâtisserie Algérienne",
-    nav1:"Nos Créations",nav2:"Nos Gammes",nav3:"Commander",nav_choco:"🍫 Coffrets Chocolats",nav_sable:"🍪 Sablés",
+    nav1:"Nos Créations",nav2:"Nos Gammes",nav3:"Commander",nav_choco:"🍫 Coffrets Chocolats",
     hero_h:"L'Art des Gâteaux<br>Traditionnels Algériens",
     spec_h:"Nos Spécialités",spec_p:"Sélectionnez vos douceurs pour composer votre coffret",
     qual_h:"Nos Standards d'Excellence",qual_p:"Deux expériences adaptées à vos exigences",
@@ -1103,32 +1114,34 @@ const I18N = {
     cnt_back:"← Format",cnt_next:"Récap →",
     c_toast_over:"Capacité dépassée ! Réduisez la quantité.",c_toast_add:"🍫 Coffret ajouté au panier !",
     c_to_step2:"Choisir mes chocolats →",c_da:"DA",
-    c_discount_lbl_5:"🎉 Réduction -5% coffret 20 pièces",c_discount_lbl_10:"🎉 Réduction -10% coffret 30 pièces",
-    sable_sec_h:"Nos Sablés Artisanaux",sable_sec_p:"8 saveurs — choisissez votre préférée et composez votre commande",
-    sable_sec_overline:"Nouvelle Collection · Fait Maison",
-    smc_qty_lbl:"Quantité (min. 10 pièces)",smc_add:"Ajouter au Panier",
-    smc_ing_lbl:"Ingrédients",smc_nut_lbl:"Valeurs Nutritionnelles",smc_line_lbl:"Total ligne",
-    sable_overline:"Pâtisserie Algérienne · Fait Maison",
-    sable_headline:"Découvrez nos<br><em>Sablés Artisanaux</em>",
-    sable_desc:"Façonnés à la main selon des recettes familiales jalousement gardées, nos sablés allient texture fondante, beurre de qualité supérieure et garnitures généreuses.",
-    sable_cnt_lbl1:"Saveurs",sable_cnt_lbl2:"Artisanal",sable_cnt_lbl3:"Pièces",
-    sf1:"🧈 Beurre Fin",sf2:"🌸 Fleur d'Oranger",sf3:"🌿 Sans Conservateurs",sf4:"🎁 Idéal Cadeau",
-    sable_cta_main:"Voir tous les Sablés",sable_cta_ghost:"Commander →",
-    sable_badge_float:"Nouvelle Collection",
-    slide0_eyebrow:"✨ Nouveauté",slide0_title:"Découvrez nos <em>Sablés Artisanaux</em>",slide0_sub:"8 saveurs uniques — beurre fin, amandes, pistache & plus",slide0_cta:"Voir la Collection →",
-    slide1_eyebrow:"🎁 Offre Spéciale",slide1_title:"Coffrets <em>Cadeaux Prestige</em>",slide1_sub:"Pour vos mariages, Aïd et occasions mémorables",slide1_cta:"Explorer →",
-    slide2_eyebrow:"🚚 Livraison Alger",slide2_title:"Livraison <em>Rapide & Soignée</em>",slide2_sub:"Vos commandes livrées fraîches dans tout Alger",slide2_cta:"Commander →",
-    slide3_eyebrow:"🍫 Nouvelle Collection",slide3_title:"<em>Coffrets Chocolats</em> à Composer",slide3_sub:"Choisissez vos 6, 12, 20 ou 30 chocolats artisanaux",slide3_cta:"Composer →",
+    c_discount_lbl_5:"🎉 Réduction -5% coffret 20 pièces",
+    c_discount_lbl_10:"🎉 Réduction -10% coffret 30 pièces",
+    /* slider i18n */
+    ps_new_badge:"Nouveauté 2026",
+    ps0_eyebrow:"✦ Nouvelle Collection",ps0_title:"Découvrez nos<br><em>Sablés Artisanaux</em>",
+    ps0_desc:"8 saveurs artisanales, fondantes et généreuses. Fabriquées chaque matin avec du beurre frais.",
+    ps0_cta:"Découvrir les Sablés →",ps0_badge:"Nouveauté 2026",
+    ps1_eyebrow:"🍫 Exclusivité",ps1_title:"Coffrets Chocolats<br><em>sur mesure</em>",
+    ps1_desc:"Composez votre box parmi 9 variétés. Réductions jusqu'à -10% sur les grands coffrets.",
+    ps1_cta:"Composer mon Coffret →",
+    ps2_eyebrow:"📦 Service Premium",ps2_title:"Livraison rapide<br><em>à Alger</em>",
+    ps2_desc:"Commandez avant 14h pour une livraison le jour même à Alger.",
+    ps2_cta:"Commander Maintenant →",
+    ps3_eyebrow:"👑 Prestige",ps3_title:"L'Art de la<br><em>Pâtisserie Algérienne</em>",
+    ps3_desc:"Recettes familiales transmises de génération en génération avec des ingrédients d'exception.",
+    ps3_cta:"Nos Gammes →",
+    sable_featured_label:"Nouvelle Collection",
+    sable_promo_label:"8 Saveurs",
   },
   ar:{
     tagline:"التميز في الحلويات الجزائرية التقليدية",
-    nav1:"إبداعاتنا",nav2:"مجموعاتنا",nav3:"اطلب الآن",nav_choco:"🍫 علب الشوكولاتة",nav_sable:"🍪 ساب",
+    nav1:"إبداعاتنا",nav2:"مجموعاتنا",nav3:"اطلب الآن",nav_choco:"🍫 علب الشوكولاتة",
     hero_h:"فن الحلويات<br>الجزائرية التقليدية",
     spec_h:"تخصصاتنا",spec_p:"اختر حلوياتك المفضلة لتكوين علبتك الخاصة",
-    qual_h:"معايير التميز لدينا",qual_p:"تجربتان راقيتان",
-    q1_n:"كلاسيكي",q1_d:"الأصالة الخالصة. وصفات عائلية متوارثة.",
-    q2_n:"بريستيج",q2_d:"الفخامة المطلقة. لوز رفيع جداً وذهب خالص.",
-    q3_n:"علب الشوكولاتة",q3_d:"صمم علبتك من 6 أو 12 أو 20 أو 30 شوكولاتة.",
+    qual_h:"معايير التميز لدينا",qual_p:"تجربتان راقيتان تتناسبان مع جميع متطلباتكم",
+    q1_n:"كلاسيكي",q1_d:"الأصالة الخالصة. وصفات عائلية متوارثة ونكهات متوازنة.",
+    q2_n:"بريستيج",q2_d:"الفخامة المطلقة. لوز رفيع جداً، عسل جبلي وذهب خالص.",
+    q3_n:"علب الشوكولاتة",q3_d:"صمم علبتك من 6 أو 12 أو 20 أو 30 شوكولاتة يدوية.",
     order_h:"إتمام عملية الطلب",order_p:"خدمة راقية للحظات لا تُنسى",
     lbl_name:"الاسم واللقب *",lbl_phone:"رقم الهاتف *",lbl_wilaya:"الولاية *",lbl_addr:"العنوان الكامل *",
     lbl_occ:"نوع المناسبة",select_default:"-- اختر الولاية --",
@@ -1143,8 +1156,8 @@ const I18N = {
     m_qty:"الكمية (أدنى 10)",m_add:"أضف إلى السلة",
     m_ing_label:"المكونات",m_nut_label:"القيم الغذائية (لقطعة واحدة)",
     m_line_lbl:"إجمالي السطر",added:"تمت الإضافة بنجاح!",
-    order_ok:"شكراً! تم استلام طلبيتكم بنجاح ✓",
-    loading:"جاري المعالجة...",error:"حدث خطأ. يرجى المحاولة مرة أخرى.",
+    order_ok:"شكراً لكم! تم استلام طلبيتكم بنجاح ✓",
+    loading:"جاري المعالجة...",error:"حدث خطأ ما. يرجى المحاولة مرة أخرى.",
     promo:"عرض",nutri_cal:"سعرات",nutri_sug:"سكر",nutri_fat:"دهون",
     choco_banner_title:"🍫 تم استلام طلب علبة الشوكولاتة",
     choco_banner_msg:"تمت إضافة علبة الشوكولاتة إلى سلتك. أكمل النموذج.",
@@ -1155,8 +1168,8 @@ const I18N = {
     c_hero_h:"صمّم علبة<br><em>الشوكولاتة الخاصة بك</em>",
     c_hero_sub:"اختر الحجم المناسب ثم انتقِ الشوكولاتة التي تحبها.",
     c_s1:"الحجم",c_s2:"الشوكولاتة",c_s3:"الملخص",
-    cp1_h:"اختر حجم العلبة",cp1_sub:"كلما كانت العلبة أكبر، زادت النكهات!",
-    cp2_h:"اختر شوكولاتتك",cp2_sub:"اضغط على + للإضافة.",
+    cp1_h:"اختر حجم العلبة",cp1_sub:"كلما كانت العلبة أكبر، زادت تشكيلة النكهات!",
+    cp2_h:"اختر شوكولاتتك",cp2_sub:"اضغط على + للإضافة — العداد يرشدك.",
     cp3_h:"علبتك",cp3_sub:"راجع اختيارك قبل التأكيد.",
     c_pieces:"قطعة",c_err_format:"يرجى اختيار حجم للمتابعة.",
     c_err_total:"يجب أن يكون المجموع المختار بالضبط",
@@ -1165,157 +1178,136 @@ const I18N = {
     recap_sub:"تشكيلة علبتك الفاخرة",recap_total_lbl:"إجمالي العلبة",
     c_validate_lbl:"تأكيد الطلب",recap_edit:"← تعديل",
     cnt_back:"الحجم ←",cnt_next:"الملخص →",
-    c_toast_over:"تجاوزت السعة! قلّل الكمية.",c_toast_add:"🍫 تمت العلبة!",
+    c_toast_over:"تجاوزت السعة! قلّل الكمية.",c_toast_add:"🍫 تمت العلبة! جارٍ الإضافة…",
     c_to_step2:"اختر شوكولاتتي →",c_da:"دج",
-    c_discount_lbl_5:"🎉 تخفيض -5% علبة 20 قطعة",c_discount_lbl_10:"🎉 تخفيض -10% علبة 30 قطعة",
-    sable_sec_h:"سابلِي الصناعة اليدوية",sable_sec_p:"8 نكهات — اختر المفضلة لديك وأكمل طلبك",
-    sable_sec_overline:"مجموعة جديدة · صنع يدوي",
-    smc_qty_lbl:"الكمية (أدنى 10 قطع)",smc_add:"أضف إلى السلة",
-    smc_ing_lbl:"المكونات",smc_nut_lbl:"القيم الغذائية",smc_line_lbl:"إجمالي السطر",
-    sable_overline:"حلويات جزائرية · صنع يدوي",
-    sable_headline:"اكتشف<br><em>ساب اليدوي</em>",
-    sable_desc:"مصنوعة يدوياً وفق وصفات عائلية مصونة، تجمع ساب لدينا بين قوام هش وزبدة فاخرة وحشوات سخية.",
-    sable_cnt_lbl1:"نكهة",sable_cnt_lbl2:"يدوي",sable_cnt_lbl3:"قطعة كحد أدنى",
-    sf1:"🧈 زبدة فاخرة",sf2:"🌸 ماء زهر",sf3:"🌿 بدون مواد حافظة",sf4:"🎁 هدية مثالية",
-    sable_cta_main:"عرض كل الساب",sable_cta_ghost:"اطلب الآن →",
-    sable_badge_float:"مجموعة جديدة",
-    slide0_eyebrow:"✨ جديد",slide0_title:"اكتشف <em>ساب الصناعة اليدوية</em>",slide0_sub:"8 نكهات فريدة — زبدة، لوز، فستق والمزيد",slide0_cta:"عرض المجموعة →",
-    slide1_eyebrow:"🎁 عرض خاص",slide1_title:"علب <em>هدايا بريستيج</em>",slide1_sub:"لأعراسكم وعيدكم ومناسباتكم الخاصة",slide1_cta:"استكشاف →",
-    slide2_eyebrow:"🚚 توصيل الجزائر",slide2_title:"توصيل <em>سريع وعناية فائقة</em>",slide2_sub:"طلبياتكم تُسلَّم طازجة في كامل الجزائر العاصمة",slide2_cta:"اطلب الآن →",
-    slide3_eyebrow:"🍫 مجموعة جديدة",slide3_title:"<em>علب الشوكولاتة</em> لتصميمها",slide3_sub:"اختر 6 أو 12 أو 20 أو 30 شوكولاتة يدوية",slide3_cta:"صمم علبتي →",
+    c_discount_lbl_5:"🎉 تخفيض -5% علبة 20 قطعة",
+    c_discount_lbl_10:"🎉 تخفيض -10% علبة 30 قطعة",
+    /* slider i18n */
+    ps_new_badge:"جديد 2026",
+    ps0_eyebrow:"✦ مجموعة جديدة",ps0_title:"اكتشفي<br><em>سابلِي الفاخر</em>",
+    ps0_desc:"8 نكهات حرفية طرية وشهية. تُصنع كل صباح بزبدة طازجة ومكونات مختارة.",
+    ps0_cta:"اكتشفي السابلِي ←",ps0_badge:"جديد 2026",
+    ps1_eyebrow:"🍫 حصري",ps1_title:"علب شوكولاتة<br><em>مخصصة لك</em>",
+    ps1_desc:"اختر من 9 أنواع شوكولاتة يدوية. تخفيضات حتى -10% على العلب الكبيرة.",
+    ps1_cta:"صمم علبتي ←",
+    ps2_eyebrow:"📦 خدمة متميزة",ps2_title:"توصيل سريع<br><em>في الجزائر</em>",
+    ps2_desc:"اطلب قبل الساعة 14:00 للتوصيل في نفس اليوم في الجزائر العاصمة.",
+    ps2_cta:"اطلب الآن ←",
+    ps3_eyebrow:"👑 بريستيج",ps3_title:"فن<br><em>الحلويات الجزائرية</em>",
+    ps3_desc:"وصفات عائلية متوارثة من جيل إلى جيل مع مكونات استثنائية الجودة.",
+    ps3_cta:"مجموعاتنا ←",
+    sable_featured_label:"مجموعة جديدة",
+    sable_promo_label:"8 نكهات",
   }
 };
 
-/* ════════════════════════════════
+/* ═══════════════════════════════
    STATE
-════════════════════════════════ */
+═══════════════════════════════ */
 let currentLang='fr', cart=[], currentSel={product:null,variantIndex:0,qty:10};
 let chocoStep=1, selectedBoxSize=null, chocoQuantities={};
-let sableVariantIndex=0, sableQty=10;
-let sliderIndex=0, sliderTimer=null;
 
-/* ════════════════════════════════
+/* ── Slider state ── */
+let sliderIndex=0, sliderTotal=4, sliderTimer=null, sliderPaused=false;
+
+/* ═══════════════════════════════
    INIT
-════════════════════════════════ */
+═══════════════════════════════ */
 document.addEventListener('DOMContentLoaded',()=>{
-    populateWilayas();renderProducts();setupMainEvents();applyI18N();
-    renderBoxSizes();renderChocoCards();applyChocoI18N();
-    renderSableCard();initSlider();
+    populateWilayas();
+    renderProducts();
+    setupMainEvents();
+    applyI18N();
+    renderBoxSizes();
+    renderChocoCards();
+    applyChocoI18N();
+    initSlider();
 });
 
-/* ════════════════════════════════
-   HERO SLIDER
-════════════════════════════════ */
+/* ═══════════════════════════════
+   PROMO SLIDER
+═══════════════════════════════ */
 function initSlider(){
-    const total=4;
-    const dotsEl=document.getElementById('slider_dots');
-    dotsEl.innerHTML=Array.from({length:total},(_,i)=>
-        `<div class="slider-dot${i===0?' active':''}" onclick="sliderGoTo(${i})"></div>`
-    ).join('');
-    sliderTimer=setInterval(()=>sliderNext(),5500);
+    sliderGoTo(0);
+    startSliderTimer();
+    const section=document.getElementById('promo_slider_section');
+    if(section){
+        section.addEventListener('mouseenter',()=>{sliderPaused=true;stopSliderTimer();});
+        section.addEventListener('mouseleave',()=>{sliderPaused=false;startSliderTimer();});
+        /* Touch swipe */
+        let touchStartX=0;
+        section.addEventListener('touchstart',e=>{touchStartX=e.touches[0].clientX;},{passive:true});
+        section.addEventListener('touchend',e=>{
+            const dx=e.changedTouches[0].clientX-touchStartX;
+            if(Math.abs(dx)>50){dx<0?sliderNext():sliderPrev();}
+        },{passive:true});
+    }
 }
+
+function startSliderTimer(){
+    stopSliderTimer();
+    const fill=document.getElementById('ps_progress');
+    if(fill){fill.style.transition='none';fill.style.width='0%';setTimeout(()=>{fill.style.transition='width 4.5s linear';fill.style.width='100%';},30);}
+    sliderTimer=setTimeout(()=>{sliderNext();},4800);
+}
+function stopSliderTimer(){
+    clearTimeout(sliderTimer);
+    const fill=document.getElementById('ps_progress');
+    if(fill){fill.style.transition='none';fill.style.width='0%';}
+}
+
 function sliderGoTo(idx){
-    const slides=document.querySelectorAll('.slide');
-    const dots=document.querySelectorAll('.slider-dot');
-    slides[sliderIndex].classList.remove('active');
-    dots[sliderIndex].classList.remove('active');
-    sliderIndex=((idx%4)+4)%4;
-    slides[sliderIndex].classList.add('active');
-    dots[sliderIndex].classList.add('active');
-    document.getElementById('slider_track').style.transform=`translateX(-${sliderIndex*100}%)`;
-    clearInterval(sliderTimer);sliderTimer=setInterval(()=>sliderNext(),5500);
+    sliderIndex=((idx%sliderTotal)+sliderTotal)%sliderTotal;
+    const track=document.getElementById('promo_track');
+    if(track) track.style.transform=`translateX(-${sliderIndex*100}%)`;
+    /* active class for animations */
+    document.querySelectorAll('.promo-slide').forEach((s,i)=>{
+        s.classList.toggle('ps-active',i===sliderIndex);
+    });
+    /* dots */
+    document.querySelectorAll('.ps-dot').forEach((d,i)=>d.classList.toggle('active',i===sliderIndex));
+    startSliderTimer();
 }
 function sliderNext(){sliderGoTo(sliderIndex+1);}
 function sliderPrev(){sliderGoTo(sliderIndex-1);}
 
-/* ════════════════════════════════
-   SABLÉ MASTER CARD
-════════════════════════════════ */
-function renderSableCard(){
+function applySliderI18N(){
     const T=I18N[currentLang];
-    const variants=SABLE_VARIANTS[currentLang];
-    sableVariantIndex=Math.min(sableVariantIndex,variants.length-1);
-    const v=variants[sableVariantIndex];
-
-    /* Hero */
-    document.getElementById('smc_hero_img').src=v.img;
-    document.getElementById('smc_hero_name').textContent=v.name;
-    document.getElementById('smc_hero_desc').textContent=v.desc.substring(0,80)+'…';
-
-    /* Tabs */
-    document.getElementById('smc_tabs').innerHTML=variants.map((vt,i)=>{
-        const priceLabel=vt.prix_promo?`${vt.prix_promo} DA`:`${vt.prix} DA`;
-        const isPromo=!!vt.prix_promo;
-        return `<button type="button" class="smc-tab${i===sableVariantIndex?' active':''}${isPromo?' promo-tab':''}"
-            onclick="selectSableVariant(${i})">
-            <span class="tab-name">${vt.name}</span>
-            <span class="tab-price">${priceLabel}</span>
-        </button>`;
-    }).join('');
-
-    /* Detail */
-    document.getElementById('smc_dname').textContent=v.name;
-    document.getElementById('smc_ddesc').textContent=v.desc;
-    const priceHtml=v.prix_promo
-        ?`<span class="smc-price-now">${v.prix_promo} DA</span><span class="smc-price-old">${v.prix} DA</span><span class="smc-price-badge">${T.promo}</span>`
-        :`<span class="smc-price-now">${v.prix} DA</span><small style="color:#aaa;font-size:0.85rem;"> / pièce</small>`;
-    document.getElementById('smc_price_block').innerHTML=priceHtml;
-    document.getElementById('smc_ings').innerHTML=v.ingredients.map(ing=>`<span class="smc-ing-chip">${ing}</span>`).join('');
-    document.getElementById('smc_nutri').innerHTML=`
-        <div class="smc-nutri-cell"><span class="smc-nutri-val">${v.nutrition.calories}</span><span class="smc-nutri-key">${T.nutri_cal}</span></div>
-        <div class="smc-nutri-cell"><span class="smc-nutri-val">${v.nutrition.sucre}</span><span class="smc-nutri-key">${T.nutri_sug}</span></div>
-        <div class="smc-nutri-cell"><span class="smc-nutri-val">${v.nutrition.gras}</span><span class="smc-nutri-key">${T.nutri_fat}</span></div>`;
-
-    /* Labels */
-    document.getElementById('smc_ing_lbl').textContent=T.smc_ing_lbl;
-    document.getElementById('smc_nut_lbl').textContent=T.smc_nut_lbl;
-    document.getElementById('smc_qty_lbl').textContent=T.smc_qty_lbl;
-    document.getElementById('smc_add_txt').textContent=T.smc_add;
-    document.getElementById('smc_line_lbl').textContent=T.smc_line_lbl;
-    document.getElementById('smc_add_btn').dataset.variantIndex=sableVariantIndex;
-    updateSableLineTotal();
-}
-
-function selectSableVariant(idx){
-    sableVariantIndex=idx;
-    sableQty=10;
-    document.getElementById('smc_qty').value=10;
-    renderSableCard();
-    /* Scroll hero into view softly */
-    document.getElementById('smc_hero_img').scrollIntoView({behavior:'smooth',block:'nearest'});
-}
-
-function updateSableLineTotal(){
-    const v=SABLE_VARIANTS[currentLang][sableVariantIndex];
-    const up=v.prix_promo||v.prix;
-    document.getElementById('smc_line_val').textContent=`${Math.round(up*sableQty).toLocaleString()} DA`;
-}
-
-function addSableToCart(){
-    const T=I18N[currentLang];
-    const variants=SABLE_VARIANTS[currentLang];
-    const v=variants[sableVariantIndex];
-    const up=v.prix_promo||v.prix;
-    const variantKey=`sable_${v.key}`;
-    const exists=cart.find(x=>x.variantKey===variantKey);
-    if(exists){exists.qty+=sableQty;}
-    else{
-        cart.push({
-            id:Date.now(),variantKey,productId:'sable',
-            name:`🍪 ${currentLang==='fr'?'Sablé Artisanal':'ساب يدوي'}`,
-            variantName:v.name,variant:v.key,qty:sableQty,price:up,
-            originalPrice:v.prix_promo?v.prix:null
-        });
+    /* Slide 0 */
+    setHTML('ps_badge_0',T.ps0_badge);
+    setHTML('ps_eyebrow_0',T.ps0_eyebrow);
+    setHTML('ps_title_0',T.ps0_title);
+    setHTML('ps_desc_0',T.ps0_desc);
+    setHTML('ps_cta_0',T.ps0_cta);
+    /* Slide 1 */
+    setHTML('ps_eyebrow_1',T.ps1_eyebrow);
+    setHTML('ps_title_1',T.ps1_title);
+    setHTML('ps_desc_1',T.ps1_desc);
+    setHTML('ps_cta_1',T.ps1_cta);
+    /* Slide 2 */
+    setHTML('ps_eyebrow_2',T.ps2_eyebrow);
+    setHTML('ps_title_2',T.ps2_title);
+    setHTML('ps_desc_2',T.ps2_desc);
+    setHTML('ps_cta_2',T.ps2_cta);
+    /* Slide 3 */
+    setHTML('ps_eyebrow_3',T.ps3_eyebrow);
+    setHTML('ps_title_3',T.ps3_title);
+    setHTML('ps_desc_3',T.ps3_desc);
+    setHTML('ps_cta_3',T.ps3_cta);
+    /* Flavor pills slide 0 */
+    const flavors0=document.getElementById('ps_flavors_0');
+    if(flavors0){
+        const pills=currentLang==='fr'
+          ?['Vanille','Chocolat','Citron','Coco','Amande','Pistache','Caramel','Framboise']
+          :['فانيليا','شوكولاتة','ليمون','جوز الهند','لوز','فستق','كراميل','توت'];
+        flavors0.innerHTML=pills.map(p=>`<span class="ps-flavor-pill">${p}</span>`).join('');
     }
-    confetti({particleCount:70,spread:80,origin:{y:0.8}});
-    document.getElementById('smc_sel_badge').classList.add('show');
-    setTimeout(()=>document.getElementById('smc_sel_badge').classList.remove('show'),2200);
-    updateCartUI();showNotif(T.added);
 }
+function setHTML(id,html){const el=document.getElementById(id);if(el&&html!==undefined)el.innerHTML=html;}
 
-/* ════════════════════════════════
+/* ═══════════════════════════════
    PAGE NAVIGATION
-════════════════════════════════ */
+═══════════════════════════════ */
 function openChocoPage(){
     document.getElementById('page_main').classList.remove('active');
     document.getElementById('page_choco').classList.add('active');
@@ -1329,9 +1321,9 @@ function closeChocoPage(){
     window.scrollTo(0,0);
 }
 
-/* ════════════════════════════════
+/* ═══════════════════════════════
    LANG
-════════════════════════════════ */
+═══════════════════════════════ */
 function toggleLang(){
     currentLang=currentLang==='fr'?'ar':'fr';
     document.documentElement.lang=currentLang;
@@ -1340,9 +1332,8 @@ function toggleLang(){
     document.getElementById('lang_btn').textContent=lbl;
     document.getElementById('choco_lang_btn').textContent=lbl;
     applyI18N();renderProducts();updateCartUI();
-    renderBoxSizes();renderChocoCards();applyChocoI18N();
+    renderBoxSizes();renderChocoCards();applyChocoI18N();applySliderI18N();
     if(chocoStep===3)renderRecap();
-    renderSableCard();
 }
 
 function applyI18N(){
@@ -1360,25 +1351,14 @@ function applyI18N(){
         m_qty_label:'m_qty',m_add_txt:'m_add',
         m_ing_label:'m_ing_label',m_nut_label:'m_nut_label',m_line_lbl:'m_line_lbl',
         cart_val_btn:'cart_val',
-        sable_sec_h:'sable_sec_h',sable_sec_p:'sable_sec_p',sable_sec_overline:'sable_sec_overline',
-        sable_overline:'sable_overline',sable_desc:'sable_desc',
-        sable_cnt_lbl1:'sable_cnt_lbl1',sable_cnt_lbl2:'sable_cnt_lbl2',sable_cnt_lbl3:'sable_cnt_lbl3',
-        sf1:'sf1',sf2:'sf2',sf3:'sf3',sf4:'sf4',
-        sable_cta_main_txt:'sable_cta_main',sable_cta_ghost_txt:'sable_cta_ghost',
-        sable_badge_float:'sable_badge_float',
-        slide0_eyebrow:'slide0_eyebrow',slide0_title:'slide0_title',slide0_sub:'slide0_sub',slide0_cta:'slide0_cta',
-        slide1_eyebrow:'slide1_eyebrow',slide1_title:'slide1_title',slide1_sub:'slide1_sub',slide1_cta:'slide1_cta',
-        slide2_eyebrow:'slide2_eyebrow',slide2_title:'slide2_title',slide2_sub:'slide2_sub',slide2_cta:'slide2_cta',
-        slide3_eyebrow:'slide3_eyebrow',slide3_title:'slide3_title',slide3_sub:'slide3_sub',slide3_cta:'slide3_cta',
     };
-    Object.entries(map).forEach(([id,key])=>{const el=document.getElementById(id);if(el&&T[key]!==undefined)el.innerHTML=T[key];});
+    Object.entries(map).forEach(([id,key])=>{const el=document.getElementById(id);if(el&&T[key])el.innerHTML=T[key];});
     document.querySelectorAll('[data-key]').forEach(el=>{const k=el.getAttribute('data-key');if(T[k])el.innerHTML=T[k];});
     ['select_default_opt:select_default','occ_0:occ_0','occ_1:occ_1','occ_2:occ_2','occ_3:occ_3','occ_4:occ_4'].forEach(pair=>{
         const[id,k]=pair.split(':');const el=document.getElementById(id);if(el&&T[k])el.textContent=T[k];
     });
     const ta=document.getElementById('f_message');if(ta&&T.f_msg_ph)ta.placeholder=T.f_msg_ph;
-    /* sable headline separately (contains HTML) */
-    const sh=document.getElementById('sable_headline');if(sh&&T.sable_headline)sh.innerHTML=T.sable_headline;
+    applySliderI18N();
 }
 
 function applyChocoI18N(){
@@ -1391,14 +1371,15 @@ function applyChocoI18N(){
         c_err1:'c_err_format',
         recap_sub:'recap_sub',recap_total_lbl:'recap_total_lbl',
         c_validate_lbl:'c_validate_lbl',recap_edit_btn:'recap_edit',
-        step1_next_btn:'c_to_step2',cnt_back_btn:'cnt_back',cnt_next_btn:'cnt_next',
+        step1_next_btn:'c_to_step2',
+        cnt_back_btn:'cnt_back',cnt_next_btn:'cnt_next',
     };
     Object.entries(ids).forEach(([id,key])=>{const el=document.getElementById(id);if(el&&T[key]!==undefined)el.innerHTML=T[key];});
 }
 
-/* ════════════════════════════════
+/* ═══════════════════════════════
    MAIN CATALOG
-════════════════════════════════ */
+═══════════════════════════════ */
 function populateWilayas(){
     const sel=document.getElementById('f_wilaya');
     WILAYAS.forEach(w=>{const o=document.createElement('option');o.value=w;o.textContent=w;sel.appendChild(o);});
@@ -1411,16 +1392,42 @@ function renderProducts(){
         const hasPromo=p.variants.some(v=>v.prix_promo);
         const minPrice=Math.min(...p.variants.map(v=>v.prix_promo||v.prix));
         const maxPrice=Math.max(...p.variants.map(v=>v.prix));
+
+        /* ── Featured Sablé card ── */
+        if(p.featured){
+            const flavors=(p[`flavors_${currentLang}`]||p.flavors_fr);
+            const flavorsHTML=flavors.map(f=>`<span class="sable-flavor-chip">${f}</span>`).join('');
+            const labelNew=T.sable_featured_label||'Nouvelle Collection';
+            const labelPromo=T.sable_promo_label||'8 Saveurs';
+            return `<div class="product-card sable-featured" onclick="openProduct('${p.id}')">
+                <span class="sable-new-ribbon">✦ ${labelNew} — ${labelPromo}</span>
+                <div class="product-img-wrap">
+                    <img src="${p.img}" class="product-img" alt="${p[currentLang]||p.fr}"
+                         onerror="this.src='https://via.placeholder.com/600x400/4a0404/c9993a?text=Sablés'">
+                </div>
+                <div class="product-info">
+                    <h4>${p[currentLang]||p.fr}</h4>
+                    <div class="price-tag">
+                        <span class="price-current">${minPrice} – ${maxPrice} DA</span>
+                        <span class="price-badge">${labelPromo}</span>
+                    </div>
+                </div>
+                <div class="sable-flavors-strip">${flavorsHTML}</div>
+            </div>`;
+        }
+
         const priceHtml=hasPromo
             ?`<span class="price-current">${minPrice} DA</span><span class="price-badge">${T.promo}</span>`
             :(p.variants.length>1
                 ?`<span class="price-current">${minPrice} – ${maxPrice} DA</span>`
                 :`<span class="price-current">${p.variants[0].prix} DA</span>`);
         return `<div class="product-card" onclick="openProduct('${p.id}')">
-            <div class="product-img-wrap"><img src="${p.variants[0].img}" class="product-img" alt="${p[currentLang]}" onerror="this.src='https://via.placeholder.com/600x400/4a0404/c9993a?text=MyZina'"></div>
-            <div class="product-info"><h4>${p[currentLang]}</h4><div class="price-tag">${priceHtml}</div></div>
+            <div class="product-img-wrap"><img src="${p.variants[0].img}" class="product-img" alt="${p[currentLang]||p.fr}" onerror="this.src='https://via.placeholder.com/600x400/4a0404/c9993a?text=MyZina'"></div>
+            <div class="product-info"><h4>${p[currentLang]||p.fr}</h4><div class="price-tag">${priceHtml}</div></div>
         </div>`;
     }).join('');
+
+    /* Choco promo card */
     html+=`<div class="choco-promo-card" onclick="openChocoPage()">
         <span class="choco-promo-new-badge">${currentLang==='fr'?'Nouveau':'جديد'}</span>
         <div class="choco-promo-img"><img src="https://raw.githubusercontent.com/AMKY22/MYZINA/refs/heads/main/Firefly_Gemini%20Flash_generer%20photo%20affiche%20bniwen%20sans%20ecritures%20230901.png" alt="Chocolats" onerror="this.src='https://via.placeholder.com/600x400/1a0a00/c9993a?text=Chocolats'"></div>
@@ -1432,7 +1439,7 @@ function renderProducts(){
 window.openProduct=function(id){
     const p=CATALOG.find(x=>x.id===id);if(!p)return;
     currentSel={product:p,variantIndex:0,qty:10};
-    document.getElementById('m_name').textContent=p[currentLang];
+    document.getElementById('m_name').textContent=p[currentLang]||p.fr;
     document.getElementById('m_qty_val').value=10;
     document.getElementById('m_variants').innerHTML=p.variants.map((v,i)=>{
         const label=v[currentLang]||v.fr;
@@ -1503,11 +1510,6 @@ function setupMainEvents(){
     document.getElementById('add_to_cart_btn').addEventListener('click',addToCart);
     document.getElementById('f_wilaya').addEventListener('change',updateCartUI);
     document.getElementById('order_form').addEventListener('submit',handleOrder);
-    /* Sablé card events */
-    document.getElementById('smc_plus').addEventListener('click',()=>{sableQty++;document.getElementById('smc_qty').value=sableQty;updateSableLineTotal();});
-    document.getElementById('smc_minus').addEventListener('click',()=>{if(sableQty>10){sableQty--;document.getElementById('smc_qty').value=sableQty;updateSableLineTotal();}});
-    document.getElementById('smc_qty').addEventListener('change',e=>{let v=parseInt(e.target.value);if(isNaN(v)||v<10)v=10;sableQty=v;e.target.value=v;updateSableLineTotal();});
-    document.getElementById('smc_add_btn').addEventListener('click',addSableToCart);
 }
 
 function scrollToAnchor(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
@@ -1518,7 +1520,7 @@ function addToCart(){
     const up=v.prix_promo||v.prix,variantKey=`${p.id}_${v.key}`;
     const exists=cart.find(x=>x.variantKey===variantKey);
     if(exists){exists.qty+=currentSel.qty;}
-    else{cart.push({id:Date.now(),variantKey,productId:p.id,name:p[currentLang],variantName:v[currentLang]||v.fr,variant:v.key,qty:currentSel.qty,price:up,originalPrice:v.prix_promo?v.prix:null});}
+    else{cart.push({id:Date.now(),variantKey,productId:p.id,name:p[currentLang]||p.fr,variantName:v[currentLang]||v.fr,variant:v.key,qty:currentSel.qty,price:up,originalPrice:v.prix_promo?v.prix:null});}
     confetti({particleCount:70,spread:80,origin:{y:0.8}});
     closeModal();updateCartUI();showNotif(I18N[currentLang].added);
 }
@@ -1586,9 +1588,9 @@ async function handleOrder(e){
     finally{btn.disabled=false;btnText.textContent=I18N[currentLang].btn_order;spinner.style.display='none';}
 }
 
-/* ════════════════════════════════
-   CHOCO PAGE LOGIC
-════════════════════════════════ */
+/* ═══════════════════════════════
+   CHOCO PAGE
+═══════════════════════════════ */
 function chocoGoToStep(step){
     const T=I18N[currentLang];
     if(step>1&&!selectedBoxSize){document.getElementById('c_err1').style.display='block';return;}
@@ -1600,13 +1602,15 @@ function chocoGoToStep(step){
             e.textContent=`${T.c_err_total} ${selectedBoxSize} ${T.c_pieces}.`;
             e.style.display='block';return;
         }
-        document.getElementById('c_err2').style.display='none';renderRecap();
+        document.getElementById('c_err2').style.display='none';
+        renderRecap();
     }
     chocoStep=step;
-    ['cpanel1','cpanel2','cpanel3'].forEach((id,i)=>{document.getElementById(id).classList.toggle('active',i+1===step);});
+    ['cpanel1','cpanel2','cpanel3'].forEach((id,i)=>document.getElementById(id).classList.toggle('active',i+1===step));
     [1,2,3].forEach(i=>{
-        const item=document.getElementById('csi'+i);const circle=document.getElementById('csc'+i);
-        item.classList.toggle('active',i===step);item.classList.toggle('done',i<step);circle.textContent=i<step?'✓':i;
+        const item=document.getElementById('csi'+i),circle=document.getElementById('csc'+i);
+        item.classList.toggle('active',i===step);item.classList.toggle('done',i<step);
+        circle.textContent=i<step?'✓':i;
     });
     [1,2].forEach(i=>{const conn=document.getElementById('csconn'+i);if(conn)conn.classList.toggle('done',i<step);});
     document.getElementById('c_counter').style.display=step===2?'grid':'none';
@@ -1628,8 +1632,7 @@ function renderBoxSizes(){
 }
 
 function selectBox(size){
-    selectedBoxSize=size;chocoQuantities={};
-    renderBoxSizes();renderChocoCards();updateCounter();
+    selectedBoxSize=size;chocoQuantities={};renderBoxSizes();renderChocoCards();updateCounter();
     const T=I18N[currentLang],data=CHOCO_DATA[currentLang];
     const box=data.box_sizes.find(b=>b.size===size);
     showChocoToast(`${currentLang==='fr'?'Coffret':'علبة'} ${size} ${box.label} ${currentLang==='fr'?'sélectionné !':'تم اختياره!'}`,false);
@@ -1659,8 +1662,7 @@ function renderChocoCards(){
 }
 
 function ccChange(id,delta){
-    const T=I18N[currentLang];
-    const total=getChocoTotal(),cur=chocoQuantities[id]||0,newQty=cur+delta;
+    const T=I18N[currentLang],total=getChocoTotal(),cur=chocoQuantities[id]||0,newQty=cur+delta;
     if(newQty<0)return;
     if(delta>0){
         if(!selectedBoxSize){showChocoToast(T.c_err_format,true);return;}
@@ -1676,16 +1678,10 @@ function ccChange(id,delta){
 }
 
 function getChocoTotal(){return Object.values(chocoQuantities).reduce((a,b)=>a+b,0);}
-
-function getBoxDiscount(){
-    if(!selectedBoxSize)return 0;
-    const box=CHOCO_DATA[currentLang].box_sizes.find(b=>b.size===selectedBoxSize);
-    return box?box.discount:0;
-}
+function getBoxDiscount(){if(!selectedBoxSize)return 0;const box=CHOCO_DATA[currentLang].box_sizes.find(b=>b.size===selectedBoxSize);return box?box.discount:0;}
 
 function updateCounter(){
-    const T=I18N[currentLang];
-    const total=getChocoTotal(),cap=selectedBoxSize||0,pct=cap>0?Math.min(100,(total/cap)*100):0;
+    const T=I18N[currentLang],total=getChocoTotal(),cap=selectedBoxSize||0,pct=cap>0?Math.min(100,(total/cap)*100):0;
     const remaining=cap-total;
     const bigEl=document.getElementById('cnt_big');
     bigEl.textContent=total;
@@ -1737,16 +1733,11 @@ function validateCoffret(){
     const itemsStr=items.map(c=>`${chocoQuantities[c.id]}x ${c.name}`).join(', ');
     const boxLabel=currentLang==='fr'?`Coffret ${selectedBoxSize} pièces`:`علبة ${selectedBoxSize} قطعة`;
     const discInfo=discount>0?(currentLang==='fr'?` (-${Math.round(discount*100)}%)`:`(-${Math.round(discount*100)}%)`):'';
-    cart.push({
-        id:Date.now(),variantKey:`choco_box_${selectedBoxSize}_${Date.now()}`,
-        productId:'choco_box',name:`🍫 ${T.choco_cart_name} (${boxLabel}${discInfo})`,
-        variantName:itemsStr.length>80?itemsStr.slice(0,80)+'…':itemsStr,
-        variant:`box_${selectedBoxSize}`,qty:1,price:priceTotal,originalPrice:discount>0?baseTotal:null,isChocoBox:true
-    });
+    cart.push({id:Date.now(),variantKey:`choco_box_${selectedBoxSize}_${Date.now()}`,productId:'choco_box',name:`🍫 ${T.choco_cart_name} (${boxLabel}${discInfo})`,variantName:itemsStr.length>80?itemsStr.slice(0,80)+'…':itemsStr,variant:`box_${selectedBoxSize}`,qty:1,price:priceTotal,originalPrice:discount>0?baseTotal:null,isChocoBox:true});
     const banner=document.getElementById('choco_transfer_banner');
     banner.style.display='block';
     document.getElementById('banner_title_txt').textContent=T.choco_banner_title;
-    const discLine=discount>0?`<span style="color:#5dde87;font-weight:800;">🎉 ${currentLang==='fr'?`Réduction -${Math.round(discount*100)}% appliquée ! Économie : ${savings.toLocaleString()} DA`:`تخفيض -${Math.round(discount*100)}% مطبق! وفرت: ${savings.toLocaleString()} دج`}</span><br>`:'';
+    const discLine=discount>0?`<span style="color:#5dde87;font-weight:800;">🎉 ${currentLang==='fr'?`Réduction -${Math.round(discount*100)}% ! Économie : ${savings.toLocaleString()} DA`:`تخفيض -${Math.round(discount*100)}%! وفرت: ${savings.toLocaleString()} دج`}</span><br>`:'';
     document.getElementById('banner_detail_txt').innerHTML=`${T.choco_banner_msg}<br>${discLine}<strong style="color:var(--gold2);">${boxLabel} — ${priceTotal.toLocaleString()} ${T.c_da}</strong><br><small style="opacity:0.65;">${itemsStr}</small>`;
     const ta=document.getElementById('f_message');
     const discNote=discount>0?(currentLang==='fr'?`• Réduction -${Math.round(discount*100)}% : -${savings.toLocaleString()} DA\n`:`• تخفيض -${Math.round(discount*100)}%: -${savings.toLocaleString()} دج\n`):'';
